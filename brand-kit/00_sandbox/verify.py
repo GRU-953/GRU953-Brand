@@ -160,6 +160,15 @@ for f in w2:
         TTFont(f)                      # parses the woff2 or raises
         check(f"webfont is a valid woff2 · {f.name}", head == b"wOF2",
               f"{f.stat().st_size // 1024} kB, signature {head!r}")
+    except ImportError as e:
+        # A MISSING TOOL IS NOT A BROKEN FONT. fontTools only decodes woff2 when the
+        # Brotli extension is present, and `pip install fonttools` does not bring it —
+        # you need fonttools[woff]. Reporting that as "this font will not parse" sent a
+        # CI run red with a message pointing at the wrong thing entirely: the fonts were
+        # fine, the checker was not equipped. This belongs beside the CSS parse check,
+        # under what could not be checked.
+        note(f"webfont parse check could not run · {f.name}",
+             f"{e}. Install it with: pip install 'fonttools[woff]'")
     except Exception as e:
         check(f"webfont is a valid woff2 · {f.name}", False, f"will not parse: {e}")
 check("font licences shipped", len(list(FONTS.glob("OFL-*.txt"))) == 5,

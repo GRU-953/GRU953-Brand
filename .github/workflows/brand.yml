@@ -21,7 +21,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
-      - run: pip install coloraide
+      # PINNED. coloraide does the gamut mapping that turns an OKLCH value into a hex,
+      # so an unpinned version means the committed palette can change without anybody
+      # editing the palette — and the diff check below would then fail, correctly, for a
+      # reason nobody could act on. Raise this deliberately, and re-run engine.py when you do.
+      - run: pip install 'coloraide==8.11.1'
       - name: engine.py must reproduce the committed tokens exactly
         run: |
           cd brand-kit/04_colour && python3 engine.py
@@ -67,5 +71,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
-      - run: pip install coloraide fonttools
+      # fonttools[woff], not fonttools: the woff2 decoder needs the Brotli
+      # extension, which the bare package does not pull in. Without it the five
+      # webfont checks cannot run — and this job spent its first CI run failing
+      # for that reason, reporting five perfectly good fonts as unparseable.
+      - run: pip install 'coloraide==8.11.1' 'fonttools[woff]==4.62.1'
+      # Node, because verify.py shells out to it for the CSS parse check. Without
+      # it that check is skipped and says so, which is honest but is one fewer
+      # check than the job claims to run.
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: cd brand-kit/00_sandbox && npm ci --silent || npm install --silent
       - run: python3 brand-kit/00_sandbox/verify.py
