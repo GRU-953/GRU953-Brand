@@ -1,0 +1,85 @@
+GRU953 — the design system
+Copyright 2026 Aninda Sundar Howlader (GRU953)
+
+সহজ প্রযুক্তি। সবার জন্য।
+Simple technology. For everyone.
+
+This product bundles work under more than one licence. Which licence applies depends on
+which part you are using.
+
+--------------------------------------------------------------------------------
+1. THE CODE AND THE TOKENS — Apache License, Version 2.0
+--------------------------------------------------------------------------------
+src/components.css, build.py, check.mjs, the 27 preview HTML files, _cards.json, and
+everything in tokens/ except the typefaces (see 4 below).
+
+   Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+   these files except in compliance with the License. You may obtain a copy of the
+   License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software distributed
+   under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+   CONDITIONS OF ANY KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations under the License.
+
+The full text is in LICENSE.
+
+--------------------------------------------------------------------------------
+2. THE WRITING — PolyForm Noncommercial License 1.0.0
+--------------------------------------------------------------------------------
+The words inside the 27 preview cards, README.md, and _cards.json's descriptions.
+
+Required Notice: Copyright 2026 Aninda Sundar Howlader (GRU953)
+
+   Licensed under the PolyForm Noncommercial License 1.0.0. You may use, copy,
+   modify and share this work for any noncommercial purpose. Commercial use
+   requires separate permission from the licensor.
+
+       https://polyformproject.org/licenses/noncommercial/1.0.0
+
+PolyForm Noncommercial 1.0.0 is a source-available licence. It is NOT approved by the
+Open Source Initiative, because it restricts commercial use. That is stated plainly
+rather than glossed over.
+
+--------------------------------------------------------------------------------
+3. THE MARKS — not licensed
+--------------------------------------------------------------------------------
+The name GRU953, the GRU953 wordmark, the Soaring Bird, the app-icon tile, and any
+lockup of them are trademarks of Aninda Sundar Howlader. They are NOT licensed by
+either licence above. Apache-2.0 section 6 expressly withholds trademark permission,
+and the PolyForm licence grants no trademark rights either.
+
+What this means in practice, without asking anyone:
+  · You MAY fork this work, change it, and ship what you build with it.
+  · You MAY show the marks to refer to GRU953 — a credit line, a comparison, an
+    article about the brand.
+  · You MAY NOT put the marks on your own product, or on a fork, as if it were GRU953.
+  · You MAY NOT use a name confusable with GRU953 for a competing tool.
+
+Replace the identity with your own and everything else here is yours to use.
+
+--------------------------------------------------------------------------------
+4. THE TYPEFACES — SIL Open Font License 1.1
+--------------------------------------------------------------------------------
+Sora, Noto Sans, Noto Sans Bengali, Anek Bangla and JetBrains Mono are licensed under
+the SIL Open Font License, Version 1.1. Each font's own licence file travels beside it
+in tokens/fonts/.
+
+Subsetting and instancing a variable font are permitted modifications under OFL 1.1.
+Reserved Font Names, where a font declares one, must be respected — do not ship a
+modified font under its original name. None of the fonts here declares one.
+
+   https://openfontlicense.org
+
+--------------------------------------------------------------------------------
+
+This file is the NOTICE file required by section 4(d) of the Apache License, Version
+2.0. If you redistribute an Apache-2.0 part of this work, the parts of this file that
+apply to what you redistribute must travel with it — section 4(d) lets you leave out
+notices that do not pertain to your derivative work.
+
+Permissions and questions: aninda.sh15@gmail.com
+
+This is not legal advice. It was written by the author, who is not a lawyer.

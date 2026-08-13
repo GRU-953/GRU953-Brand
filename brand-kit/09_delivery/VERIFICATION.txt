@@ -1,0 +1,204 @@
+GRU953 BRAND KIT — VERIFICATION REPORT
+সহজ প্রযুক্তি। সবার জন্য। · Simple technology. For everyone.
+Copyright 2026 Aninda Sundar Howlader (GRU953)
+==============================================================================
+
+Packaged     13 August 2026
+Archive      GRU953-Brand-Kit.zip
+             7,974,281 bytes
+             SHA-256 7b8380b60c921847312e785fb1607a1118669da3ddcfffc266924a1242d8be6a
+Contents     198 files, 11,387,246 bytes uncompressed
+Excluded     the guidebook HTML and PDF — the guidebook already embeds every
+             other file in the kit individually, so archiving it alongside them
+             would carry a third copy of everything. Also excluded: the node
+             install and the build caches.
+
+This report is the verifier's own output, captured by 09_delivery/package.py.
+It is not a summary written by hand, and it is regenerated every time the kit is
+packaged — so it cannot describe a build that no longer exists.
+
+==============================================================================
+
+
+==============================================================================
+GRU953 — verification:  167 passed, 0 failed, 0 to look at by hand
+==============================================================================
+
+PASSED:
+  ✓ signature works on light grounds — #B45A39 = 4.71:1 on paper
+  ✓ signature works on dark grounds — #FFAB8E = 10.55:1 on ink
+  ✓ the signature's two values are one hue — 0.51° apart
+  ✓ contrast · white on Meridian — 16.26:1 (needs 4.5:1)
+  ✓ contrast · Daybreak on Meridian — 8.88:1 (needs 4.5:1)
+  ✓ contrast · Ember on Meridian — 8.58:1 (needs 4.5:1)
+  ✓ contrast · Ink on Daybreak — 10.55:1 (needs 4.5:1)
+  ✓ contrast · Ink on Ember — 10.19:1 (needs 4.5:1)
+  ✓ contrast · Meridian on paper — 16.26:1 (needs 4.5:1)
+  ✓ contrast · Daybreak on Ink — 10.55:1 (needs 4.5:1)
+  ✓ contrast · Ink on paper — 19.32:1 (needs 4.5:1)
+  ✓ role contrast · light: ink on bg — 19.32:1 (#0B0E14 on #FFFFFF)
+  ✓ role contrast · light: ink-muted on bg — 7.98:1 (#4D5157 on #FFFFFF)
+  ✓ role contrast · light: ink-subtle on bg — 5.18:1 (#6A6D74 on #FFFFFF)
+  ✓ role contrast · light: link on bg — 10.59:1 (#343583 on #FFFFFF)
+  ✓ role contrast · light: link-visited on bg — 18.72:1 (#0E0B37 on #FFFFFF)
+  ✓ role contrast · light: accent on bg — 4.71:1 (#B45A39 on #FFFFFF)
+  ✓ role contrast · light: brand on bg — 16.26:1 (#1A1753 on #FFFFFF)
+  ✓ role contrast · light: info on bg — 7.0:1 (#4C4EAD on #FFFFFF)
+  ✓ role contrast · light: success on bg — 6.17:1 (#007131 on #FFFFFF)
+  ✓ role contrast · light: warning on bg — 6.79:1 (#805100 on #FFFFFF)
+  ✓ role contrast · light: danger on bg — 4.92:1 (#CE393A on #FFFFFF)
+  ✓ role contrast · light: on-brand on brand — 16.26:1 (#FFFFFF on #1A1753)
+  ✓ role contrast · light: on-accent on accent — 4.71:1 (#FFFFFF on #B45A39)
+  ✓ role contrast · light: ink on surface — 19.32:1 (#0B0E14 on #FFFFFF)
+  ✓ role contrast · light: ink on surface-raised — 18.69:1 (#0B0E14 on #FBFBFD)
+  ✓ role contrast · light: ink on bg-subtle — 17.88:1 (#0B0E14 on #F3F6FF)
+  ✓ role contrast · dark: ink on bg — 17.73:1 (#F4F5F9 on #0B0E14)
+  ✓ role contrast · dark: ink-muted on bg — 8.49:1 (#A8ACB4 on #0B0E14)
+  ✓ role contrast · dark: ink-subtle on bg — 5.5:1 (#858990 on #0B0E14)
+  ✓ role contrast · dark: link on bg — 5.94:1 (#E26C42 on #0B0E14)
+  ✓ role contrast · dark: link-visited on bg — 10.55:1 (#FFAB8E on #0B0E14)
+  ✓ role contrast · dark: accent on bg — 10.55:1 (#FFAB8E on #0B0E14)
+  ✓ role contrast · dark: brand on bg — 6.1:1 (#7E86F6 on #0B0E14)
+  ✓ role contrast · dark: info on bg — 6.1:1 (#7E86F6 on #0B0E14)
+  ✓ role contrast · dark: success on bg — 6.78:1 (#32AE62 on #0B0E14)
+  ✓ role contrast · dark: warning on bg — 6.22:1 (#C88400 on #0B0E14)
+  ✓ role contrast · dark: danger on bg — 5.8:1 (#F25855 on #0B0E14)
+  ✓ role contrast · dark: on-brand on brand — 6.1:1 (#0B0E14 on #7E86F6)
+  ✓ role contrast · dark: on-accent on accent — 10.55:1 (#0B0E14 on #FFAB8E)
+  ✓ role contrast · dark: ink on surface — 16.11:1 (#F4F5F9 on #141926)
+  ✓ role contrast · dark: ink on surface-raised — 14.75:1 (#F4F5F9 on #1B2130)
+  ✓ role contrast · dark: ink on bg-subtle — 16.61:1 (#F4F5F9 on #12161F)
+  ✓ ramp monotonic · meridian — 11 steps
+  ✓ anchor inside ramp · meridian — #1A1753
+  ✓ ramp monotonic · daybreak — 11 steps
+  ✓ anchor inside ramp · daybreak — #FFAB8E
+  ✓ ramp monotonic · ember — 11 steps
+  ✓ anchor inside ramp · ember — #EDB24D
+  ✓ ramp monotonic · success — 11 steps
+  ✓ ramp monotonic · danger — 11 steps
+  ✓ ui contrast · light: border-strong — 4.66:1 (needs 3:1)
+  ✓ ui contrast · light: focus — 4.66:1 (needs 3:1)
+  ✓ ui contrast · light: accent-ui — 3.25:1 (needs 3:1)
+  ✓ ui contrast · light: info-border — 4.66:1 (needs 3:1)
+  ✓ ui contrast · light: success-border — 4.13:1 (needs 3:1)
+  ✓ ui contrast · light: warning-border — 4.55:1 (needs 3:1)
+  ✓ ui contrast · light: danger-border — 3.33:1 (needs 3:1)
+  ✓ ui contrast · dark: border-strong — 4.14:1 (needs 3:1)
+  ✓ ui contrast · dark: focus — 4.14:1 (needs 3:1)
+  ✓ ui contrast · dark: accent-ui — 10.55:1 (needs 3:1)
+  ✓ ui contrast · dark: info-border — 4.14:1 (needs 3:1)
+  ✓ ui contrast · dark: success-border — 4.67:1 (needs 3:1)
+  ✓ ui contrast · dark: warning-border — 4.25:1 (needs 3:1)
+  ✓ ui contrast · dark: danger-border — 3.93:1 (needs 3:1)
+  ✓ chart · light: Meridian — 4.21:1
+  ✓ chart · light: Daybreak — 4.36:1
+  ✓ chart · light: Kingfisher — 3.88:1
+  ✓ chart · light: Verdant — 3.9:1
+  ✓ chart · light: Orchid — 4.42:1
+  ✓ chart · light: Ember — 4.21:1
+  ✓ chart series distinguishable · light — closest pair Meridian/Orchid at ΔE 18.6
+  ✓ chart · dark: Meridian — 3.53:1
+  ✓ chart · dark: Daybreak — 3.41:1
+  ✓ chart · dark: Kingfisher — 3.84:1
+  ✓ chart · dark: Verdant — 3.81:1
+  ✓ chart · dark: Orchid — 3.36:1
+  ✓ chart · dark: Ember — 3.53:1
+  ✓ chart series distinguishable · dark — closest pair Meridian/Orchid at ΔE 18.6
+  ✓ every role is defined in both themes — 55 roles each
+  ✓ svg · GRU953-appicon.svg — 4273 bytes
+  ✓ svg · GRU953-bird.svg — 4281 bytes
+  ✓ svg · GRU953-lockup-horizontal-tagline.svg — 26357 bytes
+  ✓ svg · GRU953-lockup-horizontal.svg — 7503 bytes
+  ✓ svg · GRU953-lockup-stacked-tagline.svg — 26076 bytes
+  ✓ svg · GRU953-lockup-stacked.svg — 7540 bytes
+  ✓ svg · GRU953-tagline.svg — 17762 bytes
+  ✓ svg · GRU953-wordmark.svg — 3616 bytes
+  ✓ svg · icon.svg — 4273 bytes
+  ✓ svg · mask-icon.svg — 4276 bytes
+  ✓ recolourable · GRU953-bird.svg
+  ✓ recolourable · GRU953-lockup-horizontal.svg
+  ✓ recolourable · GRU953-lockup-horizontal-tagline.svg
+  ✓ recolourable · GRU953-lockup-stacked.svg
+  ✓ recolourable · GRU953-lockup-stacked-tagline.svg
+  ✓ recolourable · GRU953-wordmark.svg
+  ✓ recolourable · GRU953-tagline.svg
+  ✓ css parses · tokens.css — 0 parse errors
+  ✓ css parses · typography.css — 0 parse errors
+  ✓ css parses · layout.css — 0 parse errors
+  ✓ webfonts present — 5 files, 564 kB total
+  ✓ webfont is a valid woff2 · anekbangla.woff2 — 149 kB, signature b'wOF2'
+  ✓ webfont is a valid woff2 · jetbrainsmono-latin.woff2 — 39 kB, signature b'wOF2'
+  ✓ webfont is a valid woff2 · notosans-latin.woff2 — 205 kB, signature b'wOF2'
+  ✓ webfont is a valid woff2 · notosansbengali.woff2 — 125 kB, signature b'wOF2'
+  ✓ webfont is a valid woff2 · sora-latin.woff2 — 43 kB, signature b'wOF2'
+  ✓ font licences shipped — 5 OFL files
+  ✓ font is OFL 1.1 · Sora — This Font Software is licensed under the SIL Open Fo
+  ✓ font is OFL 1.1 · Noto Sans — This Font Software is licensed under the SIL Open Fo
+  ✓ font is OFL 1.1 · Noto Sans Bengali — This Font Software is licensed under the SIL Open Fo
+  ✓ font is OFL 1.1 · JetBrains Mono — This Font Software is licensed under the SIL Open Fo
+  ✓ font is OFL 1.1 · Anek Bangla — This Font Software is licensed under the SIL Open Fo
+  ✓ guidebook built — 16047 kB, well-formed document
+  ✓ guidebook is self-contained — no unresolved local references
+  ✓ guidebook fonts embedded — 19 embedded font faces
+  ✓ guidebook has no unwritten chapters
+  ✓ guidebook declares language
+  ✓ guidebook marks Bangla — 175 Bangla-marked elements
+  ✓ guidebook has skip link
+  ✓ guidebook has print styles
+  ✓ no lorem or TODO in any source — clean
+  ✓ no unfilled placeholder left in guidebook prose — clean
+  ✓ guidebook PDF built — 2829 kB
+  ✓ deliverable · START-HERE.md
+  ✓ deliverable · 02_strategy/BRAND-SPEC.md
+  ✓ deliverable · 02_strategy/DESIGN-RULES.md
+  ✓ deliverable · 02_strategy/VERBAL-IDENTITY.md
+  ✓ deliverable · 02_strategy/VERBAL-IDENTITY-BN.md
+  ✓ deliverable · 01_research/RESEARCH.md
+  ✓ deliverable · 04_colour/CONTRAST.md
+  ✓ deliverable · 08_guidebook/assets/tokens.css
+  ✓ deliverable · 08_guidebook/assets/tokens.json
+  ✓ deliverable · 08_guidebook/assets/typography.css
+  ✓ deliverable · 08_guidebook/assets/layout.css
+  ✓ deliverable · 08_guidebook/governance/LICENSE
+  ✓ deliverable · 08_guidebook/governance/NOTICE
+  ✓ deliverable · 08_guidebook/governance/LICENSING-EXPLAINED.md
+  ✓ deliverable · 08_guidebook/governance/TRADEMARKS.md
+  ✓ deliverable · 08_guidebook/governance/LOGO-USAGE.md
+  ✓ deliverable · 08_guidebook/governance/LICENSE-GUIDEBOOK.md
+  ✓ deliverable · 07_templates/github-profile-README.md
+  ✓ deliverable · 07_templates/repo-README-template.md
+  ✓ deliverable · 07_templates/CV-content.md
+  ✓ deliverable · 07_templates/email-signature.md
+  ✓ deliverable · 07_templates/invoice-and-proposal-copy.md
+  ✓ deliverable · 07_templates/social-copy.md
+  ✓ deliverable · 06_assets/outreach/github-social-preview.png
+  ✓ deliverable · 06_assets/outreach/avatar-512.png
+  ✓ deliverable · 06_assets/outreach/og-card-1200x630.png
+  ✓ deliverable · 06_assets/favicon/favicon.ico
+  ✓ deliverable · 03_logo/GRU953-bird.svg
+  ✓ deliverable · 03_logo/GRU953-appicon.svg
+  ✓ deliverable · 03_logo/GRU953-lockup-horizontal.svg
+  ✓ deliverable · 03_logo/GRU953-lockup-horizontal-tagline.svg
+  ✓ deliverable · 03_logo/GRU953-lockup-stacked.svg
+  ✓ deliverable · 03_logo/GRU953-lockup-stacked-tagline.svg
+  ✓ deliverable · 03_logo/GRU953-wordmark.svg
+  ✓ deliverable · 03_logo/GRU953-tagline.svg
+  ✓ no references to superseded editions or deleted marks — clean
+  ✓ tagline present and complete · English — 18 occurrences
+  ✓ tagline present and complete · Bangla — 15 occurrences
+  ✓ tagline artwork is outlines, not live text · GRU953-tagline.svg — both taglines in the accessible description, no live text
+  ✓ tagline artwork is outlines, not live text · GRU953-lockup-horizontal-tagline.svg — both taglines in the accessible description, no live text
+  ✓ tagline artwork is outlines, not live text · GRU953-lockup-stacked-tagline.svg — both taglines in the accessible description, no live text
+  ✓ social copy's stated character counts are correct — 12 posts checked
+  ✓ every short post still fits X with a real link — all within 280
+  ✓ the stated with-a-real-link figures are correct — every printed figure matches
+
+CANNOT BE CHECKED BY A MACHINE — stated rather than silently passed:
+  · Whether the guidebook has been read by a real screen-reader user. It has not.
+  · Whether the Bangla reads naturally to a native speaker. Written as an original,
+    but not reviewed by a second Bangla speaker.
+  · Whether Meridian and Daybreak feel right to Aninda. Only he can say.
+  · Trademark clearance outside the USA (Bangladesh DPDT, EUIPO, WIPO) — needs a
+    human search, and a trademark attorney if GRU953 ever becomes commercial.
+  · Whether GitHub/X will actually release the `gru953` handles: a 404 is a strong
+    signal, not a guarantee.

@@ -1,0 +1,71 @@
+# The brand, checked on every push. Four jobs, in the order a failure is cheapest to find.
+#
+# Nothing here needs a network beyond checking the code out: the palette engine's one
+# dependency is installed from PyPI, and every other step is the standard library or Node.
+name: brand
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  # 1. The colours. This is first because everything else is generated from them, and a
+  #    palette that fails here makes every later failure a symptom rather than a cause.
+  colour:
+    name: the palette, computed and proved
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install coloraide
+      - name: engine.py must reproduce the committed tokens exactly
+        run: |
+          cd brand-kit/04_colour && python3 engine.py
+          cd "$GITHUB_WORKSPACE"
+          # A generated file that differs from the one in the commit means somebody edited
+          # the output instead of the input. That is the drift this whole repository is
+          # arranged to prevent, so it fails the build rather than being quietly corrected.
+          git diff --exit-code -- brand-kit/08_guidebook/assets/tokens.css \
+                                  brand-kit/08_guidebook/assets/tokens.json \
+                                  brand-kit/04_colour/CONTRAST.md
+
+  # 2. The three copies of the tokens, and the 27 cards.
+  build:
+    name: tokens in step, cards in step
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: python3 sync-tokens.py --check
+      - run: cd design-system && python3 build.py --check
+
+  # 3. The brand itself, on everything that ships.
+  review:
+    name: the brand review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: python3 plugin/gru953/skills/gru953-review/scripts/check.py plugin --html
+      - run: python3 plugin/gru953/skills/gru953-review/scripts/check.py design-system --html
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node scripts/brand-check.mjs .
+
+  # 4. The kit's own 167 checks. Last because it is the slowest, and because a failure
+  #    here is usually a consequence of one of the three above.
+  verify:
+    name: the kit's own verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install coloraide fonttools
+      - run: python3 brand-kit/00_sandbox/verify.py

@@ -1,0 +1,86 @@
+GRU953 Brand Kit
+Copyright 2026 Aninda Sundar Howlader (GRU953)
+
+সহজ প্রযুক্তি। সবার জন্য।
+Simple technology. For everyone.
+
+This product bundles work under more than one licence. Which licence applies depends on
+which part of the kit you are using. The full explanation, in plain English, is in
+LICENSING-EXPLAINED.md.
+
+--------------------------------------------------------------------------------
+1. THE SYSTEM — Apache License, Version 2.0
+--------------------------------------------------------------------------------
+The machine-readable design system: colour tokens (tokens.css, tokens.json), the
+stylesheets, and every generating script in this kit.
+
+   Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+   these files except in compliance with the License. You may obtain a copy of the
+   License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software distributed
+   under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+   CONDITIONS OF ANY KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations under the License.
+
+The full text is in LICENSE.
+
+--------------------------------------------------------------------------------
+2. THE BOOK AND THE WRITING — PolyForm Noncommercial License 1.0.0
+--------------------------------------------------------------------------------
+The brand guidebook (HTML and PDF), its chapters, the templates, and the written
+documentation in this kit.
+
+Required Notice: Copyright 2026 Aninda Sundar Howlader (GRU953)
+
+   Licensed under the PolyForm Noncommercial License 1.0.0. You may use, copy,
+   modify and share this work for any noncommercial purpose. Commercial use
+   requires separate permission from the licensor.
+
+       https://polyformproject.org/licenses/noncommercial/1.0.0
+
+The full text is in LICENSE-GUIDEBOOK.md.
+
+PolyForm Noncommercial 1.0.0 is a source-available licence. It is NOT approved by the
+Open Source Initiative, because it restricts commercial use. That is stated plainly
+rather than glossed over.
+
+--------------------------------------------------------------------------------
+3. THE MARKS — not licensed
+--------------------------------------------------------------------------------
+The GRU953 wordmark, the Soaring Bird, every lockup, and the app icon are trademarks of
+Aninda Sundar Howlader. They are NOT licensed by either licence above. Apache-2.0
+section 6 expressly withholds trademark permission, and the PolyForm licence grants no
+trademark rights either.
+
+See TRADEMARKS.md for what is allowed without asking, and LOGO-USAGE.md for how to use
+the mark when you are allowed to.
+
+--------------------------------------------------------------------------------
+4. THE TYPEFACES — SIL Open Font License 1.1
+--------------------------------------------------------------------------------
+Sora, Noto Sans, Noto Sans Bengali, Anek Bangla and JetBrains Mono are licensed under
+the SIL Open Font License, Version 1.1. Each font's own licence file travels with it in
+05_type/source-fonts/ and in 08_guidebook/assets/fonts/.
+
+The guidebook's typography chapter also shows four typefaces that were CONSIDERED and
+REJECTED — Space Grotesk, Chivo, Bricolage Grotesque and Geist — subset to the few
+characters the comparison displays. These are also SIL OFL 1.1, and their licences
+travel with them in 08_guidebook/assets/fonts/specimen/.
+
+Subsetting and instancing a variable font are permitted modifications under OFL 1.1.
+Reserved Font Names, where a font declares them, must be respected — do not ship a
+modified font under its original name. None of the fonts here declares one.
+
+   https://openfontlicense.org
+
+--------------------------------------------------------------------------------
+
+This file is the NOTICE file required by section 4(d) of the Apache License, Version
+2.0. If you redistribute any Apache-2.0 part of this kit, this file must travel with it.
+
+Permissions and questions: aninda.sh15@gmail.com
+
+This is not legal advice. It was written by the kit's author, who is not a lawyer.

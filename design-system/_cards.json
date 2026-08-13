@@ -1,0 +1,225 @@
+{
+  "project": "GRU953",
+  "tagline": {
+    "en": "Simple technology. For everyone.",
+    "bn": "সহজ প্রযুক্তি। সবার জন্য।"
+  },
+  "cards": [
+    {
+      "path": "foundations/colour.html",
+      "name": "Colour",
+      "group": "Foundations",
+      "subtitle": "Three signature colours, two functional, two grounds — and one signature with two values",
+      "width": 900,
+      "height": 1500
+    },
+    {
+      "path": "foundations/typography.html",
+      "name": "Typography",
+      "group": "Foundations",
+      "subtitle": "Sora for display, Noto Sans for body, Noto Sans Bengali for Bangla, JetBrains Mono for code",
+      "width": 900,
+      "height": 1000
+    },
+    {
+      "path": "foundations/space-shape-depth.html",
+      "name": "Space, shape and depth",
+      "group": "Foundations",
+      "subtitle": "A 4px scale, four radii, three elevations",
+      "width": 900,
+      "height": 920
+    },
+    {
+      "path": "foundations/marks.html",
+      "name": "The marks",
+      "group": "Foundations",
+      "subtitle": "One bird, one tile, six lockups — and the size floor that decides between them",
+      "width": 900,
+      "height": 1050
+    },
+    {
+      "path": "foundations/motion.html",
+      "name": "Motion",
+      "group": "Foundations",
+      "subtitle": "Two durations, two easings, and one thing that never moves",
+      "width": 900,
+      "height": 560
+    },
+    {
+      "path": "components/button.html",
+      "name": "Button",
+      "group": "Components",
+      "subtitle": "Five intents, three sizes, every state",
+      "width": 900,
+      "height": 620
+    },
+    {
+      "path": "components/input.html",
+      "name": "Text fields",
+      "group": "Components",
+      "subtitle": "Label, hint, error and disabled — wired together",
+      "width": 900,
+      "height": 880
+    },
+    {
+      "path": "components/choice.html",
+      "name": "Checkbox, radio and switch",
+      "group": "Components",
+      "subtitle": "Choices, with a note where a note helps",
+      "width": 900,
+      "height": 880
+    },
+    {
+      "path": "components/card.html",
+      "name": "Card",
+      "group": "Components",
+      "subtitle": "Flat, raised, sunken, and the whole-card link",
+      "width": 900,
+      "height": 620
+    },
+    {
+      "path": "components/alert.html",
+      "name": "Alert",
+      "group": "Components",
+      "subtitle": "The four meanings — each with an icon and a word, never colour alone",
+      "width": 900,
+      "height": 760
+    },
+    {
+      "path": "components/badge.html",
+      "name": "Badge",
+      "group": "Components",
+      "subtitle": "Status and labels, with a dot so status is never colour alone",
+      "width": 900,
+      "height": 440
+    },
+    {
+      "path": "components/table.html",
+      "name": "Table",
+      "group": "Components",
+      "subtitle": "A real header row, tabular numerals, and sideways scrolling instead of a broken page",
+      "width": 900,
+      "height": 640
+    },
+    {
+      "path": "components/tabs.html",
+      "name": "Tabs",
+      "group": "Components",
+      "subtitle": "Selected by weight, colour and an underline — not by colour alone",
+      "width": 900,
+      "height": 450
+    },
+    {
+      "path": "components/nav.html",
+      "name": "Navigation",
+      "group": "Components",
+      "subtitle": "Top bar, side navigation, breadcrumb and pagination",
+      "width": 900,
+      "height": 680
+    },
+    {
+      "path": "components/dialog.html",
+      "name": "Dialog and toast",
+      "group": "Components",
+      "subtitle": "A real &lt;dialog&gt;, so Escape and the focus trap come for free",
+      "width": 900,
+      "height": 700
+    },
+    {
+      "path": "components/feedback.html",
+      "name": "Progress and loading",
+      "group": "Components",
+      "subtitle": "A bar, a spinner and a skeleton — each saying something different",
+      "width": 900,
+      "height": 620
+    },
+    {
+      "path": "components/state.html",
+      "name": "Empty and error states",
+      "group": "Components",
+      "subtitle": "An invitation to act, not an apology",
+      "width": 900,
+      "height": 760
+    },
+    {
+      "path": "components/stat.html",
+      "name": "Stat",
+      "group": "Components",
+      "subtitle": "A number, what it means, and where it came from",
+      "width": 900,
+      "height": 440
+    },
+    {
+      "path": "components/code.html",
+      "name": "Code",
+      "group": "Components",
+      "subtitle": "A block that can be copied, and a filename that says what it is",
+      "width": 900,
+      "height": 520
+    },
+    {
+      "path": "components/chart.html",
+      "name": "Chart",
+      "group": "Components",
+      "subtitle": "Six series that clear 3:1 on their own ground and stay ΔE 10 apart",
+      "width": 900,
+      "height": 560
+    },
+    {
+      "path": "patterns/landing.html",
+      "name": "A landing page",
+      "group": "Patterns",
+      "subtitle": "The hero as a thesis, then the reading",
+      "width": 900,
+      "height": 1400
+    },
+    {
+      "path": "patterns/settings.html",
+      "name": "A settings screen",
+      "group": "Patterns",
+      "subtitle": "Grouped, plainly named, with the destructive thing kept apart",
+      "width": 900,
+      "height": 1250
+    },
+    {
+      "path": "patterns/docs.html",
+      "name": "A documentation page",
+      "group": "Patterns",
+      "subtitle": "Prose at a readable measure, bilingual, with the code beside it",
+      "width": 900,
+      "height": 1250
+    },
+    {
+      "path": "patterns/dashboard.html",
+      "name": "A dashboard",
+      "group": "Patterns",
+      "subtitle": "Numbers with their units, a chart with its legend, and one primary action",
+      "width": 900,
+      "height": 1300
+    },
+    {
+      "path": "patterns/signin.html",
+      "name": "A sign-in screen",
+      "group": "Patterns",
+      "subtitle": "One job per screen, and an error that helps",
+      "width": 900,
+      "height": 760
+    },
+    {
+      "path": "patterns/automatic.html",
+      "name": "Following the system",
+      "group": "Patterns",
+      "subtitle": "The same page with no data-theme set at all",
+      "width": 900,
+      "height": 520
+    },
+    {
+      "path": "patterns/notfound.html",
+      "name": "A 404 page",
+      "group": "Patterns",
+      "subtitle": "Say what happened, then offer the way out",
+      "width": 900,
+      "height": 560
+    }
+  ]
+}

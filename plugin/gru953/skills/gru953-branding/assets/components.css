@@ -1,0 +1,853 @@
+/*
+ * GRU953 — component library
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright 2026 Aninda Sundar Howlader (GRU953)
+ *
+ * সহজ প্রযুক্তি। সবার জন্য। · Simple technology. For everyone.
+ *
+ * This file is the design system. Everything else in this project is a preview
+ * of what it does.
+ *
+ * THREE RULES IT KEEPS, SO YOU DO NOT HAVE TO THINK ABOUT THEM
+ * -----------------------------------------------------------
+ * 1. NOT ONE LITERAL COLOUR. Every value comes from a role token in tokens.css,
+ *    which is defined in both themes. A screen built from this file is correct
+ *    in light and dark with no second stylesheet and no media query of yours.
+ *
+ * 2. FOCUS IS ALWAYS VISIBLE. Every interactive element has a :focus-visible
+ *    ring. There is no `outline: none` anywhere in this file without a
+ *    replacement, because a keyboard user who loses their place has lost the
+ *    page.
+ *
+ * 3. NOTHING RELIES ON COLOUR ALONE — in every example this file ships. Each state
+ *    carries a word, an icon or a shape as well as a colour, and that, not the contrast
+ *    figure, is what protects a colour-blind reader. CSS cannot enforce it, though:
+ *    `<span class="gru-badge gru-badge--danger"></span>` with no text inside is valid
+ *    against every rule here and breaks the rule anyway. The library makes the right
+ *    thing easy; it cannot make the wrong thing impossible.
+ *
+ * Requires tokens.css, typography.css and layout.css to be loaded first.
+ */
+
+/* ==========================================================================
+   RESET — only what is needed. A heavy reset fights the tokens.
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box }
+
+.gru {
+  font-family: var(--gru-font-text);
+  font-size: var(--gru-text-base);
+  line-height: var(--gru-leading-normal);
+  color: var(--gru-ink);
+  background: var(--gru-bg);
+  -webkit-font-smoothing: antialiased;
+}
+.gru :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--gru-font-display);
+  letter-spacing: var(--gru-tracking-display);
+  line-height: var(--gru-leading-tight);
+  margin: 0 0 var(--gru-space-3);
+}
+.gru :where(p, ul, ol) { margin: 0 0 var(--gru-space-4) }
+.gru :where(code, kbd, samp) { font-family: var(--gru-font-mono); font-size: .88em }
+/* :where(a:not(.gru-btn)), not :where(a). `:hover` is a pseudo-CLASS and counts towards
+   specificity even when the element part sits inside :where(), so `.gru :where(a):hover`
+   scores (0,2,0) and outranked `.gru-btn--primary` (0,1,0). Every anchor styled as a
+   button turned link-coloured under the pointer: measured 1.76:1 on the 404 page's
+   primary action. Excluding buttons inside the :where() keeps the score at (0,2,0) and
+   simply stops it matching them. */
+.gru :where(a) { color: var(--gru-link); text-underline-offset: .18em }
+.gru :where(a:not(.gru-btn)):hover { color: var(--gru-link-hover) }
+.gru :where(a:not(.gru-btn)):visited { color: var(--gru-link-visited) }
+.gru :where(:lang(bn)) { line-height: var(--gru-leading-bangla) }
+
+/* One focus ring, defined once, used by everything. TWO LAYERS, and both are real: the
+   outline carries on a pale surface, and the inner box-shadow carries where the outline
+   sits against something close to its own value — the brand's deep indigo, or a filled
+   button. The comment here used to claim two layers while the rule had one, and
+   --gru-focus-inverse was referenced nowhere in the file. */
+.gru :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--gru-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px var(--gru-focus-inverse);
+  border-radius: var(--gru-radius-xs);
+}
+
+/* ==========================================================================
+   BUTTON — five intents, three sizes, every state
+   ========================================================================== */
+.gru-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--gru-space-2);
+  font-family: var(--gru-font-text);
+  font-size: var(--gru-text-sm);
+  font-weight: 600;
+  line-height: 1;
+  /* min-height 40px is not decoration: WCAG 2.2 2.5.8 sets 24x24 CSS px as the
+     floor for a target, and 40px is the smallest that is comfortable on a phone. */
+  min-height: 40px; min-width: 40px;
+  padding: 0 var(--gru-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--gru-radius-sm);
+  background: none; color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--gru-duration-fast) var(--gru-ease-out),
+              border-color var(--gru-duration-fast) var(--gru-ease-out),
+              color var(--gru-duration-fast) var(--gru-ease-out);
+}
+.gru-btn--sm { min-height: 32px; font-size: var(--gru-text-xs); padding: 0 var(--gru-space-3) }
+.gru-btn--lg { min-height: 48px; font-size: var(--gru-text-md); padding: 0 var(--gru-space-5) }
+.gru-btn--block { display: flex; width: 100% }
+
+/* primary — the signature. One per view. */
+.gru-btn--primary { background: var(--gru-accent); color: var(--gru-on-accent) }
+.gru-btn--primary:hover:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-accent-hover) }
+.gru-btn--primary:active:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-accent-active) }
+
+/* brand — the deep indigo, for a formal or structural action */
+.gru-btn--brand { background: var(--gru-brand); color: var(--gru-on-brand) }
+.gru-btn--brand:hover:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-brand-hover) }
+.gru-btn--brand:active:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-brand-active) }
+
+/* secondary — an outline. The default for anything that is not the one action. */
+.gru-btn--secondary {
+  background: var(--gru-surface); color: var(--gru-ink);
+  border-color: var(--gru-border-strong);
+}
+/* --gru-surface-raised, not bg-subtle: in the dark theme bg-subtle is DARKER than
+   surface, so secondary was the one intent that went down on hover while primary,
+   brand and danger went up. Measured, 6/255 in the wrong direction. */
+.gru-btn--secondary:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--gru-surface-raised);
+}
+
+/* ghost — for a toolbar, or a third-level action */
+.gru-btn--ghost { color: var(--gru-ink-muted) }
+.gru-btn--ghost:hover:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-bg-subtle); color: var(--gru-ink) }
+
+/* danger — only for something that cannot be undone */
+.gru-btn--danger { background: var(--gru-danger); color: var(--gru-on-danger) }
+/* Tokens, not `filter: brightness()`. Brightness darkens in both themes, so in the dark
+   theme the danger button went darker on hover while every other intent went lighter —
+   the one control where a hesitant user most needs the feedback to feel consistent. */
+.gru-btn--danger:hover:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-danger-hover) }
+/* The :not() guards are on :active too, and that is not symmetry for its own sake.
+   Without them the guarded :hover rule (specificity 0,4,0) outranks a bare :active
+   (0,2,0), and since a pointer press is always also a hover, the pressed state never
+   rendered on these three intents. Measured: 0.0 RGB difference between hover and
+   active on danger, secondary and ghost. */
+.gru-btn--danger:active:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-danger-active) }
+.gru-btn--secondary:active:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-border) }
+.gru-btn--ghost:active:not([disabled]):not([aria-disabled="true"]) { background: var(--gru-border) }
+
+/* aria-disabled does NOT stop a click — only the real `disabled` attribute does. If you
+   use aria-disabled to keep the control focusable, you must also guard the handler. */
+.gru-btn[disabled], .gru-btn[aria-disabled="true"] {
+  background: var(--gru-disabled-bg);
+  color: var(--gru-disabled-ink);
+  border-color: var(--gru-disabled-border);
+  cursor: not-allowed;
+}
+/* A loading button keeps its width, so the layout does not jump, and announces
+   itself — the spinner alone tells a screen reader nothing. */
+/* NOT opacity: it fades the focus outline with everything else, and the control is still
+   focusable and still in the tab order. Measured, the ring went from 3.17:1 to 2.46:1 —
+   the worst focus indicator in the library, on the one control a user is waiting on. */
+.gru-btn[aria-busy="true"] {
+  pointer-events: none;
+  background: var(--gru-disabled-bg);
+  /* ink-muted, NOT disabled-ink. A busy button is not a disabled one: its label is still
+     the thing the reader is waiting on, so WCAG 1.4.3's exemption for an inactive control
+     does not apply to it. Measured at 3.00:1 with disabled-ink. */
+  color: var(--gru-ink-muted);
+  border-color: var(--gru-disabled-border);
+}
+
+.gru-btn__icon { width: 1.1em; height: 1.1em; flex: none }
+
+/* ==========================================================================
+   FIELD — a label, a control, a hint and an error, wired together
+   ========================================================================== */
+.gru-field { display: grid; gap: var(--gru-space-2); margin-bottom: var(--gru-space-5) }
+.gru-field__label {
+  font-size: var(--gru-text-sm); font-weight: 600; color: var(--gru-ink);
+}
+.gru-field__label .gru-req { color: var(--gru-danger); margin-left: .15em }
+.gru-field__hint { font-size: var(--gru-text-xs); color: var(--gru-ink-subtle) }
+.gru-field__error {
+  font-size: var(--gru-text-xs); color: var(--gru-danger);
+  display: flex; align-items: flex-start; gap: var(--gru-space-2);
+}
+/* the ✗ is not decoration: it is what carries the meaning when colour cannot */
+.gru-field__error::before { content: "✗"; font-weight: 700; line-height: 1.5 }
+
+.gru-input, .gru-select, .gru-textarea {
+  font-family: var(--gru-font-text);
+  font-size: var(--gru-text-base);
+  color: var(--gru-ink);
+  background: var(--gru-surface);
+  border: 1px solid var(--gru-border-strong);
+  border-radius: var(--gru-radius-sm);
+  padding: var(--gru-space-3) var(--gru-space-3);
+  min-height: 44px;
+  width: 100%;
+  transition: border-color var(--gru-duration-fast) var(--gru-ease-out);
+}
+.gru-textarea { min-height: 7rem; resize: vertical; line-height: var(--gru-leading-normal) }
+.gru-input::placeholder, .gru-textarea::placeholder { color: var(--gru-ink-subtle) }
+.gru-input:hover:not([disabled]):not([aria-disabled="true"]),
+.gru-select:hover:not([disabled]):not([aria-disabled="true"]),
+.gru-textarea:hover:not([disabled]):not([aria-disabled="true"]) {
+  border-color: var(--gru-ink-subtle);
+}
+.gru-input[aria-invalid="true"], .gru-select[aria-invalid="true"],
+.gru-textarea[aria-invalid="true"] {
+  border-color: var(--gru-danger); border-width: 2px;
+}
+/* Both spellings. The buttons above were guarded and the fields were not, so an
+   aria-disabled input rendered pixel-identical to an enabled one and still changed
+   its border on hover. */
+.gru-input[disabled], .gru-select[disabled], .gru-textarea[disabled],
+.gru-input[aria-disabled="true"], .gru-select[aria-disabled="true"],
+.gru-textarea[aria-disabled="true"] {
+  background: var(--gru-disabled-bg); color: var(--gru-disabled-ink);
+  border-color: var(--gru-disabled-border); cursor: not-allowed;
+}
+.gru-select {
+  appearance: none;
+  /* the chevron is drawn with a gradient rather than an image, so it inherits
+     the theme and needs no asset */
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: var(--gru-space-8);
+}
+.gru-input-group { display: flex; align-items: stretch }
+.gru-input-group .gru-input { border-radius: var(--gru-radius-sm) 0 0 var(--gru-radius-sm) }
+.gru-input-group .gru-btn { border-radius: 0 var(--gru-radius-sm) var(--gru-radius-sm) 0 }
+
+/* ==========================================================================
+   CHOICE — checkbox, radio, switch
+   ========================================================================== */
+.gru-choice {
+  display: flex; align-items: flex-start; gap: var(--gru-space-3);
+  padding: var(--gru-space-2) 0; cursor: pointer;
+  font-size: var(--gru-text-base);
+}
+.gru-choice input { flex: none; width: 20px; height: 20px; margin: 2px 0 0;
+  accent-color: var(--gru-accent); cursor: pointer }
+.gru-choice__text { display: grid; gap: 2px }
+.gru-choice__note { font-size: var(--gru-text-xs); color: var(--gru-ink-subtle) }
+.gru-choice input[disabled] ~ .gru-choice__text { color: var(--gru-disabled-ink) }
+
+.gru-switch { display: flex; align-items: center; gap: var(--gru-space-3); cursor: pointer }
+.gru-switch input { position: absolute; opacity: 0; width: 44px; height: 26px; margin: 0 }
+.gru-switch__track {
+  position: relative; flex: none; width: 44px; height: 26px;
+  background: var(--gru-border-strong); border-radius: var(--gru-radius-full);
+  transition: background var(--gru-duration-fast) var(--gru-ease-out);
+}
+.gru-switch__track::after {
+  content: ""; position: absolute; inset: 3px auto 3px 3px;
+  width: 20px; border-radius: 50%; background: var(--gru-surface);
+  transition: transform var(--gru-duration-fast) var(--gru-ease-out);
+}
+.gru-switch input:checked + .gru-switch__track { background: var(--gru-accent) }
+.gru-switch input:checked + .gru-switch__track::after { transform: translateX(18px) }
+.gru-switch input:focus-visible + .gru-switch__track {
+  outline: 3px solid var(--gru-focus); outline-offset: 2px;
+}
+/* On/off must not rest on the knob's position alone — a knob position is a shape a
+   colour-blind reader can miss and a low-vision reader may not resolve at all.
+   BUT CSS CANNOT WRITE A TEXT NODE. This label is static markup, and it will say the
+   wrong thing the moment somebody toggles the switch unless the consuming code updates
+   it. That is one line, and it is not optional:
+
+     el.addEventListener("change", e => {
+       e.target.closest(".gru-switch").querySelector(".gru-switch__state")
+         .textContent = e.target.checked ? "on" : "off";
+     });
+
+   Saying this out loud is the honest alternative to shipping a component that looks
+   complete and is not. */
+.gru-switch__state { font-size: var(--gru-text-xs); color: var(--gru-ink-subtle);
+  font-family: var(--gru-font-mono); min-width: 3.2em }
+
+/* ==========================================================================
+   CARD
+   ========================================================================== */
+.gru-card {
+  background: var(--gru-surface-raised);
+  border: 1px solid var(--gru-border);
+  border-radius: var(--gru-radius-lg);
+  padding: var(--gru-space-5);
+}
+.gru-card--sunken { background: var(--gru-surface-sunken); box-shadow: none }
+.gru-card--raised { box-shadow: var(--gru-shadow-2) }
+.gru-card__title { font-size: var(--gru-text-lg); margin-bottom: var(--gru-space-2) }
+.gru-card__meta {
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  color: var(--gru-ink-subtle); margin-bottom: var(--gru-space-3);
+}
+.gru-card__foot {
+  display: flex; gap: var(--gru-space-3); align-items: center;
+  margin-top: var(--gru-space-5); padding-top: var(--gru-space-4);
+  border-top: 1px solid var(--gru-border);
+}
+/* A whole card as one link: the anchor covers it, so the hit area is the card
+   and the accessible name is still just the title. */
+.gru-card--link { position: relative;
+  transition: border-color var(--gru-duration-fast) var(--gru-ease-out),
+              box-shadow var(--gru-duration-base) var(--gru-ease-out) }
+.gru-card--link:hover { border-color: var(--gru-border-strong); box-shadow: var(--gru-shadow-1) }
+.gru-card--link a::after { content: ""; position: absolute; inset: 0 }
+.gru-card--link:focus-within { outline: 3px solid var(--gru-focus); outline-offset: 2px }
+
+/* ==========================================================================
+   ALERT — the four meanings. Each carries an icon AND a word.
+   ========================================================================== */
+.gru-alert {
+  display: flex; gap: var(--gru-space-3);
+  padding: var(--gru-space-4);
+  border: 1px solid; border-left-width: 4px;
+  border-radius: var(--gru-radius-md);
+  font-size: var(--gru-text-sm);
+}
+.gru-alert__icon { flex: none; font-weight: 700; line-height: var(--gru-leading-normal) }
+.gru-alert__body > :last-child { margin-bottom: 0 }
+.gru-alert__title { font-weight: 700; margin-bottom: var(--gru-space-1) }
+.gru-alert--info    { background: var(--gru-info-quiet);    border-color: var(--gru-info-border);    color: var(--gru-ink) }
+.gru-alert--success { background: var(--gru-success-quiet); border-color: var(--gru-success-border); color: var(--gru-ink) }
+.gru-alert--warning { background: var(--gru-warning-quiet); border-color: var(--gru-warning-border); color: var(--gru-ink) }
+.gru-alert--danger  { background: var(--gru-danger-quiet);  border-color: var(--gru-danger-border);  color: var(--gru-ink) }
+/* The icon sits on the alert's tint, so it takes the on-*-quiet step for the same reason
+   the badge above does. It is also a glyph, not decoration: it carries the meaning
+   when colour is unavailable, so it is held to 4.5:1, not 3:1. */
+.gru-alert--info    .gru-alert__icon { color: var(--gru-on-info-quiet) }
+.gru-alert--success .gru-alert__icon { color: var(--gru-on-success-quiet) }
+.gru-alert--warning .gru-alert__icon { color: var(--gru-on-warning-quiet) }
+.gru-alert--danger  .gru-alert__icon { color: var(--gru-on-danger-quiet) }
+
+/* ==========================================================================
+   BADGE
+   ========================================================================== */
+.gru-badge {
+  display: inline-flex; align-items: center; gap: var(--gru-space-1);
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  font-weight: 700;
+  padding: .28em .7em;
+  border: 1px solid var(--gru-border-strong);
+  border-radius: var(--gru-radius-full);
+  color: var(--gru-ink-muted); background: var(--gru-surface);
+}
+.gru-badge--brand   { background: var(--gru-brand); color: var(--gru-on-brand); border-color: transparent }
+.gru-badge--accent  { background: var(--gru-accent); color: var(--gru-on-accent); border-color: transparent }
+/* --gru-on-{role}-quiet, not --gru-{role}. A role colour is proved against bg, surface and
+   surface-raised; it is NOT automatically legible on its own tint. These four shipped
+   between 4.20:1 and 4.44:1 when they used the plain role. */
+.gru-badge--info    { background: var(--gru-info-quiet);    border-color: var(--gru-info-border);    color: var(--gru-on-info-quiet) }
+.gru-badge--success { background: var(--gru-success-quiet); border-color: var(--gru-success-border); color: var(--gru-on-success-quiet) }
+.gru-badge--warning { background: var(--gru-warning-quiet); border-color: var(--gru-warning-border); color: var(--gru-on-warning-quiet) }
+.gru-badge--danger  { background: var(--gru-danger-quiet);  border-color: var(--gru-danger-border);  color: var(--gru-on-danger-quiet) }
+/* The dot is a shape, so a status is never colour alone. */
+.gru-badge__dot { width: .5em; height: .5em; border-radius: 50%; background: currentColor }
+
+/* ==========================================================================
+   TABLE — scrolls sideways rather than widening the page
+   ========================================================================== */
+.gru-tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--gru-border); border-radius: var(--gru-radius-md) }
+.gru-tablewrap:focus-visible { outline: 3px solid var(--gru-focus); outline-offset: -3px }
+.gru-table { width: 100%; min-width: 28rem; border-collapse: collapse;
+  font-size: var(--gru-text-sm) }
+.gru-table caption {
+  text-align: left; padding: var(--gru-space-3) var(--gru-space-4);
+  font-size: var(--gru-text-xs); color: var(--gru-ink-subtle);
+  border-bottom: 1px solid var(--gru-border);
+}
+.gru-table th, .gru-table td {
+  text-align: left; padding: var(--gru-space-3) var(--gru-space-4);
+  border-bottom: 1px solid var(--gru-border); vertical-align: top;
+}
+.gru-table th {
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  font-weight: 700; color: var(--gru-ink-subtle);
+  border-bottom: 2px solid var(--gru-border-strong);
+  background: var(--gru-bg-subtle);
+}
+.gru-table tbody tr:hover { background: var(--gru-bg-subtle) }
+.gru-table tbody tr:last-child td { border-bottom: 0 }
+.gru-table .num { text-align: right; font-family: var(--gru-font-mono);
+  font-variant-numeric: tabular-nums }
+
+/* ==========================================================================
+   TABS
+   ========================================================================== */
+.gru-tabs { border-bottom: 1px solid var(--gru-border); display: flex; gap: var(--gru-space-1);
+  overflow-x: auto }
+.gru-tab {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  font-family: var(--gru-font-text); font-size: var(--gru-text-sm); font-weight: 600;
+  color: var(--gru-ink-muted);
+  padding: var(--gru-space-3) var(--gru-space-4);
+  min-height: 44px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+/* :not(...) on the hover rule, because a hover selector with one more component
+   than the current/selected rule OUTRANKS it — so hovering the page you are
+   already on replaced its foreground while keeping its ground. Measured: the
+   selected tab went to 4.36:1, and the current pagination link to 1.19:1. */
+.gru-tab:not([aria-selected="true"]):hover {
+  color: var(--gru-ink); background: var(--gru-bg-subtle);
+}
+/* The selected tab is heavier AND underlined — weight alone is too quiet, and
+   colour alone would be invisible to some readers. */
+.gru-tab[aria-selected="true"] {
+  color: var(--gru-accent); border-bottom-color: var(--gru-accent); font-weight: 700;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.gru-topbar {
+  flex-wrap: wrap;
+  display: flex; align-items: center; gap: var(--gru-space-4);
+  padding: var(--gru-space-3) var(--gru-page-padding);
+  background: var(--gru-surface);
+  border-bottom: 1px solid var(--gru-border);
+}
+.gru-topbar__brand { display: flex; align-items: center; gap: var(--gru-space-3);
+  color: var(--gru-brand); text-decoration: none; font-family: var(--gru-font-display);
+  font-weight: 700; letter-spacing: var(--gru-tracking-display) }
+.gru-topbar__brand svg { height: 1.6em; width: auto }
+.gru-topbar__spacer { flex: 1 }
+/* A set of navigation links is a LIST, and saying so is the difference between "Reports,
+   link" and "list of 3 items, Reports, link, 2 of 3". The breadcrumb and the pagination in
+   this same file were already lists; the top bar and the side navigation were not.
+   A real <ul> rather than `display:contents`, which several screen readers still strip the
+   list semantics from — the exact thing this markup exists to provide. */
+.gru-navlist {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--gru-space-2);
+  list-style: none; margin: 0; padding: 0;
+}
+.gru-navlink {
+  font-size: var(--gru-text-sm); font-weight: 600; color: var(--gru-ink-muted);
+  text-decoration: none; padding: var(--gru-space-2) var(--gru-space-3);
+  border-radius: var(--gru-radius-sm); min-height: 40px;
+  display: inline-flex; align-items: center;
+}
+.gru-navlink:not([aria-current="page"]):hover {
+  background: var(--gru-bg-subtle); color: var(--gru-ink);
+}
+.gru-navlink[aria-current="page"] { color: var(--gru-on-accent-quiet); background: var(--gru-accent-quiet) }
+
+.gru-sidenav { display: grid; gap: 2px; padding: var(--gru-space-2) 0 }
+.gru-sidenav ul { display: grid; gap: 2px; list-style: none; margin: 0; padding: 0 }
+.gru-sidenav__group {
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  color: var(--gru-ink-subtle); padding: var(--gru-space-4) var(--gru-space-3) var(--gru-space-2);
+}
+.gru-sidenav a {
+  display: flex; align-items: center; gap: var(--gru-space-3);
+  padding: var(--gru-space-2) var(--gru-space-3); min-height: 40px;
+  border-radius: var(--gru-radius-sm);
+  font-size: var(--gru-text-sm); color: var(--gru-ink-muted); text-decoration: none;
+}
+.gru-sidenav a:not([aria-current="page"]):hover {
+  background: var(--gru-bg-subtle); color: var(--gru-ink);
+}
+.gru-sidenav a[aria-current="page"] {
+  background: var(--gru-accent-quiet); color: var(--gru-on-accent-quiet); font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--gru-accent);
+}
+
+.gru-breadcrumb { display: flex; flex-wrap: wrap; align-items: center;
+  gap: var(--gru-space-2); font-size: var(--gru-text-xs); padding: 0; margin: 0; list-style: none }
+.gru-breadcrumb li { display: flex; align-items: center; gap: var(--gru-space-2) }
+.gru-breadcrumb li + li::before { content: "/"; color: var(--gru-ink-subtle) }
+/* WCAG 2.2 2.5.8 wants 24x24 CSS px. At --gru-text-xs (12.8px) x 1.6 these measured
+   20.5px tall; the pagination and side-nav links already carried a min-height and
+   this one was missed. */
+.gru-breadcrumb a { color: var(--gru-ink-muted); display: inline-flex;
+  align-items: center; min-height: 24px }
+.gru-breadcrumb [aria-current="page"] { color: var(--gru-ink); font-weight: 600 }
+
+.gru-pagination { display: flex; gap: var(--gru-space-2); align-items: center;
+  list-style: none; padding: 0; margin: 0; flex-wrap: wrap }
+.gru-pagination a, .gru-pagination span {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 40px; min-height: 40px; padding: 0 var(--gru-space-2);
+  border: 1px solid var(--gru-border-strong); border-radius: var(--gru-radius-sm);
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-xs);
+  color: var(--gru-ink-muted); text-decoration: none;
+}
+.gru-pagination a:not([aria-current="page"]):hover {
+  background: var(--gru-bg-subtle); color: var(--gru-ink);
+}
+.gru-pagination [aria-current="page"] {
+  background: var(--gru-brand); color: var(--gru-on-brand); border-color: transparent;
+  font-weight: 700;
+}
+.gru-pagination .gru-gap { border: 0; min-width: auto }
+
+/* ==========================================================================
+   AVATAR
+   ========================================================================== */
+/* min-*, not fixed: 1.4.12 lets a reader force line-height, and a hard
+   width/height with overflow:hidden clips the initial rather than growing. */
+.gru-avatar {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 40px; min-height: 40px; aspect-ratio: 1; flex: none;
+  border-radius: 50%;
+  background: var(--gru-brand); color: var(--gru-on-brand);
+  font-family: var(--gru-font-display); font-weight: 700; font-size: var(--gru-text-sm);
+}
+.gru-avatar--sm { min-width: 28px; min-height: 28px; font-size: var(--gru-text-2xs) }
+.gru-avatar--lg { min-width: 64px; min-height: 64px; font-size: var(--gru-text-lg) }
+/* The app-icon tile keeps its own squircle radius, not a circle. */
+.gru-avatar--tile { border-radius: var(--gru-radius-appicon); background: none }
+.gru-avatar img, .gru-avatar svg { width: 100%; height: 100%; object-fit: cover;
+  border-radius: inherit }
+
+/* ==========================================================================
+   DIALOG — a real <dialog>, so Escape and the focus trap come for free
+   ========================================================================== */
+.gru-dialog {
+  border: 1px solid var(--gru-border-strong);
+  border-radius: var(--gru-radius-lg);
+  background: var(--gru-surface-raised); color: var(--gru-ink);
+  padding: 0; max-width: min(32rem, calc(100vw - 2 * var(--gru-space-5)));
+  box-shadow: var(--gru-shadow-3);
+}
+.gru-dialog::backdrop { background: var(--gru-overlay) }
+.gru-dialog__head { padding: var(--gru-space-5) var(--gru-space-5) 0 }
+.gru-dialog__body { padding: var(--gru-space-4) var(--gru-space-5) }
+.gru-dialog__foot {
+  display: flex; gap: var(--gru-space-3); justify-content: flex-end;
+  padding: var(--gru-space-4) var(--gru-space-5) var(--gru-space-5);
+  border-top: 1px solid var(--gru-border); margin-top: var(--gru-space-2);
+}
+
+/* ==========================================================================
+   TOAST
+   ========================================================================== */
+/* NEEDS JAVASCRIPT, like the dialog and the tabs. This gives a toast its position and its
+   look; showing one, dismissing it, and removing it after a timeout are the consumer's
+   job. The close button below is a real button with a real accessible name and no
+   behaviour attached — wire it, or remove it. */
+.gru-toasts {
+  position: fixed; z-index: 60;
+  inset: auto var(--gru-space-5) var(--gru-space-5) auto;
+  display: grid; gap: var(--gru-space-3);
+  width: min(26rem, calc(100vw - 2 * var(--gru-space-5)));
+}
+/* inside a preview or a docs page, let it sit in the flow instead */
+.gru-toasts--inline { position: static; z-index: auto; width: auto; max-width: 26rem }
+.gru-toast {
+  display: flex; gap: var(--gru-space-3); align-items: flex-start;
+  padding: var(--gru-space-4);
+  background: var(--gru-surface-raised);
+  border: 1px solid var(--gru-border-strong);
+  border-left: 4px solid var(--gru-accent);
+  border-radius: var(--gru-radius-md);
+  box-shadow: var(--gru-shadow-2);
+  font-size: var(--gru-text-sm);
+}
+.gru-toast--success { border-left-color: var(--gru-success) }
+.gru-toast--danger  { border-left-color: var(--gru-danger) }
+.gru-toast__close {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  color: var(--gru-ink-subtle); font-size: var(--gru-text-md);
+  min-width: 32px; min-height: 32px; line-height: 1;
+}
+.gru-toast__close:hover { color: var(--gru-ink) }
+
+/* ==========================================================================
+   PROGRESS AND LOADING
+   ========================================================================== */
+.gru-progress { display: grid; gap: var(--gru-space-2) }
+.gru-progress__track {
+  height: 8px; background: var(--gru-bg-subtle);
+  border: 1px solid var(--gru-border); border-radius: var(--gru-radius-full);
+  overflow: hidden;
+}
+.gru-progress__bar { height: 100%; background: var(--gru-accent); border-radius: inherit }
+.gru-progress__label { font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  color: var(--gru-ink-subtle) }
+
+.gru-spinner {
+  width: 20px; height: 20px; flex: none;
+  border: 2px solid var(--gru-border-strong);
+  border-top-color: var(--gru-accent);
+  border-radius: 50%;
+  animation: gru-spin 700ms linear infinite;
+}
+@keyframes gru-spin { to { transform: rotate(360deg) } }
+
+/* A skeleton says "something is coming" without pretending to be content. */
+.gru-skel { background: var(--gru-bg-subtle); border-radius: var(--gru-radius-xs);
+  height: 1em; animation: gru-pulse 1.4s var(--gru-ease-in-out) infinite }
+.gru-skel--title { height: 1.6em; width: 60% }
+.gru-skel--line { width: 100% }
+.gru-skel--short { width: 40% }
+@keyframes gru-pulse { 0%, 100% { opacity: 1 } 50% { opacity: .55 } }
+
+/* ==========================================================================
+   EMPTY AND ERROR STATES — an invitation to act, not an apology
+   ========================================================================== */
+.gru-state {
+  text-align: center; padding: var(--gru-space-9) var(--gru-space-5);
+  border: 1px dashed var(--gru-border-strong);
+  border-radius: var(--gru-radius-lg);
+  background: var(--gru-surface);
+}
+.gru-state__art { width: 72px; margin: 0 auto var(--gru-space-4); color: var(--gru-border-strong) }
+.gru-state__title { font-size: var(--gru-text-lg) }
+.gru-state__body { color: var(--gru-ink-muted); max-width: 34ch; margin: 0 auto var(--gru-space-5) }
+.gru-state--error { border-style: solid; border-color: var(--gru-danger-border);
+  background: var(--gru-danger-quiet) }
+.gru-state--error .gru-state__art { color: var(--gru-danger) }
+
+/* ==========================================================================
+   STAT — a number and what it means, never a number alone
+   ========================================================================== */
+.gru-stats { display: grid; gap: var(--gru-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)) }
+.gru-stat { padding: var(--gru-space-4); background: var(--gru-surface-raised);
+  border: 1px solid var(--gru-border); border-radius: var(--gru-radius-md) }
+.gru-stat__label {
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  color: var(--gru-ink-subtle);
+}
+.gru-stat__value {
+  font-family: var(--gru-font-display); font-weight: 700;
+  font-size: var(--gru-text-2xl); line-height: 1.05;
+  letter-spacing: var(--gru-tracking-display);
+  margin: var(--gru-space-2) 0 var(--gru-space-1);
+  font-variant-numeric: tabular-nums;
+}
+.gru-stat__note { font-size: var(--gru-text-xs); color: var(--gru-ink-muted) }
+.gru-stat__delta { font-family: var(--gru-font-mono); font-size: var(--gru-text-xs) }
+/* the arrow carries direction; the colour only reinforces it */
+.gru-stat__delta--up::before   { content: "\2191 "; }
+.gru-stat__delta--down::before { content: "\2193 "; }
+.gru-stat__delta--up   { color: var(--gru-success) }
+.gru-stat__delta--down { color: var(--gru-danger) }
+
+/* ==========================================================================
+   CODE
+   ========================================================================== */
+/* An overflowing pre is a scroll container, and a scroll container that cannot be
+   reached by keyboard fails 2.1.1. Give it tabindex="0", role="region" and a name in
+   the markup WHEN it overflows — the same rule this project states for wide tables.
+   CSS cannot add them, and cannot tell whether it overflowed. */
+.gru-code {
+  background: var(--gru-surface-sunken); color: var(--gru-ink);
+  border: 1px solid var(--gru-border);
+  border-radius: var(--gru-radius-md);
+  padding: var(--gru-space-4);
+  overflow-x: auto;
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-xs);
+  line-height: var(--gru-leading-snug);
+}
+.gru-code__head {
+  display: flex; align-items: center; gap: var(--gru-space-3);
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  color: var(--gru-ink-subtle);
+  padding: var(--gru-space-2) var(--gru-space-4);
+  background: var(--gru-bg-subtle);
+  border: 1px solid var(--gru-border); border-bottom: 0;
+  border-radius: var(--gru-radius-md) var(--gru-radius-md) 0 0;
+}
+.gru-code__head + .gru-code { border-radius: 0 0 var(--gru-radius-md) var(--gru-radius-md) }
+
+/* ==========================================================================
+   CHART — the six-series sequence, as bars and as a line
+   ========================================================================== */
+.gru-chart { display: grid; gap: var(--gru-space-3) }
+.gru-chart__bars { display: flex; align-items: flex-end; gap: var(--gru-space-3);
+  min-height: 10rem; padding-top: var(--gru-space-3) }
+.gru-chart__bar { flex: 1; display: grid; gap: var(--gru-space-2); justify-items: center }
+.gru-chart__bar i { display: block; width: 100%; border-radius: var(--gru-radius-xs)
+  var(--gru-radius-xs) 0 0 }
+.gru-chart__bar span { font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  color: var(--gru-ink-subtle); text-align: center }
+.gru-chart__legend { display: flex; flex-wrap: wrap; gap: var(--gru-space-3);
+  font-size: var(--gru-text-xs); color: var(--gru-ink-muted) }
+.gru-chart__key { display: inline-flex; align-items: center; gap: var(--gru-space-2) }
+/* the swatch is a shape as well as a colour, and each series also gets a symbol */
+.gru-chart__key i { width: .8em; height: .8em; border-radius: 2px; display: inline-block }
+.gru-s1 { background: var(--gru-chart-1) } .gru-s2 { background: var(--gru-chart-2) }
+.gru-s3 { background: var(--gru-chart-3) } .gru-s4 { background: var(--gru-chart-4) }
+.gru-s5 { background: var(--gru-chart-5) } .gru-s6 { background: var(--gru-chart-6) }
+
+/* ==========================================================================
+   LAYOUT HELPERS — the smallest set that makes the previews honest
+   ========================================================================== */
+.gru-stack   { display: grid; gap: var(--gru-space-4) }
+.gru-stack-2 { display: grid; gap: var(--gru-space-2) }
+.gru-row     { display: flex; flex-wrap: wrap; gap: var(--gru-space-3); align-items: center }
+.gru-grid    { display: grid; gap: var(--gru-space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) }
+.gru-page    { max-width: var(--gru-container); margin: 0 auto;
+  padding: var(--gru-space-7) var(--gru-page-padding) }
+.gru-prose   { max-width: var(--gru-measure) }
+.gru-prose:lang(bn) { max-width: var(--gru-measure-bn) }
+.gru-muted   { color: var(--gru-ink-muted) }
+.gru-subtle  { color: var(--gru-ink-subtle) }
+.gru-mono    { font-family: var(--gru-font-mono) }
+.gru-eyebrow {
+  font-family: var(--gru-font-mono); font-size: var(--gru-text-2xs);
+  letter-spacing: var(--gru-tracking-caps); text-transform: uppercase;
+  color: var(--gru-ink-subtle);
+}
+.gru-hr { border: 0; border-top: 1px solid var(--gru-border); margin: var(--gru-space-6) 0 }
+
+/* The hero uses the signature gradient — hero art only, never behind body text.
+ *
+ * THE SCRIM IS NOT DECORATION. The gradient ends in Ember and Daybreak, which are pale.
+ * White text over that end measures about 2:1 and disappears. So the deep end is held
+ * over the text with a scrim, and the content is capped at a measure that cannot reach
+ * the pale end. Without both, this component would be the brand's own worst contrast
+ * failure printed across the top of a page.
+ */
+/* ==========================================================================
+   SHELL — a side navigation and its content
+   ========================================================================== */
+/* One column until there is room for two. A fixed sidebar track on a 360px viewport
+   pushed the settings pattern to 489px inside an `overflow:hidden` ancestor: 163px of
+   the layout was neither visible nor scrollable, and the documentation pattern's code
+   block came out 32px wide. A grid does not reflow by itself; it has to be told. */
+.gru-shell {
+  display: grid;
+  /* minmax(0,1fr), not the implicit `auto`. A grid column sized `auto` takes the width of
+     its widest content, so one wide code block inside the documentation pattern pushed the
+     single-column layout 133px past a page frame that clips. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gru-space-6);
+  padding: var(--gru-space-6) var(--gru-page-padding);
+}
+@media (min-width: 48rem) {
+  .gru-shell {
+    grid-template-columns: minmax(0, var(--gru-shell-side, 14rem)) minmax(0, 1fr);
+  }
+}
+.gru-shell--wide { --gru-shell-side: 15rem }
+
+.gru-hero {
+  background: var(--gru-grad-firstlight);
+  color: var(--gru-on-gradient);
+  border-radius: var(--gru-radius-lg);
+  padding: clamp(var(--gru-space-6), 5vw, var(--gru-space-10));
+  position: relative; overflow: hidden;
+}
+.gru-hero::before {
+  content: ""; position: absolute; inset: 0;
+  /* The stops are a PERCENTAGE OF THE HERO, and the content is capped at a percentage of
+     the same box — so the two scale together. An earlier version fixed the content at
+     46ch while the stops stayed proportional, which meant that at about 360px the text was
+     wider than the opaque part of the scrim and the headline measured 2.3:1 against the
+     gold end. The file's own comment said this was prevented. It was not. */
+  background: linear-gradient(100deg,
+    var(--gru-scrim-strong) 0%, var(--gru-scrim-strong) 62%,
+    var(--gru-scrim-soft) 78%, var(--gru-scrim-none) 94%);
+}
+.gru-hero__content {
+  position: relative; z-index: 1;
+  /* never wider than the opaque part of the scrim, at any width */
+  max-width: min(46ch, 60%);
+}
+/* Below the point where 60% of the hero is too narrow to read, the scrim goes solid and
+   the content uses the full width. Legibility wins over the gradient every time. */
+@media (max-width: 34rem) {
+  .gru-hero::before { background: var(--gru-scrim-strong) }
+  .gru-hero__content { max-width: 100% }
+}
+/* A control inside the hero sits on the GRADIENT, not on the page. The ghost button's
+   page-level hover ground is a pale tint, which put its white label at 1.00:1 — the
+   button disappeared under the pointer. Everything inside the hero keeps the gradient's
+   own foreground and lifts rather than lightens. */
+.gru-hero .gru-btn--ghost { color: var(--gru-on-gradient) }
+.gru-hero .gru-btn--ghost:hover:not([disabled]):not([aria-disabled="true"]),
+.gru-hero .gru-btn--ghost:active:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--gru-scrim-lift);
+  color: var(--gru-on-gradient);
+}
+.gru-hero h1 { color: var(--gru-on-gradient) }
+.gru-hero .gru-hero__sub { color: var(--gru-daybreak-200) }
+.gru-hero .gru-hero__mark { width: clamp(64px, 8vw, 104px); color: var(--gru-daybreak-200);
+  margin-bottom: var(--gru-space-5) }
+
+/* Skip link: off-screen until focused. Never display:none — that removes it. */
+.gru-skip {
+  position: absolute; left: -9999px; top: var(--gru-space-3);
+  background: var(--gru-brand); color: var(--gru-on-brand);
+  padding: var(--gru-space-3) var(--gru-space-4); border-radius: var(--gru-radius-sm);
+  z-index: 50; font-weight: 600;
+}
+.gru-skip:focus { left: var(--gru-space-3) }
+
+/* Visually hidden but read aloud — for the text that carries meaning colour cannot. */
+.gru-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* The mark is still. This is the one animation rule that is never relaxed. */
+.gru-mark, .gru-mark * { animation: none !important; transition: none !important }
+
+/* ==========================================================================
+   REDUCED MOTION — honour it, and mean it
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .gru *, .gru *::before, .gru *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* A spinner with no motion tells nobody anything, so it becomes a word. */
+  .gru-spinner { border-top-color: var(--gru-border-strong) }
+}
+
+/* ==========================================================================
+   FORCED COLOURS — hand control back, except where colour IS the subject
+   ========================================================================== */
+@media (forced-colors: active) {
+  .gru-swatch, .gru-chart__bar i, .gru-chart__key i, .gru-badge__dot,
+  .gru-progress__bar, .gru-hero { forced-color-adjust: none }
+  .gru-btn, .gru-card, .gru-input, .gru-select, .gru-textarea,
+  .gru-alert, .gru-badge, .gru-dialog, .gru-toast,
+  .gru-switch__track, .gru-progress__track { border: 1px solid CanvasText }
+  /* The switch's checked state is a background colour, which forced colours discards.
+     The knob keeps its edge so the position still reads; the on/off word beside it is
+     what actually carries the state, which is why that word is not optional. */
+  .gru-switch input:checked + .gru-switch__track { background: Highlight }
+  .gru-switch__track::after { background: ButtonFace; border: 1px solid CanvasText }
+  .gru-tab[aria-selected="true"] { border-bottom-color: Highlight }
+}
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+@media print {
+  /* Paper is white whatever the reader's theme was, so these two ARE fixed values — and
+     they are the only ones in this file. Everything else routes through a token. */
+  .gru { background: var(--gru-ground-paper); color: var(--gru-ground-ink) }
+  .gru-btn, .gru-toasts, .gru-skip { display: none }
+  .gru-card, .gru-alert, .gru-tablewrap { break-inside: avoid; box-shadow: none }
+  .gru-hero { -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  .gru a::after { content: " (" attr(href) ")"; font-size: .8em; color: var(--gru-ground-ink) }
+}

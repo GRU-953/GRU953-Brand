@@ -1,0 +1,75 @@
+GRU953 — the gru953-repo skill
+Copyright 2026 Aninda Sundar Howlader (GRU953)
+
+সহজ প্রযুক্তি। সবার জন্য।
+Simple technology. For everyone.
+
+This product bundles work under more than one licence. Which licence applies depends on
+which part you are using.
+
+--------------------------------------------------------------------------------
+1. THE CODE AND THE TOKENS — Apache License, Version 2.0
+--------------------------------------------------------------------------------
+scripts/init.py, and the brand-check.mjs it writes into a repository.
+
+   Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+   these files except in compliance with the License. You may obtain a copy of the
+   License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software distributed
+   under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+   CONDITIONS OF ANY KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations under the License.
+
+The full text is in LICENSE.txt.
+
+--------------------------------------------------------------------------------
+2. THE WRITING — PolyForm Noncommercial License 1.0.0
+--------------------------------------------------------------------------------
+SKILL.md's body and assets/README.template.md.
+
+assets/licences/ holds the Apache-2.0 and PolyForm texts verbatim; those are
+third-party texts, reproduced unmodified, and are not GRU953's to relicense. The
+NOTICE each scaffolded repository gets is built for it by init.py, not copied.
+
+Required Notice: Copyright 2026 Aninda Sundar Howlader (GRU953)
+
+   Licensed under the PolyForm Noncommercial License 1.0.0. You may use, copy,
+   modify and share this work for any noncommercial purpose. Commercial use
+   requires separate permission from the licensor.
+
+       https://polyformproject.org/licenses/noncommercial/1.0.0
+
+PolyForm Noncommercial 1.0.0 is a source-available licence. It is NOT approved by the
+Open Source Initiative, because it restricts commercial use. That is stated plainly
+rather than glossed over.
+
+--------------------------------------------------------------------------------
+3. THE MARKS — not licensed
+--------------------------------------------------------------------------------
+The name GRU953, the GRU953 wordmark, the Soaring Bird, the app-icon tile, and any
+lockup of them are trademarks of Aninda Sundar Howlader. They are NOT licensed by
+either licence above. Apache-2.0 section 6 expressly withholds trademark permission,
+and the PolyForm licence grants no trademark rights either.
+
+What this means in practice, without asking anyone:
+  · You MAY fork this work, change it, and ship what you build with it.
+  · You MAY show the marks to refer to GRU953 — a credit line, a comparison, an
+    article about the brand.
+  · You MAY NOT put the marks on your own product, or on a fork, as if it were GRU953.
+  · You MAY NOT use a name confusable with GRU953 for a competing tool.
+
+Replace the identity with your own and everything else here is yours to use.
+
+--------------------------------------------------------------------------------
+
+This file is the NOTICE file required by section 4(d) of the Apache License, Version
+2.0. If you redistribute an Apache-2.0 part of this work, the parts of this file that
+apply to what you redistribute must travel with it — section 4(d) lets you leave out
+notices that do not pertain to your derivative work.
+
+Permissions and questions: aninda.sh15@gmail.com
+
+This is not legal advice. It was written by the author, who is not a lawyer.

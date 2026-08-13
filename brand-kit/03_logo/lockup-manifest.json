@@ -1,0 +1,32 @@
+{
+  "GRU953-lockup-horizontal.svg": {
+    "bytes": 7503,
+    "viewBox": "0 0 3699.4 1160",
+    "aspect": 3.189
+  },
+  "GRU953-lockup-horizontal-tagline.svg": {
+    "bytes": 26357,
+    "viewBox": "0 0 3699.4 1160",
+    "aspect": 3.189
+  },
+  "GRU953-lockup-stacked.svg": {
+    "bytes": 7540,
+    "viewBox": "0 0 1692.6 1678.4",
+    "aspect": 1.008
+  },
+  "GRU953-lockup-stacked-tagline.svg": {
+    "bytes": 26076,
+    "viewBox": "0 0 1692.6 2078",
+    "aspect": 0.815
+  },
+  "GRU953-wordmark.svg": {
+    "bytes": 3616,
+    "viewBox": "0 0 5641.7 1320",
+    "aspect": 4.274
+  },
+  "GRU953-tagline.svg": {
+    "bytes": 17762,
+    "viewBox": "0 0 3384 860",
+    "aspect": 3.935
+  }
+}

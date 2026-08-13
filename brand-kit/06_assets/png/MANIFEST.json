@@ -1,0 +1,593 @@
+{
+  "note": "Every PNG is rendered from the SVG in 03_logo. Backgrounds are transparent; 'on' records the ground the colour is approved against.",
+  "files": [
+    {
+      "file": "GRU953-bird-meridian-256.png",
+      "mark": "GRU953-bird",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 256
+    },
+    {
+      "file": "GRU953-bird-meridian-512.png",
+      "mark": "GRU953-bird",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-bird-meridian-1024.png",
+      "mark": "GRU953-bird",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-bird-accent-256.png",
+      "mark": "GRU953-bird",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 256
+    },
+    {
+      "file": "GRU953-bird-accent-512.png",
+      "mark": "GRU953-bird",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-bird-accent-1024.png",
+      "mark": "GRU953-bird",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-bird-daybreak-256.png",
+      "mark": "GRU953-bird",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 256
+    },
+    {
+      "file": "GRU953-bird-daybreak-512.png",
+      "mark": "GRU953-bird",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-bird-daybreak-1024.png",
+      "mark": "GRU953-bird",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-bird-paper-256.png",
+      "mark": "GRU953-bird",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 256
+    },
+    {
+      "file": "GRU953-bird-paper-512.png",
+      "mark": "GRU953-bird",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-bird-paper-1024.png",
+      "mark": "GRU953-bird",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-bird-ink-256.png",
+      "mark": "GRU953-bird",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 256
+    },
+    {
+      "file": "GRU953-bird-ink-512.png",
+      "mark": "GRU953-bird",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-bird-ink-1024.png",
+      "mark": "GRU953-bird",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-wordmark-meridian-512.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-wordmark-meridian-1024.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-wordmark-accent-512.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-wordmark-accent-1024.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-wordmark-daybreak-512.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-wordmark-daybreak-1024.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-wordmark-paper-512.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-wordmark-paper-1024.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-wordmark-ink-512.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-wordmark-ink-1024.png",
+      "mark": "GRU953-wordmark",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-meridian-512.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-horizontal-meridian-1024.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-meridian-2048.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-accent-512.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-horizontal-accent-1024.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-accent-2048.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-daybreak-512.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-horizontal-daybreak-1024.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-daybreak-2048.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-paper-512.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-horizontal-paper-1024.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-paper-2048.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-ink-512.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-horizontal-ink-1024.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-ink-2048.png",
+      "mark": "GRU953-lockup-horizontal",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-meridian-1024.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-meridian-2048.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-accent-1024.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-accent-2048.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-daybreak-1024.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-daybreak-2048.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-paper-1024.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-paper-2048.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-ink-1024.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-horizontal-tagline-ink-2048.png",
+      "mark": "GRU953-lockup-horizontal-tagline",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-stacked-meridian-512.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-stacked-meridian-1024.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-accent-512.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-stacked-accent-1024.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-daybreak-512.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-stacked-daybreak-1024.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-paper-512.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-stacked-paper-1024.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-ink-512.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-lockup-stacked-ink-1024.png",
+      "mark": "GRU953-lockup-stacked",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-meridian-1024.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-meridian-2048.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-accent-1024.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-accent-2048.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-daybreak-1024.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-daybreak-2048.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-paper-1024.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-paper-2048.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-ink-1024.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-lockup-stacked-tagline-ink-2048.png",
+      "mark": "GRU953-lockup-stacked-tagline",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 2048
+    },
+    {
+      "file": "GRU953-tagline-meridian-512.png",
+      "mark": "GRU953-tagline",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-tagline-meridian-1024.png",
+      "mark": "GRU953-tagline",
+      "colour": "#1A1753",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-tagline-accent-512.png",
+      "mark": "GRU953-tagline",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-tagline-accent-1024.png",
+      "mark": "GRU953-tagline",
+      "colour": "#B45A39",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-tagline-daybreak-512.png",
+      "mark": "GRU953-tagline",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-tagline-daybreak-1024.png",
+      "mark": "GRU953-tagline",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-tagline-paper-512.png",
+      "mark": "GRU953-tagline",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-tagline-paper-1024.png",
+      "mark": "GRU953-tagline",
+      "colour": "#FFFFFF",
+      "on": "#1A1753",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-tagline-ink-512.png",
+      "mark": "GRU953-tagline",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 512
+    },
+    {
+      "file": "GRU953-tagline-ink-1024.png",
+      "mark": "GRU953-tagline",
+      "colour": "#0B0E14",
+      "on": "#FFFFFF",
+      "width": 1024
+    },
+    {
+      "file": "GRU953-appicon-128.png",
+      "mark": "GRU953-appicon",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 128
+    },
+    {
+      "file": "GRU953-appicon-256.png",
+      "mark": "GRU953-appicon",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 256
+    },
+    {
+      "file": "GRU953-appicon-512.png",
+      "mark": "GRU953-appicon",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 512
+    },
+    {
+      "file": "GRU953-appicon-1024.png",
+      "mark": "GRU953-appicon",
+      "colour": "#FFAB8E",
+      "on": "#1A1753",
+      "width": 1024
+    }
+  ]
+}

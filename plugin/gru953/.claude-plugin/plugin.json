@@ -1,0 +1,24 @@
+{
+  "name": "gru953",
+  "version": "1.0.0",
+  "description": "Applies the GRU953 brand to anything written, designed or built: the Soaring Bird mark, the two-value Daybreak signature, the locked bilingual taglines, and the Apache-2.0 / PolyForm licence split. Generates marks, lockups, icon sets, social artwork and design tokens. Scaffolds a repository with the right licences, README and brand check. Reviews anything against the brand and WCAG 2.2 AA, naming the rule broken and the fix. সহজ প্রযুক্তি। সবার জন্য। · Simple technology. For everyone.",
+  "author": {
+    "name": "Aninda Sundar Howlader (GRU953)"
+  },
+  "homepage": "https://github.com/GRU-953",
+  "license": "Apache-2.0 AND PolyForm-Noncommercial-1.0.0",
+  "keywords": [
+    "gru953",
+    "brand",
+    "design-system",
+    "design-tokens",
+    "accessibility",
+    "wcag",
+    "bilingual",
+    "bangla",
+    "logo",
+    "licensing"
+  ],
+  "displayName": "GRU953",
+  "repository": "https://github.com/GRU-953/gru953"
+}

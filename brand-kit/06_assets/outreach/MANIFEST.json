@@ -1,0 +1,50 @@
+[
+  {
+    "file": "github-social-preview.png",
+    "size": "1280x640",
+    "kB": 124.4,
+    "purpose": "GitHub repository social preview card. GitHub specifies 1280x640."
+  },
+  {
+    "file": "avatar-512.png",
+    "size": "512x512",
+    "kB": 47.8,
+    "purpose": "Profile avatar for GitHub, LinkedIn and X. Square; renders as a circle on most platforms, so the mark is kept well inside a safe circle."
+  },
+  {
+    "file": "x-header-1500x500.png",
+    "size": "1500x500",
+    "kB": 104.9,
+    "purpose": "X / Twitter profile header. X specifies 1500x500 and crops the edges on small screens, so nothing important sits within 90px of any edge."
+  },
+  {
+    "file": "linkedin-banner-1584x396.png",
+    "size": "1584x396",
+    "kB": 96.8,
+    "purpose": "LinkedIn profile banner. LinkedIn specifies 1584x396 and overlays the profile photo on the lower left, so that area is deliberately left empty."
+  },
+  {
+    "file": "readme-header-light.png",
+    "size": "1600x300",
+    "kB": 30.2,
+    "purpose": "README banner for the light GitHub theme. Rendered at 1600px so it stays crisp on a high-density display when shown at 800px."
+  },
+  {
+    "file": "readme-header-dark.png",
+    "size": "1600x300",
+    "kB": 75.2,
+    "purpose": "README banner for the dark GitHub theme. Pairs with the light version via a <picture> element so the banner follows the reader's theme."
+  },
+  {
+    "file": "og-card-1200x630.png",
+    "size": "1200x630",
+    "kB": 117,
+    "purpose": "Open Graph / Twitter Card image for the portfolio site. 1200x630 is the size Facebook, LinkedIn and Slack all render well."
+  },
+  {
+    "file": "palette-poster.png",
+    "size": "1400x900",
+    "kB": 98.7,
+    "purpose": "A one-page palette reference, for pinning up or dropping into a slide."
+  }
+]

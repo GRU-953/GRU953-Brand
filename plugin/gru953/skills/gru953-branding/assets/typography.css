@@ -1,0 +1,216 @@
+/*
+ * GRU953 — typography
+ * GRU953 brand kit
+ *
+ * Four faces, each with one job:
+ *   Sora              display, wordmark, headings (Latin)
+ *   Noto Sans         body (Latin) — Unchanged.
+ *   Noto Sans Bengali all Bangla — Unchanged.
+ *   JetBrains Mono    code, data labels, version strings, metadata
+ * Anek Bangla is loaded only where a large Bangla display line is wanted.
+ *
+ * All five are SIL Open Font License 1.1. Their licences ship beside the font
+ * files as OFL-*.txt and must travel with them.
+ *
+ * CSS: Apache-2.0. The fonts keep their own OFL terms. The GRU953 marks are NOT licensed.
+ * Copyright (c) 2026 Aninda Sundar Howlader (GRU953)
+ */
+
+/* ============================================================ 1. the faces */
+/* Each is a variable font: one file covers every weight, which is why the whole
+   bundle is about 580 kB rather than the 2 MB a static family would cost. */
+
+@font-face {
+  font-family: "GRU953 Display";
+  src: url("fonts/sora-latin.woff2") format("woff2-variations"),
+       url("fonts/sora-latin.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+                 U+02DD-02FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122;
+}
+
+@font-face {
+  font-family: "GRU953 Text";
+  src: url("fonts/notosans-latin.woff2") format("woff2-variations"),
+       url("fonts/notosans-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+                 U+02DD-02FF, U+0131, U+0152-0153, U+1E00-1E9F, U+2000-206F, U+20AC, U+2122;
+}
+
+/* Bangla is declared on the SAME two families, with a Bengali unicode-range.
+   That is the whole trick: one CSS rule, and the browser picks the right face per
+   character. A bilingual sentence needs no markup and no font switching by hand. */
+@font-face {
+  font-family: "GRU953 Text";
+  src: url("fonts/notosansbengali.woff2") format("woff2-variations"),
+       url("fonts/notosansbengali.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+200C-200D, U+20B9, U+25CC, U+A8F1;
+}
+@font-face {
+  font-family: "GRU953 Display";
+  src: url("fonts/notosansbengali.woff2") format("woff2-variations"),
+       url("fonts/notosansbengali.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+200C-200D, U+20B9, U+25CC, U+A8F1;
+}
+
+@font-face {
+  font-family: "GRU953 Bangla Display";
+  src: url("fonts/anekbangla.woff2") format("woff2-variations"),
+       url("fonts/anekbangla.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0980-09FE, U+200C-200D, U+25CC;
+}
+
+@font-face {
+  font-family: "GRU953 Mono";
+  src: url("fonts/jetbrainsmono-latin.woff2") format("woff2-variations"),
+       url("fonts/jetbrainsmono-latin.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================= 2. stacks and the scale */
+:root {
+  --gru-font-display: "GRU953 Display", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --gru-font-text: "GRU953 Text", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  --gru-font-bangla-display: "GRU953 Bangla Display", "GRU953 Display", sans-serif;
+  --gru-font-mono: "GRU953 Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* A modular scale on a ratio of 1.25 (a major third), anchored at 16px, then
+     clamped so it shrinks on a phone without a media query. Every size is stated
+     in rem so a reader who enlarges their default text size is obeyed. */
+  --gru-text-2xs: 0.694rem;   /* 11.1px — legal lines, table footnotes           */
+  --gru-text-xs:  0.8rem;     /* 12.8px — metadata, captions, badge text         */
+  --gru-text-sm:  0.9rem;     /* 14.4px — secondary body, table cells            */
+  --gru-text-base: 1rem;      /* 16px — body. Never smaller for running prose. */
+  --gru-text-md:  1.125rem;   /* 18px — lead paragraphs                        */
+  --gru-text-lg:  clamp(1.25rem, 1.15rem + 0.5vw, 1.4rem);      /* h4            */
+  --gru-text-xl:  clamp(1.5rem, 1.34rem + 0.8vw, 1.75rem);      /* h3            */
+  --gru-text-2xl: clamp(1.85rem, 1.55rem + 1.5vw, 2.44rem);     /* h2            */
+  --gru-text-3xl: clamp(2.3rem, 1.75rem + 2.75vw, 3.82rem);     /* h1            */
+  --gru-text-4xl: clamp(2.9rem, 1.9rem + 5vw, 5.96rem);         /* hero / display */
+
+  --gru-leading-tight: 1.08;   /* display sizes only                            */
+  --gru-leading-snug: 1.25;    /* headings                                      */
+  --gru-leading-normal: 1.6;   /* Latin body                                    */
+  --gru-leading-bangla: 1.85;  /* Bangla body — see the note below              */
+
+  --gru-tracking-display: -0.022em;  /* the wordmark's own tracking             */
+  --gru-tracking-tight: -0.014em;
+  --gru-tracking-normal: 0;
+  --gru-tracking-caps: 0.09em;       /* small caps / mono labels                */
+
+  --gru-measure: 68ch;   /* maximum line length for comfortable reading         */
+  --gru-measure-bn: 60ch;/* Bangla runs wider per character, so fewer of them   */
+}
+
+/* ============================================== 3. the elements themselves */
+body {
+  font-family: var(--gru-font-text);
+  font-size: var(--gru-text-base);
+  line-height: var(--gru-leading-normal);
+  font-weight: 400;
+  letter-spacing: var(--gru-tracking-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .gru-display {
+  font-family: var(--gru-font-display);
+  line-height: var(--gru-leading-snug);
+  letter-spacing: var(--gru-tracking-tight);
+  font-weight: 700;
+  text-wrap: balance;             /* stops a lone word dangling on its own line */
+}
+h1 { font-size: var(--gru-text-3xl); line-height: var(--gru-leading-tight);
+     letter-spacing: var(--gru-tracking-display); }
+h2 { font-size: var(--gru-text-2xl); }
+h3 { font-size: var(--gru-text-xl); }
+h4 { font-size: var(--gru-text-lg); font-weight: 600; }
+
+p, li { max-width: var(--gru-measure); text-wrap: pretty; }
+.gru-lead { font-size: var(--gru-text-md); line-height: 1.55; }
+
+code, kbd, pre, samp, .gru-mono {
+  font-family: var(--gru-font-mono);
+  font-variant-ligatures: none;   /* no => arrows in a brand guide; clarity wins */
+  font-size: 0.92em;              /* em, so it tracks whatever it sits inside    */
+}
+.gru-label {
+  font-family: var(--gru-font-mono);
+  font-size: var(--gru-text-xs);
+  font-weight: 600;
+  letter-spacing: var(--gru-tracking-caps);
+  text-transform: uppercase;
+}
+
+/* ================================================= 4. Bangla-specific rules */
+/*
+ * Bangla is not Latin with different letters. Two things must change:
+ *
+ * 1. LEADING. Bangla stacks marks above and below the মাত্রা (the horizontal
+ *    headline that runs across the top of most letters). At Latin's 1.6 line
+ *    height those marks from one line nearly touch the next. 1.85 fixes it.
+ * 2. NO ALL-CAPS AND NO SYNTHETIC BOLD. Bangla has no capital letters, so
+ *    text-transform:uppercase does nothing useful and can break conjuncts.
+ *    Always use a real weight from the variable font, never a faux-bold.
+ */
+:lang(bn), .gru-bn {
+  line-height: var(--gru-leading-bangla);
+  max-width: var(--gru-measure-bn);
+  text-transform: none;
+  letter-spacing: normal;         /* letter-spacing damages Bangla conjuncts     */
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+}
+:lang(bn) h1, :lang(bn) h2, :lang(bn) h3, .gru-bn h1, .gru-bn h2, .gru-bn h3 {
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+.gru-bn-display { font-family: var(--gru-font-bangla-display); font-weight: 700; }
+:lang(bn) .gru-label, .gru-bn .gru-label { text-transform: none; letter-spacing: 0.02em; }
+
+/* ==================================================== 5. the wordmark rule */
+/*
+ * "GRU953" set as live text — for an HTML title, a heading, an email signature.
+ * The LOGO is always the SVG file; this class exists so that when the word appears
+ * as text it is at least set correctly. Never re-typeset the logo with this.
+ */
+.gru-wordmark {
+  font-family: var(--gru-font-display);
+  font-weight: 700;
+  letter-spacing: var(--gru-tracking-display);
+  font-feature-settings: "tnum" 1;   /* tabular figures: 953 stays even-width    */
+  white-space: nowrap;               /* GRU953 must never break across a line    */
+}
+
+/* ================================================== 6. accessibility floors */
+/* Respect a reader who has asked the system to reduce motion or increase contrast.
+   These are floors, not decoration — do not remove them from a fork. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:focus-visible {
+  outline: 3px solid var(--gru-focus, #7E86F6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+::selection { background: var(--gru-daybreak-200, #FFCEBA); color: var(--gru-ink, #0B0E14); }

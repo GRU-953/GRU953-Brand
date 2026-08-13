@@ -1,0 +1,111 @@
+/*
+ * GRU953 — layout, spacing, shape and depth
+ * GRU953 brand kit
+ *
+ * One scale, one grid, four radii, three depths. Everything else is a variation of
+ * these, and if a design needs a value that is not here, the design is probably wrong.
+ *
+ * CSS: Apache-2.0. Copyright (c) 2026 Aninda Sundar Howlader (GRU953)
+ */
+
+:root {
+  /* ===================================================== the spacing scale
+     A 4px base, doubling in a familiar rhythm. Using rem rather than px means the
+     whole layout scales when a reader increases their default text size — which is
+     the single most common accessibility need and costs nothing to support. */
+  --gru-space-0: 0;
+  --gru-space-1: 0.25rem;   /*  4px — inside a badge, between an icon and its label */
+  --gru-space-2: 0.5rem;    /*  8px — tight internal padding                       */
+  --gru-space-3: 0.75rem;   /* 12px — between related controls                     */
+  --gru-space-4: 1rem;      /* 16px — the default gap. When unsure, use this.       */
+  --gru-space-5: 1.5rem;    /* 24px — between paragraphs, inside a card             */
+  --gru-space-6: 2rem;      /* 32px — between components                           */
+  --gru-space-7: 3rem;      /* 48px — between subsections                          */
+  --gru-space-8: 4rem;      /* 64px — between sections                             */
+  --gru-space-9: 6rem;      /* 96px — above and below a hero                       */
+  --gru-space-10: 8rem;     /* 128px — page top and tail on a wide screen           */
+
+  /* ===================================================== the grid
+     12 columns on desktop, 6 on tablet, 4 on phone — the standard that every CSS
+     framework and design tool already understands, so nothing has to be translated. */
+  --gru-columns: 12;
+  --gru-gutter: var(--gru-space-5);
+  --gru-container: 76rem;       /* 1216px — the widest the content ever goes        */
+  --gru-container-narrow: 46rem;/*  736px — for a page that is mostly prose         */
+  --gru-page-padding: clamp(1rem, 4vw, 3rem);
+
+  /* ===================================================== shape
+     Four radii and no more. The 22.46% app-icon squircle is a separate, fixed value
+     because Apple and Google both expect it; do not reuse it for anything else. */
+  --gru-radius-xs: 4px;    /* badges, tags, inline code                             */
+  --gru-radius-sm: 8px;    /* buttons, inputs, small cards                          */
+  --gru-radius-md: 14px;   /* cards, panels, images                                 */
+  --gru-radius-lg: 24px;   /* hero panels, modal sheets                             */
+  --gru-radius-full: 9999px;
+  --gru-radius-appicon: 22.46%;
+
+  /* ===================================================== depth
+     Three levels. Shadows are tinted with Meridian rather than pure black, so a
+     raised surface still looks like it belongs to this brand and not to a default
+     framework. Grey shadows on a coloured brand always look slightly dirty. */
+  --gru-shadow-1: 0 1px 2px rgb(26 23 83 / 0.06), 0 1px 3px rgb(26 23 83 / 0.08);
+  --gru-shadow-2: 0 4px 8px rgb(26 23 83 / 0.07), 0 8px 24px rgb(26 23 83 / 0.09);
+  --gru-shadow-3: 0 12px 24px rgb(26 23 83 / 0.10), 0 24px 56px rgb(26 23 83 / 0.14);
+  /* In dark mode a shadow is invisible, so depth is carried by a lighter surface
+     and a 1px border instead. Never simply darken the shadow and hope. */
+  --gru-border-width: 1px;
+
+  /* ===================================================== motion
+     Two durations and two curves. Anything slower than 300ms on an interface
+     element feels broken rather than elegant. */
+  --gru-duration-fast: 120ms;   /* hover, focus, colour change                      */
+  --gru-duration-base: 220ms;   /* a panel opening, a list reordering               */
+  --gru-ease-out: cubic-bezier(0.22, 1, 0.36, 1);   /* things arriving              */
+  --gru-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);/* things moving in place       */
+
+  /* ===================================================== logo geometry
+     Expressed as ratios so they hold at any size. See the guidebook's logo chapter. */
+  --gru-logo-clearspace: 0.5;   /* x the mark's own height, on every side           */
+  --gru-logo-min-lockup: 120px; /* horizontal lockup: never smaller (25mm in print) */
+  --gru-logo-min-tagline: 260px;/* a lockup with the tagline: never smaller (55mm)   */
+  --gru-logo-min-bird: 24px;    /* the mark alone: never smaller. Below this, the    */
+  --gru-logo-min-tile: 16px;    /* tile — a line drawing cannot survive 16px         */
+}
+
+@media (max-width: 60rem) { :root { --gru-columns: 6; } }
+@media (max-width: 40rem) { :root { --gru-columns: 4; --gru-gutter: var(--gru-space-4); } }
+
+/* ===================================================== the two containers */
+.gru-container,
+.gru-container-narrow {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--gru-page-padding);
+}
+.gru-container { max-width: var(--gru-container); }
+.gru-container-narrow { max-width: var(--gru-container-narrow); }
+
+.gru-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--gru-columns), minmax(0, 1fr));
+  gap: var(--gru-gutter);
+}
+
+/* ===================================================== the logo clear space
+   Wrap any logo in this and the clear space is guaranteed rather than remembered.
+   The rule is one half of the mark's own height on every side, and nothing —
+   no text, no border, no other logo, no photograph edge — enters it. */
+.gru-logo-safe {
+  display: inline-block;
+  padding: calc(var(--gru-logo-clearspace) * 1em);
+  line-height: 0;
+}
+
+/* ===================================================== motion, honestly
+   Every transition here is also switched off by the reduced-motion rule in
+   typography.css. A brand that says "for everyone" cannot ignore that setting. */
+.gru-transition { transition: color var(--gru-duration-fast) var(--gru-ease-out),
+                              background-color var(--gru-duration-fast) var(--gru-ease-out),
+                              border-color var(--gru-duration-fast) var(--gru-ease-out),
+                              box-shadow var(--gru-duration-base) var(--gru-ease-out),
+                              transform var(--gru-duration-base) var(--gru-ease-out); }
