@@ -624,8 +624,23 @@ TOKENS_CSS = "\n".join(out) + "\n"
 data = dict(
     kit="GRU953",
     tagline=dict(en="Simple technology. For everyone.", bn="সহজ প্রযুক্তি। সবার জন্য।"),
-    licence=dict(system="Apache-2.0", guidebook="PolyForm-Noncommercial-1.0.0",
-                 fonts="OFL-1.1", marks="not licensed — see governance/TRADEMARKS.md"),
+    # Self-contained on purpose. This file is generated to be *shipped*, and the
+    # kit's governance/ directory does not travel with it — an app that embeds
+    # these tokens leaves anyone reading them following a path that is not there.
+    # So the answer is carried here instead of pointed at.
+    licence=dict(
+        system="Apache-2.0",
+        guidebook="PolyForm-Noncommercial-1.0.0",
+        fonts="OFL-1.1",
+        marks="not licensed",
+        marks_detail=("The name GRU953, the Soaring Bird mark, the app-icon tile, the "
+                      "GRU953 wordmark and any lockup of them are not licensed and stay "
+                      "with the studio. The colour values and these token names are "
+                      "Apache-2.0 and may be used commercially, including in commercial "
+                      "products. Full policy: the brand kit's "
+                      "08_guidebook/governance/TRADEMARKS.md, which does not ship beside "
+                      "this file."),
+    ),
     signature_rule=("One hue, two tuned values. No single colour clears 4.5:1 against both "
                     "white and near-black, so --gru-accent resolves to a deep Daybreak step "
                     "on light grounds and a pale one on dark grounds."),
