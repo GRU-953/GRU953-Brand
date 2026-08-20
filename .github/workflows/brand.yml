@@ -142,5 +142,14 @@ jobs:
         run: |
           .venv/bin/python brand-kit/03_logo/measure_original.py
           git diff --exit-code -- brand-kit/03_logo/original-measurements.json
+      # The mark-rebuild fidelity harness's own self-test (original vs itself),
+      # regenerated and diffed the same way -- this is the harness that will
+      # judge the actual grid-based rebuild once it exists; its self-test
+      # proving it is trustworthy is exactly as load-bearing as any other
+      # generated file here.
+      - name: check_rebuild_fidelity.py's self-test must reproduce exactly
+        run: |
+          .venv/bin/python brand-kit/03_logo/check_rebuild_fidelity.py
+          git diff --exit-code -- brand-kit/03_logo/fidelity-self-test.json
       - name: the build depends on nothing that merely happens to be on PATH
         run: sh scripts/no-system-path.sh

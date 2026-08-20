@@ -1,0 +1,133 @@
+{
+  "$note": "The mark-rebuild fidelity harness's own self-test: the original mark checked against itself. Every metric must be at its trivial best. Regenerate: python3 brand-kit/03_logo/check_rebuild_fidelity.py",
+  "targets": {
+    "silhouette_overlap_min": 0.92,
+    "contour_deviation_max_pct": 1.5,
+    "facet_angle_deviation_max_deg": 1.5,
+    "centroid_offset_max_pct": 1.0
+  },
+  "original_rib_angles_deg": [
+    28.37,
+    27.74,
+    25.71,
+    25.89
+  ],
+  "self_test": {
+    "candidate": "brand-kit/03_logo/original/GRU953-logo-master.svg",
+    "render_scale": 2,
+    "silhouette_overlap": 1.0,
+    "contour_deviation": {
+      "max_artboard_units": 0.0,
+      "p95_artboard_units": 0.0,
+      "mean_artboard_units": 0.0,
+      "max_pct_of_artboard": 0.0
+    },
+    "counter_correspondence": {
+      "matched": 8,
+      "orphans_in_original": 0,
+      "orphans_in_candidate": 0,
+      "one_to_one": true,
+      "match_detail": [
+        [
+          0,
+          0,
+          0.0
+        ],
+        [
+          1,
+          1,
+          0.0
+        ],
+        [
+          2,
+          2,
+          0.0
+        ],
+        [
+          3,
+          3,
+          0.0
+        ],
+        [
+          4,
+          4,
+          0.0
+        ],
+        [
+          5,
+          5,
+          0.0
+        ],
+        [
+          6,
+          6,
+          0.0
+        ],
+        [
+          7,
+          7,
+          0.0
+        ]
+      ]
+    },
+    "facet_angle_fidelity": [
+      {
+        "original_angle_deg": 28.37,
+        "candidate_angle_deg": 28.35,
+        "deviation_deg": 0.02,
+        "candidate_edge_length_units": 287.71,
+        "matched": true
+      },
+      {
+        "original_angle_deg": 27.74,
+        "candidate_angle_deg": 27.75,
+        "deviation_deg": 0.01,
+        "candidate_edge_length_units": 233.5,
+        "matched": true
+      },
+      {
+        "original_angle_deg": 25.71,
+        "candidate_angle_deg": 25.84,
+        "deviation_deg": 0.13,
+        "candidate_edge_length_units": 195.45,
+        "matched": true
+      },
+      {
+        "original_angle_deg": 25.89,
+        "candidate_angle_deg": 25.93,
+        "deviation_deg": 0.04,
+        "candidate_edge_length_units": 167.48,
+        "matched": true
+      }
+    ],
+    "centroid_offset_pct": 0.0,
+    "verdicts": {
+      "silhouette_overlap": {
+        "value": 1.0,
+        "target": ">= 0.92",
+        "passes": true
+      },
+      "contour_deviation_pct": {
+        "value": 0.0,
+        "target": "<= 1.5",
+        "passes": true
+      },
+      "counters_one_to_one": {
+        "value": true,
+        "target": "True",
+        "passes": true
+      },
+      "facet_angle_max_deviation_deg": {
+        "value": 0.13,
+        "target": "<= 1.5 per facet",
+        "passes": true
+      },
+      "centroid_offset_pct": {
+        "value": 0.0,
+        "target": "<= 1.0",
+        "passes": true
+      }
+    },
+    "all_pass": true
+  }
+}
