@@ -70,9 +70,96 @@
     "max_disagreement_artboard_units": 1.25,
     "agrees_within_2_units": true
   },
+  "interior_counters": {
+    "render_px": 512,
+    "method": "flood-fill from the artboard border finds white reachable from outside; what remains, enclosed on every side by ink, is a counter. Radius is a 4-connected BFS distance-to-boundary within each region, maximised -- an approximation, not a true Euclidean distance transform, and stated as such.",
+    "counter_count": 8,
+    "counters": [
+      {
+        "pixel_count": 3656,
+        "centroid_fraction": {
+          "x": 0.5073,
+          "y": 0.5003
+        },
+        "inscribed_radius_px_estimate": 28,
+        "inscribed_diameter_px_estimate": 56,
+        "inscribed_diameter_artboard_units_estimate": 112.0
+      },
+      {
+        "pixel_count": 3587,
+        "centroid_fraction": {
+          "x": 0.2875,
+          "y": 0.3447
+        },
+        "inscribed_radius_px_estimate": 14,
+        "inscribed_diameter_px_estimate": 28,
+        "inscribed_diameter_artboard_units_estimate": 56.0
+      },
+      {
+        "pixel_count": 3165,
+        "centroid_fraction": {
+          "x": 0.3271,
+          "y": 0.4559
+        },
+        "inscribed_radius_px_estimate": 14,
+        "inscribed_diameter_px_estimate": 28,
+        "inscribed_diameter_artboard_units_estimate": 56.0
+      },
+      {
+        "pixel_count": 2329,
+        "centroid_fraction": {
+          "x": 0.3797,
+          "y": 0.5707
+        },
+        "inscribed_radius_px_estimate": 13,
+        "inscribed_diameter_px_estimate": 26,
+        "inscribed_diameter_artboard_units_estimate": 52.0
+      },
+      {
+        "pixel_count": 2051,
+        "centroid_fraction": {
+          "x": 0.571,
+          "y": 0.6517
+        },
+        "inscribed_radius_px_estimate": 23,
+        "inscribed_diameter_px_estimate": 46,
+        "inscribed_diameter_artboard_units_estimate": 92.0
+      },
+      {
+        "pixel_count": 1888,
+        "centroid_fraction": {
+          "x": 0.7486,
+          "y": 0.4688
+        },
+        "inscribed_radius_px_estimate": 21,
+        "inscribed_diameter_px_estimate": 42,
+        "inscribed_diameter_artboard_units_estimate": 84.0
+      },
+      {
+        "pixel_count": 1831,
+        "centroid_fraction": {
+          "x": 0.4869,
+          "y": 0.7402
+        },
+        "inscribed_radius_px_estimate": 18,
+        "inscribed_diameter_px_estimate": 36,
+        "inscribed_diameter_artboard_units_estimate": 72.0
+      },
+      {
+        "pixel_count": 991,
+        "centroid_fraction": {
+          "x": 0.6152,
+          "y": 0.565
+        },
+        "inscribed_radius_px_estimate": 12,
+        "inscribed_diameter_px_estimate": 24,
+        "inscribed_diameter_artboard_units_estimate": 48.0
+      }
+    ]
+  },
   "not_yet_measured": [
     "Per-facet wing angles (needs manual identification of the four facet edges from the path data, then a least-squares line fit to each).",
-    "Interior counter count, per-counter centroid, and per-counter minimum inscribed-circle diameter (needs a flood-fill from the artboard border, the same approach brand-kit/03_logo/marks.py already uses at 512px for its own, narrower survival check).",
-    "Stroke width sampled along the drawing's own centreline (needs a centreline extraction this script does not attempt)."
+    "Stroke width sampled along the drawing's own centreline (needs a centreline extraction this script does not attempt).",
+    "A true Euclidean distance transform for the inscribed-circle radii above -- the current estimate is a 4-connected BFS approximation, which is somewhat smaller than a true Euclidean radius for a non-axis-aligned counter shape."
   ]
 }

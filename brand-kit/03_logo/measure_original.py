@@ -27,6 +27,7 @@ Run:
     PLAYWRIGHT_BROWSERS_PATH=$(pwd)/00_sandbox/browsers ../../.venv/bin/python \
         brand-kit/03_logo/measure_original.py
 """
+import collections
 import json
 import pathlib
 import sys
@@ -70,6 +71,157 @@ def render_png(scale: int) -> Image.Image:
     img = Image.open(__import__("io").BytesIO(png_bytes)).convert("L")
     assert img.size == (size, size), f"expected {size}x{size}, got {img.size}"
     return img
+
+
+# ---------------------------------------------------------------- interior counters
+#
+# An interior counter (the enclosed gap inside a wing facet, the hole in an "o") is the
+# first thing to close as a drawing shrinks, and it is the whole reason the mark ships as
+# a tile below the owner's stated 16px floor rather than a shrunken line drawing. Found
+# the same way brand-kit/03_logo/marks.py already proves its own survival check: flood
+# white in from the artboard border; whatever white is left, unreachable from outside,
+# is enclosed by ink. Rendered through Chromium here, not rsvg-convert (marks.py's own
+# choice, unavailable on this machine) -- the substitution this whole sandbox is built on.
+COUNTER_RENDER_PX = 512   # large enough that every counter is certainly still open
+
+
+def render_counter_mask(px: int) -> list:
+    """Render the mark at `px` and return a 2D list of bool: True = ink (dark).
+
+    Same polarity as measure_at_scale()'s ink test (`< INK_THRESHOLD` = ink, a low
+    grayscale value). Getting this backwards here once meant "is ink" and "is white"
+    silently swapped through two inversions downstream and produced a single wrong
+    77-artboard-unit "counter" instead of the several genuine ones — caught only by
+    it being a suspiciously round, suspiciously singular result, not by the code
+    raising anything.
+    """
+    html = f"""<!doctype html><html><head><style>
+      html, body {{ margin: 0; padding: 0; background: #fff; }}
+      svg {{ display: block; width: {px}px; height: {px}px; }}
+    </style></head><body>{MASTER_SVG.read_text(encoding='utf-8')}</body></html>"""
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": px, "height": px})
+        page.set_content(html)
+        page.wait_for_timeout(50)
+        png_bytes = page.screenshot()
+        browser.close()
+    img = Image.open(__import__("io").BytesIO(png_bytes)).convert("L")
+    assert img.size == (px, px), f"expected {px}x{px}, got {img.size}"
+    data = img.load()
+    return [[data[x, y] < INK_THRESHOLD for x in range(px)] for y in range(px)]
+
+
+def enclosed_mask(is_white: list) -> list:
+    """White reachable from the artboard border is background; anything left is a
+    counter, enclosed by ink on every side. BFS flood from the four edges."""
+    h = len(is_white)
+    w = len(is_white[0])
+    outside = [[False] * w for _ in range(h)]
+    q = collections.deque()
+    for x in range(w):
+        for y in (0, h - 1):
+            if is_white[y][x] and not outside[y][x]:
+                outside[y][x] = True
+                q.append((y, x))
+    for y in range(h):
+        for x in (0, w - 1):
+            if is_white[y][x] and not outside[y][x]:
+                outside[y][x] = True
+                q.append((y, x))
+    while q:
+        y, x = q.popleft()
+        for ny, nx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+            if 0 <= ny < h and 0 <= nx < w and is_white[ny][nx] and not outside[ny][nx]:
+                outside[ny][nx] = True
+                q.append((ny, nx))
+    return [[is_white[y][x] and not outside[y][x] for x in range(w)] for y in range(h)]
+
+
+def find_counters(enclosed: list, min_area_px: int = 20) -> list:
+    """Connected-component label the enclosed mask. For each region: pixel count,
+    centroid (fraction of canvas), and an INSCRIBED-CIRCLE RADIUS ESTIMATE.
+
+    The radius estimate is a multi-source BFS distance-to-boundary within the region
+    (4-connected), maximised over every pixel in the region -- the region's own "widest
+    point". This is an approximation under Manhattan/Chebyshev-adjacent distance, not a
+    true Euclidean distance transform; stated as such in the output, not silently
+    presented as exact.
+    """
+    h = len(enclosed)
+    w = len(enclosed[0])
+    seen = [[False] * w for _ in range(h)]
+    regions = []
+    for y0 in range(h):
+        for x0 in range(w):
+            if enclosed[y0][x0] and not seen[y0][x0]:
+                pts = []
+                st = [(y0, x0)]
+                seen[y0][x0] = True
+                while st:
+                    y, x = st.pop()
+                    pts.append((y, x))
+                    for ny, nx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+                        if (0 <= ny < h and 0 <= nx < w and enclosed[ny][nx]
+                                and not seen[ny][nx]):
+                            seen[ny][nx] = True
+                            st.append((ny, nx))
+                if len(pts) >= min_area_px:
+                    regions.append(pts)
+
+    out = []
+    pt_set_template = None
+    for pts in regions:
+        pt_set = set(pts)
+        # Boundary of this region = pixels with a 4-neighbour outside the region
+        # (either not enclosed at all, or a different region -- either way, an edge).
+        boundary = [(y, x) for (y, x) in pts
+                    if any((ny, nx) not in pt_set
+                           for ny, nx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)))]
+        dist = {p: 0 for p in boundary}
+        q = collections.deque(boundary)
+        while q:
+            y, x = q.popleft()
+            d = dist[(y, x)]
+            for ny, nx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+                if (ny, nx) in pt_set and (ny, nx) not in dist:
+                    dist[(ny, nx)] = d + 1
+                    q.append((ny, nx))
+        max_dist = max(dist.values()) if dist else 0
+        cy = sum(p[0] for p in pts) / len(pts)
+        cx = sum(p[1] for p in pts) / len(pts)
+        out.append({
+            "pixel_count": len(pts),
+            "centroid_fraction": {"x": round(cx / w, 4), "y": round(cy / h, 4)},
+            "inscribed_radius_px_estimate": max_dist,
+            "inscribed_diameter_px_estimate": max_dist * 2,
+        })
+    out.sort(key=lambda r: -r["pixel_count"])
+    return out
+
+
+def measure_counters() -> dict:
+    is_ink_dark = render_counter_mask(COUNTER_RENDER_PX)
+    # render_counter_mask returns True where the pixel counts as INK (dark). The
+    # enclosed-white analysis wants True where a pixel is WHITE (background-coloured);
+    # invert.
+    is_white = [[not v for v in row] for row in is_ink_dark]
+    enclosed = enclosed_mask(is_white)
+    counters = find_counters(enclosed)
+    px_to_artboard = 1024 / COUNTER_RENDER_PX
+    for c in counters:
+        c["inscribed_diameter_artboard_units_estimate"] = round(
+            c["inscribed_diameter_px_estimate"] * px_to_artboard, 2)
+    return {
+        "render_px": COUNTER_RENDER_PX,
+        "method": "flood-fill from the artboard border finds white reachable from "
+                  "outside; what remains, enclosed on every side by ink, is a counter. "
+                  "Radius is a 4-connected BFS distance-to-boundary within each region, "
+                  "maximised -- an approximation, not a true Euclidean distance "
+                  "transform, and stated as such.",
+        "counter_count": len(counters),
+        "counters": counters,
+    }
 
 
 def assert_viewbox():
@@ -178,6 +330,8 @@ def main():
     )
     agrees = disagreement_px <= 2.0  # 2 artboard units tolerance, i.e. <=2px at 1x
 
+    counters = measure_counters()
+
     out = {
         "$note": "Measured, not asserted. Every figure here was read off rendered "
                  "pixels of brand-kit/03_logo/original/GRU953-logo-master.svg through "
@@ -194,15 +348,16 @@ def main():
             "max_disagreement_artboard_units": round(disagreement_px, 3),
             "agrees_within_2_units": agrees,
         },
+        "interior_counters": counters,
         "not_yet_measured": [
             "Per-facet wing angles (needs manual identification of the four facet "
             "edges from the path data, then a least-squares line fit to each).",
-            "Interior counter count, per-counter centroid, and per-counter minimum "
-            "inscribed-circle diameter (needs a flood-fill from the artboard border, "
-            "the same approach brand-kit/03_logo/marks.py already uses at 512px for "
-            "its own, narrower survival check).",
             "Stroke width sampled along the drawing's own centreline (needs a "
             "centreline extraction this script does not attempt).",
+            "A true Euclidean distance transform for the inscribed-circle radii "
+            "above -- the current estimate is a 4-connected BFS approximation, "
+            "which is somewhat smaller than a true Euclidean radius for a "
+            "non-axis-aligned counter shape.",
         ],
     }
 
@@ -218,6 +373,11 @@ def main():
     print(f"  cross-check (1x vs {RENDER_SCALES[-1]}x): "
           f"{'agrees' if agrees else 'DISAGREES'} "
           f"(max diff {disagreement_px:.3f} artboard units)")
+    print(f"  {counters['counter_count']} interior counters found at "
+          f"{counters['render_px']}px")
+    for i, c in enumerate(counters["counters"], 1):
+        print(f"    #{i}: {c['pixel_count']}px, inscribed diameter "
+              f"~{c['inscribed_diameter_artboard_units_estimate']} artboard units")
     if not agrees:
         print("  FAIL: the two render scales disagree by more than 2 artboard units.")
         sys.exit(1)
