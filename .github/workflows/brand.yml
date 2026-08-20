@@ -92,10 +92,10 @@ jobs:
   sandbox:
     name: the sandbox builds clean, and the 27 cards render clean
     runs-on: ubuntu-latest
-    # Set once, at job level, so every step below — the install, the smoke test, the
-    # hermetic gate — agrees on where Chromium lives. A dev machine running the same
-    # commands from 00_sandbox/setup.sh sees the identical path, which is the point:
-    # a green run here means the same thing as a green run on the owner's own Mac.
+    # Set once, at job level, so every step below agrees on where Chromium lives. A
+    # dev machine running 00_sandbox/setup.sh sees the identical path — that is the
+    # whole point: a green run here means the same thing as a green run on the
+    # owner's own Mac.
     env:
       PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/00_sandbox/browsers
     steps:
@@ -104,14 +104,16 @@ jobs:
         with: { python-version: '3.13' }
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
-      # Every version here is pinned in requirements.txt for the same reason coloraide
-      # is pinned above: an unpinned shaping or colour library can change a measured
-      # result with nobody having edited anything.
-      - run: pip install -r requirements.txt
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - name: the sandbox's own smoke test — a real job through every pinned tool
-        run: python3 00_sandbox/smoke.py
+      - name: the actual setup script, not a hand-copied approximation of it
+        run: sh 00_sandbox/setup.sh
+        # This first ran here on 20 August 2026 with the steps typed out by hand
+        # instead of calling this script, and it went red: it installed every
+        # package into the runner's global Python with no .venv at all, so the
+        # hermetic gate below — which looks for .venv/bin/python, exactly as a
+        # local run does — found nothing there and failed with "No such file or
+        # directory". Two copies of "how to set this up" had already drifted
+        # apart on the very first day both existed. Calling the real script is
+        # the only fix that cannot happen again.
       - name: the kit's own build helpers still install on their own
         run: cd brand-kit/00_sandbox && npm ci --silent
       - name: 27 cards render clean — 4 widths x 2 colour schemes
