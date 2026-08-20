@@ -83,6 +83,7 @@
         },
         "inscribed_radius_px_estimate": 28,
         "inscribed_diameter_px_estimate": 56,
+        "elongation_estimate": 1.5929,
         "inscribed_diameter_artboard_units_estimate": 112.0
       },
       {
@@ -93,6 +94,7 @@
         },
         "inscribed_radius_px_estimate": 14,
         "inscribed_diameter_px_estimate": 28,
+        "elongation_estimate": 5.9238,
         "inscribed_diameter_artboard_units_estimate": 56.0
       },
       {
@@ -103,6 +105,7 @@
         },
         "inscribed_radius_px_estimate": 14,
         "inscribed_diameter_px_estimate": 28,
+        "elongation_estimate": 5.112,
         "inscribed_diameter_artboard_units_estimate": 56.0
       },
       {
@@ -113,6 +116,7 @@
         },
         "inscribed_radius_px_estimate": 13,
         "inscribed_diameter_px_estimate": 26,
+        "elongation_estimate": 4.2134,
         "inscribed_diameter_artboard_units_estimate": 52.0
       },
       {
@@ -123,6 +127,7 @@
         },
         "inscribed_radius_px_estimate": 23,
         "inscribed_diameter_px_estimate": 46,
+        "elongation_estimate": 1.511,
         "inscribed_diameter_artboard_units_estimate": 92.0
       },
       {
@@ -133,6 +138,7 @@
         },
         "inscribed_radius_px_estimate": 21,
         "inscribed_diameter_px_estimate": 42,
+        "elongation_estimate": 1.8034,
         "inscribed_diameter_artboard_units_estimate": 84.0
       },
       {
@@ -143,6 +149,7 @@
         },
         "inscribed_radius_px_estimate": 18,
         "inscribed_diameter_px_estimate": 36,
+        "elongation_estimate": 2.4996,
         "inscribed_diameter_artboard_units_estimate": 72.0
       },
       {
@@ -153,13 +160,178 @@
         },
         "inscribed_radius_px_estimate": 12,
         "inscribed_diameter_px_estimate": 24,
+        "elongation_estimate": 2.377,
         "inscribed_diameter_artboard_units_estimate": 48.0
       }
     ]
   },
+  "wing_facet_angles": {
+    "method": "Computed rule, not hand-picked indices: chain near-straight Bezier runs in every one of the 9 subpaths (residual-gated total-least-squares fit), cluster all chains across all subpaths by angle, take the cluster spanning the most distinct subpaths as the wing-facet family, select the 3 most elongated counter-subpaths in that family as the nested facet-gap slits, pair the silhouette's own 2 longest matching edges with the 3 slits' 6 edges into 4 ribs, ordered across the fan by perpendicular offset from the family's own mean angle.",
+    "ribs": [
+      {
+        "angle_deg": 28.37,
+        "edges": [
+          {
+            "subpath": 0,
+            "length_units": 541.7,
+            "angle_deg": 28.38
+          },
+          {
+            "subpath": 2,
+            "length_units": 270.7,
+            "angle_deg": 28.34
+          }
+        ]
+      },
+      {
+        "angle_deg": 27.74,
+        "edges": [
+          {
+            "subpath": 2,
+            "length_units": 203.5,
+            "angle_deg": 27.7
+          },
+          {
+            "subpath": 3,
+            "length_units": 246.7,
+            "angle_deg": 27.77
+          }
+        ]
+      },
+      {
+        "angle_deg": 25.71,
+        "edges": [
+          {
+            "subpath": 3,
+            "length_units": 160.3,
+            "angle_deg": 25.8
+          },
+          {
+            "subpath": 4,
+            "length_units": 185.8,
+            "angle_deg": 25.63
+          }
+        ]
+      },
+      {
+        "angle_deg": 25.89,
+        "edges": [
+          {
+            "subpath": 4,
+            "length_units": 138.9,
+            "angle_deg": 25.93
+          },
+          {
+            "subpath": 0,
+            "length_units": 141.9,
+            "angle_deg": 25.86
+          }
+        ]
+      }
+    ],
+    "spread_deg": 2.66,
+    "wing_cluster_subpath_count": 7,
+    "selected_slit_subpaths": [
+      2,
+      3,
+      4
+    ],
+    "alternate_disputed_facet": {
+      "note": "Counter-subpath(s) [7, 1, 5] sit in the same angle family as the four ribs above but were excluded from them because they are not among the 3 most-elongated slits (they read as more compact or triangular, not a thin nested slit). A different, equally defensible reading could include one of these as a genuine 4th wing facet instead of one of the silhouette-boundary ribs above. This file does not resolve that choice -- it needs a human eye-check against the rendered mark before either reading is treated as final.",
+      "candidate_edges": [
+        {
+          "subpath": 5,
+          "length_units": 86.4,
+          "angle_deg": 26.67
+        },
+        {
+          "subpath": 7,
+          "length_units": 84.9,
+          "angle_deg": 26.99
+        },
+        {
+          "subpath": 1,
+          "length_units": 128.9,
+          "angle_deg": 29.03
+        }
+      ]
+    }
+  },
+  "stroke_width_along_centreline": {
+    "method": "Chamfer (1, sqrt(2)) distance transform + Zhang-Suen thinning on the rasterised ink mask (all 9 subpaths, fill-rule nonzero, so the 8 counters are already cut out); width at each skeleton pixel = 2 x the chamfer distance-to-boundary there. min/max are tip-taper and junction-blob artefacts, not typical stroke width -- p10/median/mean/p90 are the representative figures. The calibration below reports this method's own small residual overestimate (chamfer is a much closer approximation to true Euclidean distance than a 4-connected BFS would be, but not exact); the headline figures are reported RAW, never silently corrected by it.",
+    "measurements_by_render_scale": [
+      {
+        "render_scale": 1,
+        "render_px": 1024,
+        "n_skeleton_samples": 4140,
+        "width_stats_artboard_units": {
+          "min": 2.0,
+          "max": 63.25,
+          "mean": 33.15,
+          "median": 32.28,
+          "p10": 30.28,
+          "p90": 38.0
+        }
+      },
+      {
+        "render_scale": 2,
+        "render_px": 2048,
+        "n_skeleton_samples": 8346,
+        "width_stats_artboard_units": {
+          "min": 1.0,
+          "max": 62.87,
+          "mean": 32.93,
+          "median": 32.41,
+          "p10": 30.41,
+          "p90": 37.63
+        }
+      }
+    ],
+    "cross_check": {
+      "max_median_disagreement_artboard_units": 0.13,
+      "agrees_within_1_unit": true
+    },
+    "primary_result_artboard_units": {
+      "min": 1.0,
+      "max": 62.87,
+      "mean": 32.93,
+      "median": 32.41,
+      "p10": 30.41,
+      "p90": 37.63
+    },
+    "calibration_self_test": {
+      "method": "synthetic strip of known width, drawn with PIL (no SVG involved -- pure ground-truth geometry), run through the identical chamfer distance transform + Zhang-Suen thinning pipeline used on the real mark above.",
+      "tests": [
+        {
+          "angle_deg": 0.0,
+          "true_width_px": 32,
+          "recovered_width_px": 34.0,
+          "ratio": 1.0625
+        },
+        {
+          "angle_deg": 26.93,
+          "true_width_px": 32,
+          "recovered_width_px": 35.034,
+          "ratio": 1.0948
+        },
+        {
+          "angle_deg": 45.0,
+          "true_width_px": 32,
+          "recovered_width_px": 33.941,
+          "ratio": 1.0607
+        },
+        {
+          "angle_deg": 90.0,
+          "true_width_px": 32,
+          "recovered_width_px": 34.0,
+          "ratio": 1.0625
+        }
+      ],
+      "mean_overestimate_ratio": 1.0701
+    }
+  },
   "not_yet_measured": [
-    "Per-facet wing angles (needs manual identification of the four facet edges from the path data, then a least-squares line fit to each).",
-    "Stroke width sampled along the drawing's own centreline (needs a centreline extraction this script does not attempt).",
-    "A true Euclidean distance transform for the inscribed-circle radii above -- the current estimate is a 4-connected BFS approximation, which is somewhat smaller than a true Euclidean radius for a non-axis-aligned counter shape."
+    "A true Euclidean distance transform for the inscribed-circle radii in interior_counters above -- the current estimate is a 4-connected BFS approximation. (Deliberately NOT the same claim as stroke_width_along_centreline's own calibration above: that measures a chamfer transform's bias on a linear strip, a different geometric setup from a max-distance-within-a-2D-blob computation, and the two should not be assumed to share a bias direction without a separate calibration built for blob shapes.)",
+    "wing_facet_angles.alternate_disputed_facet, if present above, is an unresolved judgement call needing a human eye-check against the rendered mark, not a settled reading."
   ]
 }

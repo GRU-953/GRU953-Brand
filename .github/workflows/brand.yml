@@ -133,5 +133,14 @@ jobs:
         run: cd brand-kit/00_sandbox && npm ci --silent
       - name: 27 cards render clean — 4 widths x 2 colour schemes
         run: node design-system/check.mjs
+      # measure_original.py needs Chromium, so it lives here rather than in the
+      # "build" job -- the same reason the 27-card render above does. First wired
+      # 20 August 2026, alongside the wing-facet-angle and stroke-width additions:
+      # without this, original-measurements.json could drift from its own
+      # generator exactly the way the typography recommendation once could.
+      - name: measure_original.py must reproduce the committed mark measurements exactly
+        run: |
+          .venv/bin/python brand-kit/03_logo/measure_original.py
+          git diff --exit-code -- brand-kit/03_logo/original-measurements.json
       - name: the build depends on nothing that merely happens to be on PATH
         run: sh scripts/no-system-path.sh
