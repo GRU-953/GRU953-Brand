@@ -19,14 +19,22 @@
       "geist":                  {"family": "Geist",                "repo_dir": "geist",                "file": "Geist[wght].ttf", "note": "borrowed-association concern (Vercel's brand face) -- measured anyway, rejected on that ground alone if it wins numerically"}
     },
     "bengali": {
-      "notosansbengali":        {"family": "Noto Sans Bengali",    "repo_dir": "notosansbengali",      "file": "NotoSansBengali[wdth,wght].ttf", "incumbent": true},
-      "notoserifbengali":       {"family": "Noto Serif Bengali",   "repo_dir": "notoserifbengali",     "file": "NotoSerifBengali[wdth,wght].ttf"},
-      "anekbangla":             {"family": "Anek Bangla",          "repo_dir": "anekbangla",           "file": "AnekBangla[wdth,wght].ttf", "incumbent": true, "note": "incumbent optional display"},
-      "tirobangla":             {"family": "Tiro Bangla",          "repo_dir": "tirobangla",           "file": "TiroBangla-Regular.ttf"},
-      "hindsiliguri":           {"family": "Hind Siliguri",        "repo_dir": "hindsiliguri",         "file": "HindSiliguri-Regular.ttf"},
-      "balooda2":               {"family": "Baloo Da 2",           "repo_dir": "balooda2",             "file": "BalooDa2[wght].ttf"},
-      "galada":                 {"family": "Galada",               "repo_dir": "galada",               "file": "Galada-Regular.ttf"},
-      "mina":                   {"family": "Mina",                 "repo_dir": "mina",                 "file": "Mina-Regular.ttf"}
+      "notosansbengali":        {"family": "Noto Sans Bengali",    "repo_dir": "notosansbengali",      "file": "NotoSansBengali[wdth,wght].ttf", "incumbent": true,
+                                 "role": "body", "role_source": "GRU953 BRAND-SPEC.md: the incumbent body face"},
+      "notoserifbengali":       {"family": "Noto Serif Bengali",   "repo_dir": "notoserifbengali",     "file": "NotoSerifBengali[wdth,wght].ttf",
+                                 "role": "body", "role_source": "Google Fonts METADATA.pb category: SERIF -- a text serif, the same purpose as its Latin counterpart"},
+      "anekbangla":             {"family": "Anek Bangla",          "repo_dir": "anekbangla",           "file": "AnekBangla[wdth,wght].ttf", "incumbent": true, "note": "incumbent optional display",
+                                 "role": "display", "role_source": "GRU953 BRAND-SPEC.md: 'for large Bangla headings where Noto Sans Bengali Bold feels too even' -- a GRU953 house decision, NOT Google's own classification (Google's METADATA.pb actually lists Anek Bangla as category SANS_SERIF, checked 20 Aug 2026)"},
+      "tirobangla":             {"family": "Tiro Bangla",          "repo_dir": "tirobangla",           "file": "TiroBangla-Regular.ttf",
+                                 "role": "body", "role_source": "Google Fonts description, verbatim: 'especially suited to traditional literary publishing' -- a book/body text serif"},
+      "hindsiliguri":           {"family": "Hind Siliguri",        "repo_dir": "hindsiliguri",         "file": "HindSiliguri-Regular.ttf",
+                                 "role": "body", "role_source": "Google Fonts description, verbatim: 'Developed explicitly for use in User Interface design'"},
+      "balooda2":               {"family": "Baloo Da 2",           "repo_dir": "balooda2",             "file": "BalooDa2[wght].ttf",
+                                 "role": "display", "role_source": "Google Fonts METADATA.pb category: DISPLAY"},
+      "galada":                 {"family": "Galada",               "repo_dir": "galada",               "file": "Galada-Regular.ttf",
+                                 "role": "display", "role_source": "Google Fonts METADATA.pb category: DISPLAY (a calligraphic Bengali script face)"},
+      "mina":                   {"family": "Mina",                 "repo_dir": "mina",                 "file": "Mina-Regular.ttf",
+                                 "role": "dual", "role_source": "Google Fonts description, verbatim: 'works well as a display typeface, but is also designed to perform at small to intermediate text sizes' -- the source itself claims both, so this file scores it in both tables rather than forcing a single bucket"}
     },
     "mono": {
       "jetbrainsmono":          {"family": "JetBrains Mono",       "repo_dir": "jetbrainsmono",        "file": "JetBrainsMono[wght].ttf", "incumbent": true},

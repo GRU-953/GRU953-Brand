@@ -50,7 +50,21 @@ BENGALI_SHAPING_FEATURES = ["akhn", "rphf", "blwf", "half", "pstf", "vatu",
 # A representative sample from the Bengali Unicode block (U+0980-U+09FF),
 # covering vowels, consonants, vowel signs and digits -- enough to say
 # whether a font's cmap covers the script, not just a few letters of it.
-BENGALI_SAMPLE_CODEPOINTS = list(range(0x0980, 0x09E0)) + list(range(0x09E6, 0x09FA))
+#
+# Filtered through unicodedata to keep only codepoints the Unicode Standard
+# actually ASSIGNS a character to. A blind range(0x0980, 0x09E0) once included
+# 29 genuinely unassigned gaps in the Bengali block (U+0984, U+098D-098E,
+# U+09A9, U+09B1... reserved, not missing) -- and every single one of 8
+# Bengali candidates then "failed" to cover them, because no real font maps
+# a codepoint nothing has ever been assigned to. That made the coverage
+# score meaningless: it scored the same 0 whether a font was excellent or
+# broken. Filtering to only-assigned codepoints is what makes the remaining
+# score mean something again.
+import unicodedata as _unicodedata
+BENGALI_SAMPLE_CODEPOINTS = [
+    cp for cp in list(range(0x0980, 0x09E0)) + list(range(0x09E6, 0x09FA))
+    if _unicodedata.category(chr(cp)) != "Cn"  # Cn = "Unassigned"
+]
 
 
 def find_font_file(key: str, spec: dict) -> pathlib.Path:
@@ -151,6 +165,7 @@ def measure_one(key: str, spec: dict, path: pathlib.Path) -> dict:
 
     return {
         "key": key, "family": spec["family"], "incumbent": spec.get("incumbent", False),
+        "role": spec.get("role"), "role_source": spec.get("role_source"),
         "file": str(path.relative_to(HERE)),
         "units_per_em": upm,
         "x_height": x_height,

@@ -50,6 +50,18 @@ jobs:
       # The benchmark's tally is generated from 01_research/_data/criteria.json and
       # 01_research/findings.json, never typed by hand -- this is what proves it.
       - run: python3 brand-kit/01_research/render_benchmark.py --check
+      # The typography recommendation, generated from the 28 candidate font FILES
+      # already checked out (never refetched -- no network needed) plus the rendered
+      # measurements committed alongside them. This gate first ran here on 20 August
+      # 2026, after the Bengali-coverage codepoint bug: without it, RECOMMENDATION.md
+      # could silently drift from measurements.json the same way tokens.json once did.
+      - run: pip install 'fonttools[woff]==4.62.1'
+      - name: measure_candidates.py and recommend.py must reproduce the committed files exactly
+        run: |
+          python3 brand-kit/05_type/measure_candidates.py
+          python3 brand-kit/05_type/recommend.py
+          git diff --exit-code -- brand-kit/05_type/measurements.json \
+                                  brand-kit/05_type/RECOMMENDATION.md
 
   # 3. The brand itself, on everything that ships.
   review:

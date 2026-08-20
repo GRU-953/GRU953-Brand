@@ -7,6 +7,8 @@
       "key": "sora",
       "family": "Sora",
       "incumbent": true,
+      "role": null,
+      "role_source": null,
       "file": "candidates/sora/Sora_wght.ttf",
       "units_per_em": 1000,
       "x_height": 534,
@@ -88,7 +90,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Sora",
       "category": "latin"
@@ -97,6 +99,8 @@
       "key": "inter",
       "family": "Inter",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/inter/Inter_opsz-wght.ttf",
       "units_per_em": 2048,
       "x_height": 1118,
@@ -205,7 +209,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Inter",
       "category": "latin"
@@ -214,6 +218,8 @@
       "key": "instrumentsans",
       "family": "Instrument Sans",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/instrumentsans/InstrumentSans_wdth-wght.ttf",
       "units_per_em": 1000,
       "x_height": 510,
@@ -287,7 +293,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Instrument Sans",
       "category": "latin"
@@ -296,6 +302,8 @@
       "key": "publicsans",
       "family": "Public Sans",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/publicsans/PublicSans_wght.ttf",
       "units_per_em": 2000,
       "x_height": 1034,
@@ -389,7 +397,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Public Sans Thin",
       "category": "latin"
@@ -398,6 +406,8 @@
       "key": "ibmplexsans",
       "family": "IBM Plex Sans",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/ibmplexsans/IBMPlexSans_wdth-wght.ttf",
       "units_per_em": 1000,
       "x_height": 516,
@@ -492,7 +502,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "IBM Plex Sans",
       "category": "latin"
@@ -501,6 +511,8 @@
       "key": "manrope",
       "family": "Manrope",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/manrope/Manrope_wght.ttf",
       "units_per_em": 2000,
       "x_height": 1080,
@@ -582,7 +594,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Manrope ExtraLight",
       "category": "latin"
@@ -591,6 +603,8 @@
       "key": "figtree",
       "family": "Figtree",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/figtree/Figtree_wght.ttf",
       "units_per_em": 1000,
       "x_height": 500,
@@ -672,7 +686,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Figtree Light",
       "category": "latin"
@@ -681,6 +695,8 @@
       "key": "plusjakartasans",
       "family": "Plus Jakarta Sans",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/plusjakartasans/PlusJakartaSans_wght.ttf",
       "units_per_em": 1000,
       "x_height": 536,
@@ -762,7 +778,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Plus Jakarta Sans",
       "category": "latin"
@@ -771,6 +787,8 @@
       "key": "worksans",
       "family": "Work Sans",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/worksans/WorkSans_wght.ttf",
       "units_per_em": 1000,
       "x_height": 500,
@@ -864,7 +882,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Work Sans",
       "category": "latin"
@@ -873,6 +891,8 @@
       "key": "archivo",
       "family": "Archivo",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/archivo/Archivo_wdth-wght.ttf",
       "units_per_em": 1000,
       "x_height": 526,
@@ -981,7 +1001,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Archivo SemiBold",
       "category": "latin"
@@ -990,6 +1010,8 @@
       "key": "schibstedgrotesk",
       "family": "Schibsted Grotesk",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/schibstedgrotesk/SchibstedGrotesk_wght.ttf",
       "units_per_em": 2048,
       "x_height": 1080,
@@ -1065,7 +1087,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Schibsted Grotesk",
       "category": "latin"
@@ -1074,6 +1096,8 @@
       "key": "onest",
       "family": "Onest",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/onest/Onest_wght.ttf",
       "units_per_em": 1000,
       "x_height": 527,
@@ -1167,7 +1191,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Onest",
       "category": "latin"
@@ -1176,6 +1200,8 @@
       "key": "spacegrotesk",
       "family": "Space Grotesk",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/spacegrotesk/SpaceGrotesk_wght.ttf",
       "units_per_em": 1000,
       "x_height": 486,
@@ -1239,7 +1265,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Space Grotesk Light",
       "category": "latin"
@@ -1248,6 +1274,8 @@
       "key": "bricolagegrotesque",
       "family": "Bricolage Grotesque",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/bricolagegrotesque/BricolageGrotesque_opsz-wdth-wght.ttf",
       "units_per_em": 1000,
       "x_height": 528,
@@ -1355,7 +1383,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Bricolage Grotesque 96pt ExtraBold",
       "category": "latin"
@@ -1364,6 +1392,8 @@
       "key": "geist",
       "family": "Geist",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/geist/Geist_wght.ttf",
       "units_per_em": 1000,
       "x_height": 530,
@@ -1457,7 +1487,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Geist",
       "category": "latin"
@@ -1466,6 +1496,8 @@
       "key": "notosansbengali",
       "family": "Noto Sans Bengali",
       "incumbent": true,
+      "role": "body",
+      "role_source": "GRU953 BRAND-SPEC.md: the incumbent body face",
       "file": "candidates/notosansbengali/NotoSansBengali_wdth-wght.ttf",
       "units_per_em": 1000,
       "x_height": 536,
@@ -1574,7 +1606,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "87/116",
+      "bengali_sample_coverage": "87/87",
       "bengali_shaping_features_present": [
         "abvs",
         "akhn",
@@ -1594,6 +1626,8 @@
       "key": "notoserifbengali",
       "family": "Noto Serif Bengali",
       "incumbent": false,
+      "role": "body",
+      "role_source": "Google Fonts METADATA.pb category: SERIF -- a text serif, the same purpose as its Latin counterpart",
       "file": "candidates/notoserifbengali/NotoSerifBengali_wdth-wght.ttf",
       "units_per_em": 1000,
       "x_height": 536,
@@ -1702,7 +1736,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "87/116",
+      "bengali_sample_coverage": "87/87",
       "bengali_shaping_features_present": [
         "abvs",
         "akhn",
@@ -1721,6 +1755,8 @@
       "key": "anekbangla",
       "family": "Anek Bangla",
       "incumbent": true,
+      "role": "display",
+      "role_source": "GRU953 BRAND-SPEC.md: 'for large Bangla headings where Noto Sans Bengali Bold feels too even' -- a GRU953 house decision, NOT Google's own classification (Google's METADATA.pb actually lists Anek Bangla as category SANS_SERIF, checked 20 Aug 2026)",
       "file": "candidates/anekbangla/AnekBangla_wdth-wght.ttf",
       "units_per_em": 2000,
       "x_height": 978,
@@ -1822,7 +1858,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "84/116",
+      "bengali_sample_coverage": "84/87",
       "bengali_shaping_features_present": [
         "abvs",
         "akhn",
@@ -1843,6 +1879,8 @@
       "key": "tirobangla",
       "family": "Tiro Bangla",
       "incumbent": false,
+      "role": "body",
+      "role_source": "Google Fonts description, verbatim: 'especially suited to traditional literary publishing' -- a book/body text serif",
       "file": "candidates/tirobangla/TiroBangla-Regular.ttf",
       "units_per_em": 1000,
       "x_height": 475,
@@ -1874,7 +1912,7 @@
       "variable_axes": [],
       "named_instances": [],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "87/116",
+      "bengali_sample_coverage": "87/87",
       "bengali_shaping_features_present": [
         "abvs",
         "akhn",
@@ -1894,6 +1932,8 @@
       "key": "hindsiliguri",
       "family": "Hind Siliguri",
       "incumbent": false,
+      "role": "body",
+      "role_source": "Google Fonts description, verbatim: 'Developed explicitly for use in User Interface design'",
       "file": "candidates/hindsiliguri/HindSiliguri-Regular.ttf",
       "units_per_em": 1000,
       "x_height": 505,
@@ -1925,7 +1965,7 @@
       "variable_axes": [],
       "named_instances": [],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "86/116",
+      "bengali_sample_coverage": "86/87",
       "bengali_shaping_features_present": [
         "akhn",
         "blwf",
@@ -1941,6 +1981,8 @@
       "key": "balooda2",
       "family": "Baloo Da 2",
       "incumbent": false,
+      "role": "display",
+      "role_source": "Google Fonts METADATA.pb category: DISPLAY",
       "file": "candidates/balooda2/BalooDa2_wght.ttf",
       "units_per_em": 1000,
       "x_height": 460,
@@ -2010,7 +2052,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "83/116",
+      "bengali_sample_coverage": "83/87",
       "bengali_shaping_features_present": [
         "abvs",
         "akhn",
@@ -2031,6 +2073,8 @@
       "key": "galada",
       "family": "Galada",
       "incumbent": false,
+      "role": "display",
+      "role_source": "Google Fonts METADATA.pb category: DISPLAY (a calligraphic Bengali script face)",
       "file": "candidates/galada/Galada-Regular.ttf",
       "units_per_em": 1000,
       "x_height": 500,
@@ -2062,7 +2106,7 @@
       "variable_axes": [],
       "named_instances": [],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "86/116",
+      "bengali_sample_coverage": "86/87",
       "bengali_shaping_features_present": [
         "akhn",
         "blwf",
@@ -2079,6 +2123,8 @@
       "key": "mina",
       "family": "Mina",
       "incumbent": false,
+      "role": "dual",
+      "role_source": "Google Fonts description, verbatim: 'works well as a display typeface, but is also designed to perform at small to intermediate text sizes' -- the source itself claims both, so this file scores it in both tables rather than forcing a single bucket",
       "file": "candidates/mina/Mina-Regular.ttf",
       "units_per_em": 1000,
       "x_height": null,
@@ -2110,7 +2156,7 @@
       "variable_axes": [],
       "named_instances": [],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "86/116",
+      "bengali_sample_coverage": "86/87",
       "bengali_shaping_features_present": [
         "abvs",
         "akhn",
@@ -2130,6 +2176,8 @@
       "key": "jetbrainsmono",
       "family": "JetBrains Mono",
       "incumbent": true,
+      "role": null,
+      "role_source": null,
       "file": "candidates/jetbrainsmono/JetBrainsMono_wght.ttf",
       "units_per_em": 1000,
       "x_height": 550,
@@ -2211,7 +2259,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "JetBrains Mono",
       "category": "mono"
@@ -2220,6 +2268,8 @@
       "key": "ibmplexmono",
       "family": "IBM Plex Mono",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/ibmplexmono/IBMPlexMono-Regular.ttf",
       "units_per_em": 1000,
       "x_height": 516,
@@ -2251,7 +2301,7 @@
       "variable_axes": [],
       "named_instances": [],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "IBM Plex Mono",
       "category": "mono"
@@ -2260,6 +2310,8 @@
       "key": "sourcecodepro",
       "family": "Source Code Pro",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/sourcecodepro/SourceCodePro_wght.ttf",
       "units_per_em": 1000,
       "x_height": 478,
@@ -2347,7 +2399,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Source Code Pro ExtraLight",
       "category": "mono"
@@ -2356,6 +2408,8 @@
       "key": "geistmono",
       "family": "Geist Mono",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/geistmono/GeistMono_wght.ttf",
       "units_per_em": 1000,
       "x_height": 530,
@@ -2449,7 +2503,7 @@
         }
       ],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Geist Mono",
       "category": "mono"
@@ -2458,6 +2512,8 @@
       "key": "spacemono",
       "family": "Space Mono",
       "incumbent": false,
+      "role": null,
+      "role_source": null,
       "file": "candidates/spacemono/SpaceMono-Regular.ttf",
       "units_per_em": 1000,
       "x_height": 496,
@@ -2489,7 +2545,7 @@
       "variable_axes": [],
       "named_instances": [],
       "latin_basic_coverage": "95/95",
-      "bengali_sample_coverage": "0/116",
+      "bengali_sample_coverage": "0/87",
       "bengali_shaping_features_present": [],
       "family_name_in_font": "Space Mono",
       "category": "mono"
