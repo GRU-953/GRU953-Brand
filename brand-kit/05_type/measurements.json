@@ -1,0 +1,2499 @@
+{
+  "$note": "File-based measurements only -- from the actual .ttf bytes via fontTools, never a marketing page. The RENDERED half (real ink extents, the Latin-to-Bangla apparent-size multiplier) is a separate pass. Regenerate: python3 brand-kit/05_type/measure_candidates.py",
+  "measured_count": 28,
+  "could_not_measure_count": 0,
+  "measurements": [
+    {
+      "key": "sora",
+      "family": "Sora",
+      "incumbent": true,
+      "file": "candidates/sora/Sora_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 534,
+      "cap_height": 730,
+      "x_height_over_em": 0.534,
+      "cap_height_over_em": 0.73,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 970,
+          "descender": -290,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 970,
+          "descender": -290,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1220,
+          "descent": 320
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.26,
+        1.26,
+        1.54
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 800.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Sora",
+      "category": "latin"
+    },
+    {
+      "key": "inter",
+      "family": "Inter",
+      "incumbent": false,
+      "file": "candidates/inter/Inter_opsz-wght.ttf",
+      "units_per_em": 2048,
+      "x_height": 1118,
+      "cap_height": 1490,
+      "x_height_over_em": 0.5459,
+      "cap_height_over_em": 0.7275,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1984,
+          "descender": -494,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1984,
+          "descender": -494,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 2269,
+          "descent": 660
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.21,
+        1.21,
+        1.4302
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "opsz",
+          "min": 14.0,
+          "default": 14.0,
+          "max": 32.0
+        },
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Inter",
+      "category": "latin"
+    },
+    {
+      "key": "instrumentsans",
+      "family": "Instrument Sans",
+      "incumbent": false,
+      "file": "candidates/instrumentsans/InstrumentSans_wdth-wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 510,
+      "cap_height": 720,
+      "x_height_over_em": 0.51,
+      "cap_height_over_em": 0.72,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 970,
+          "descender": -250,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 970,
+          "descender": -250,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 986,
+          "descent": 350
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.22,
+        1.22,
+        1.336
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wdth",
+          "min": 75.0,
+          "default": 100.0,
+          "max": 100.0
+        },
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 700.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Regular",
+          "coords": {
+            "wdth": 100.0,
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wdth": 100.0,
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wdth": 100.0,
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wdth": 100.0,
+            "wght": 700.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Instrument Sans",
+      "category": "latin"
+    },
+    {
+      "key": "publicsans",
+      "family": "Public Sans",
+      "incumbent": false,
+      "file": "candidates/publicsans/PublicSans_wght.ttf",
+      "units_per_em": 2000,
+      "x_height": 1034,
+      "cap_height": 1446,
+      "x_height_over_em": 0.517,
+      "cap_height_over_em": 0.723,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1900,
+          "descender": -450,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1900,
+          "descender": -450,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 2315,
+          "descent": 495
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.175,
+        1.175,
+        1.405
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 100.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Public Sans Thin",
+      "category": "latin"
+    },
+    {
+      "key": "ibmplexsans",
+      "family": "IBM Plex Sans",
+      "incumbent": false,
+      "file": "candidates/ibmplexsans/IBMPlexSans_wdth-wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 516,
+      "cap_height": 698,
+      "x_height_over_em": 0.516,
+      "cap_height_over_em": 0.698,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1025,
+          "descender": -275,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1025,
+          "descender": -275,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1120,
+          "descent": 275
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.3,
+        1.3,
+        1.395
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 700.0
+        },
+        {
+          "tag": "wdth",
+          "min": 75.0,
+          "default": 100.0,
+          "max": 100.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0,
+            "wdth": 100.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "IBM Plex Sans",
+      "category": "latin"
+    },
+    {
+      "key": "manrope",
+      "family": "Manrope",
+      "incumbent": false,
+      "file": "candidates/manrope/Manrope_wght.ttf",
+      "units_per_em": 2000,
+      "x_height": 1080,
+      "cap_height": 1440,
+      "x_height_over_em": 0.54,
+      "cap_height_over_em": 0.72,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 2132,
+          "descender": -600,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 2132,
+          "descender": -600,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 2132,
+          "descent": 600
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.366,
+        1.366,
+        1.366
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 200.0,
+          "max": 800.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Manrope ExtraLight",
+      "category": "latin"
+    },
+    {
+      "key": "figtree",
+      "family": "Figtree",
+      "incumbent": false,
+      "file": "candidates/figtree/Figtree_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 500,
+      "cap_height": 700,
+      "x_height_over_em": 0.5,
+      "cap_height_over_em": 0.7,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 950,
+          "descender": -250,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 950,
+          "descender": -250,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 979,
+          "descent": 222
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.2,
+        1.2,
+        1.201
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 300.0,
+          "default": 300.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Figtree Light",
+      "category": "latin"
+    },
+    {
+      "key": "plusjakartasans",
+      "family": "Plus Jakarta Sans",
+      "incumbent": false,
+      "file": "candidates/plusjakartasans/PlusJakartaSans_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 536,
+      "cap_height": 745,
+      "x_height_over_em": 0.536,
+      "cap_height_over_em": 0.745,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1038,
+          "descender": -222,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1038,
+          "descender": -222,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1296,
+          "descent": 356
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.26,
+        1.26,
+        1.652
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 400.0,
+          "max": 800.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Plus Jakarta Sans",
+      "category": "latin"
+    },
+    {
+      "key": "worksans",
+      "family": "Work Sans",
+      "incumbent": false,
+      "file": "candidates/worksans/WorkSans_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 500,
+      "cap_height": 660,
+      "x_height_over_em": 0.5,
+      "cap_height_over_em": 0.66,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 930,
+          "descender": -243,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 930,
+          "descender": -243,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1105,
+          "descent": 343
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.173,
+        1.173,
+        1.448
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Work Sans",
+      "category": "latin"
+    },
+    {
+      "key": "archivo",
+      "family": "Archivo",
+      "incumbent": false,
+      "file": "candidates/archivo/Archivo_wdth-wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 526,
+      "cap_height": 686,
+      "x_height_over_em": 0.526,
+      "cap_height_over_em": 0.686,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 878,
+          "descender": -210,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 878,
+          "descender": -210,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1100,
+          "descent": 410
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.088,
+        1.088,
+        1.51
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 600.0,
+          "max": 900.0
+        },
+        {
+          "tag": "wdth",
+          "min": 62.0,
+          "default": 100.0,
+          "max": 125.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0,
+            "wdth": 100.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Archivo SemiBold",
+      "category": "latin"
+    },
+    {
+      "key": "schibstedgrotesk",
+      "family": "Schibsted Grotesk",
+      "incumbent": false,
+      "file": "candidates/schibstedgrotesk/SchibstedGrotesk_wght.ttf",
+      "units_per_em": 2048,
+      "x_height": 1080,
+      "cap_height": 1440,
+      "x_height_over_em": 0.5273,
+      "cap_height_over_em": 0.7031,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 2000,
+          "descender": -528,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 2000,
+          "descender": -528,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 2502,
+          "descent": 568
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.2344,
+        1.2344,
+        1.499
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Schibsted Grotesk",
+      "category": "latin"
+    },
+    {
+      "key": "onest",
+      "family": "Onest",
+      "incumbent": false,
+      "file": "candidates/onest/Onest_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 527,
+      "cap_height": 707,
+      "x_height_over_em": 0.527,
+      "cap_height_over_em": 0.707,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 970,
+          "descender": -305,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 970,
+          "descender": -305,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1212,
+          "descent": 334
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.275,
+        1.275,
+        1.546
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Onest",
+      "category": "latin"
+    },
+    {
+      "key": "spacegrotesk",
+      "family": "Space Grotesk",
+      "incumbent": false,
+      "file": "candidates/spacegrotesk/SpaceGrotesk_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 486,
+      "cap_height": 700,
+      "x_height_over_em": 0.486,
+      "cap_height_over_em": 0.7,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 984,
+          "descender": -292,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 984,
+          "descender": -292,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1150,
+          "descent": 292
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.276,
+        1.276,
+        1.442
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 300.0,
+          "default": 300.0,
+          "max": 700.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Space Grotesk Light",
+      "category": "latin"
+    },
+    {
+      "key": "bricolagegrotesque",
+      "family": "Bricolage Grotesque",
+      "incumbent": false,
+      "file": "candidates/bricolagegrotesque/BricolageGrotesque_opsz-wdth-wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 528,
+      "cap_height": 660,
+      "x_height_over_em": 0.528,
+      "cap_height_over_em": 0.66,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 930,
+          "descender": -270,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 930,
+          "descender": -270,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1160,
+          "descent": 400
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.2,
+        1.2,
+        1.56
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "opsz",
+          "min": 12.0,
+          "default": 96.0,
+          "max": 96.0
+        },
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 800.0,
+          "max": 800.0
+        },
+        {
+          "tag": "wdth",
+          "min": 75.0,
+          "default": 100.0,
+          "max": 100.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 200.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 300.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 400.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 500.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 600.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 700.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "opsz": 14.0,
+            "wght": 800.0,
+            "wdth": 100.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Bricolage Grotesque 96pt ExtraBold",
+      "category": "latin"
+    },
+    {
+      "key": "geist",
+      "family": "Geist",
+      "incumbent": false,
+      "file": "candidates/geist/Geist_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 530,
+      "cap_height": 710,
+      "x_height_over_em": 0.53,
+      "cap_height_over_em": 0.71,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1005,
+          "descender": -295,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1005,
+          "descender": -295,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1088,
+          "descent": 262
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.3,
+        1.3,
+        1.35
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Geist",
+      "category": "latin"
+    },
+    {
+      "key": "notosansbengali",
+      "family": "Noto Sans Bengali",
+      "incumbent": true,
+      "file": "candidates/notosansbengali/NotoSansBengali_wdth-wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 536,
+      "cap_height": 622,
+      "x_height_over_em": 0.536,
+      "cap_height_over_em": 0.622,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 917,
+          "descender": -408,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 917,
+          "descender": -408,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 995,
+          "descent": 408
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.325,
+        1.325,
+        1.403
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100.0,
+          "max": 100.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0,
+            "wdth": 100.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "87/116",
+      "bengali_shaping_features_present": [
+        "abvs",
+        "akhn",
+        "blwf",
+        "blws",
+        "half",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf",
+        "vatu"
+      ],
+      "family_name_in_font": "Noto Sans Bengali",
+      "category": "bengali"
+    },
+    {
+      "key": "notoserifbengali",
+      "family": "Noto Serif Bengali",
+      "incumbent": false,
+      "file": "candidates/notoserifbengali/NotoSerifBengali_wdth-wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 536,
+      "cap_height": 622,
+      "x_height_over_em": 0.536,
+      "cap_height_over_em": 0.622,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1092,
+          "descender": -502,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1092,
+          "descender": -502,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1213,
+          "descent": 502
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.594,
+        1.594,
+        1.715
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100.0,
+          "max": 100.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0,
+            "wdth": 100.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "87/116",
+      "bengali_shaping_features_present": [
+        "abvs",
+        "akhn",
+        "blwf",
+        "blws",
+        "haln",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf"
+      ],
+      "family_name_in_font": "Noto Serif Bengali",
+      "category": "bengali"
+    },
+    {
+      "key": "anekbangla",
+      "family": "Anek Bangla",
+      "incumbent": true,
+      "file": "candidates/anekbangla/AnekBangla_wdth-wght.ttf",
+      "units_per_em": 2000,
+      "x_height": 978,
+      "cap_height": 1278,
+      "x_height_over_em": 0.489,
+      "cap_height_over_em": 0.639,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 2500,
+          "descender": -1232,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 2500,
+          "descender": -1232,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 2659,
+          "descent": 1232
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.866,
+        1.866,
+        1.9455
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 500.0,
+          "max": 800.0
+        },
+        {
+          "tag": "wdth",
+          "min": 75.0,
+          "default": 100.0,
+          "max": 125.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0,
+            "wdth": 100.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0,
+            "wdth": 100.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "84/116",
+      "bengali_shaping_features_present": [
+        "abvs",
+        "akhn",
+        "blwf",
+        "blws",
+        "half",
+        "haln",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf",
+        "vatu"
+      ],
+      "family_name_in_font": "Anek Bangla Medium",
+      "category": "bengali"
+    },
+    {
+      "key": "tirobangla",
+      "family": "Tiro Bangla",
+      "incumbent": false,
+      "file": "candidates/tirobangla/TiroBangla-Regular.ttf",
+      "units_per_em": 1000,
+      "x_height": 475,
+      "cap_height": 699,
+      "x_height_over_em": 0.475,
+      "cap_height_over_em": 0.699,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 755,
+          "descender": -245,
+          "lineGap": 330
+        },
+        "os2_typo": {
+          "ascender": 755,
+          "descender": -245,
+          "lineGap": 330
+        },
+        "os2_win": {
+          "ascent": 1091,
+          "descent": 430
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.33,
+        1.33,
+        1.521
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [],
+      "named_instances": [],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "87/116",
+      "bengali_shaping_features_present": [
+        "abvs",
+        "akhn",
+        "blwf",
+        "blws",
+        "half",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf",
+        "vatu"
+      ],
+      "family_name_in_font": "Tiro Bangla",
+      "category": "bengali"
+    },
+    {
+      "key": "hindsiliguri",
+      "family": "Hind Siliguri",
+      "incumbent": false,
+      "file": "candidates/hindsiliguri/HindSiliguri-Regular.ttf",
+      "units_per_em": 1000,
+      "x_height": 505,
+      "cap_height": 679,
+      "x_height_over_em": 0.505,
+      "cap_height_over_em": 0.679,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1116,
+          "descender": -501,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1116,
+          "descender": -501,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1116,
+          "descent": 501
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.617,
+        1.617,
+        1.617
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [],
+      "named_instances": [],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "86/116",
+      "bengali_shaping_features_present": [
+        "akhn",
+        "blwf",
+        "half",
+        "pres",
+        "pstf",
+        "rphf"
+      ],
+      "family_name_in_font": "Hind Siliguri",
+      "category": "bengali"
+    },
+    {
+      "key": "balooda2",
+      "family": "Baloo Da 2",
+      "incumbent": false,
+      "file": "candidates/balooda2/BalooDa2_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 460,
+      "cap_height": 602,
+      "x_height_over_em": 0.46,
+      "cap_height_over_em": 0.602,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1095,
+          "descender": -589,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1095,
+          "descender": -589,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1095,
+          "descent": 589
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.684,
+        1.684,
+        1.684
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 800.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "83/116",
+      "bengali_shaping_features_present": [
+        "abvs",
+        "akhn",
+        "blwf",
+        "blws",
+        "half",
+        "haln",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf",
+        "vatu"
+      ],
+      "family_name_in_font": "Baloo Da 2",
+      "category": "bengali"
+    },
+    {
+      "key": "galada",
+      "family": "Galada",
+      "incumbent": false,
+      "file": "candidates/galada/Galada-Regular.ttf",
+      "units_per_em": 1000,
+      "x_height": 500,
+      "cap_height": 750,
+      "x_height_over_em": 0.5,
+      "cap_height_over_em": 0.75,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1035,
+          "descender": -592,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1035,
+          "descender": -592,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1035,
+          "descent": 592
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.627,
+        1.627,
+        1.627
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [],
+      "named_instances": [],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "86/116",
+      "bengali_shaping_features_present": [
+        "akhn",
+        "blwf",
+        "half",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf"
+      ],
+      "family_name_in_font": "Galada",
+      "category": "bengali"
+    },
+    {
+      "key": "mina",
+      "family": "Mina",
+      "incumbent": false,
+      "file": "candidates/mina/Mina-Regular.ttf",
+      "units_per_em": 1000,
+      "x_height": null,
+      "cap_height": null,
+      "x_height_over_em": null,
+      "cap_height_over_em": null,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1075,
+          "descender": -515,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1075,
+          "descender": -515,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1075,
+          "descent": 539
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.59,
+        1.59,
+        1.614
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [],
+      "named_instances": [],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "86/116",
+      "bengali_shaping_features_present": [
+        "abvs",
+        "akhn",
+        "blwf",
+        "blws",
+        "half",
+        "pres",
+        "pstf",
+        "psts",
+        "rphf",
+        "vatu"
+      ],
+      "family_name_in_font": "Mina",
+      "category": "bengali"
+    },
+    {
+      "key": "jetbrainsmono",
+      "family": "JetBrains Mono",
+      "incumbent": true,
+      "file": "candidates/jetbrainsmono/JetBrainsMono_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 550,
+      "cap_height": 730,
+      "x_height_over_em": 0.55,
+      "cap_height_over_em": 0.73,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1020,
+          "descender": -300,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1020,
+          "descender": -300,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1020,
+          "descent": 300
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.32,
+        1.32,
+        1.32
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 800.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "JetBrains Mono",
+      "category": "mono"
+    },
+    {
+      "key": "ibmplexmono",
+      "family": "IBM Plex Mono",
+      "incumbent": false,
+      "file": "candidates/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "units_per_em": 1000,
+      "x_height": 516,
+      "cap_height": 698,
+      "x_height_over_em": 0.516,
+      "cap_height_over_em": 0.698,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1025,
+          "descender": -275,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1025,
+          "descender": -275,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1025,
+          "descent": 275
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [],
+      "named_instances": [],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "IBM Plex Mono",
+      "category": "mono"
+    },
+    {
+      "key": "sourcecodepro",
+      "family": "Source Code Pro",
+      "incumbent": false,
+      "file": "candidates/sourcecodepro/SourceCodePro_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 478,
+      "cap_height": 660,
+      "x_height_over_em": 0.478,
+      "cap_height_over_em": 0.66,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 984,
+          "descender": -273,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 984,
+          "descender": -273,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1060,
+          "descent": 454
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.257,
+        1.257,
+        1.514
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 200.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Source Code Pro ExtraLight",
+      "category": "mono"
+    },
+    {
+      "key": "geistmono",
+      "family": "Geist Mono",
+      "incumbent": false,
+      "file": "candidates/geistmono/GeistMono_wght.ttf",
+      "units_per_em": 1000,
+      "x_height": 530,
+      "cap_height": 710,
+      "x_height_over_em": 0.53,
+      "cap_height_over_em": 0.71,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1005,
+          "descender": -295,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1005,
+          "descender": -295,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1088,
+          "descent": 394
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.3,
+        1.3,
+        1.482
+      ],
+      "metric_sources_agree_within_2pct": false,
+      "variable_axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "named_instances": [
+        {
+          "name": "Thin",
+          "coords": {
+            "wght": 100.0
+          }
+        },
+        {
+          "name": "ExtraLight",
+          "coords": {
+            "wght": 200.0
+          }
+        },
+        {
+          "name": "Light",
+          "coords": {
+            "wght": 300.0
+          }
+        },
+        {
+          "name": "Regular",
+          "coords": {
+            "wght": 400.0
+          }
+        },
+        {
+          "name": "Medium",
+          "coords": {
+            "wght": 500.0
+          }
+        },
+        {
+          "name": "SemiBold",
+          "coords": {
+            "wght": 600.0
+          }
+        },
+        {
+          "name": "Bold",
+          "coords": {
+            "wght": 700.0
+          }
+        },
+        {
+          "name": "ExtraBold",
+          "coords": {
+            "wght": 800.0
+          }
+        },
+        {
+          "name": "Black",
+          "coords": {
+            "wght": 900.0
+          }
+        }
+      ],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Geist Mono",
+      "category": "mono"
+    },
+    {
+      "key": "spacemono",
+      "family": "Space Mono",
+      "incumbent": false,
+      "file": "candidates/spacemono/SpaceMono-Regular.ttf",
+      "units_per_em": 1000,
+      "x_height": 496,
+      "cap_height": 700,
+      "x_height_over_em": 0.496,
+      "cap_height_over_em": 0.7,
+      "metric_sources": {
+        "hhea": {
+          "ascender": 1120,
+          "descender": -361,
+          "lineGap": 0
+        },
+        "os2_typo": {
+          "ascender": 1120,
+          "descender": -361,
+          "lineGap": 0
+        },
+        "os2_win": {
+          "ascent": 1120,
+          "descent": 361
+        }
+      },
+      "line_heights_normalised_by_source": [
+        1.481,
+        1.481,
+        1.481
+      ],
+      "metric_sources_agree_within_2pct": true,
+      "variable_axes": [],
+      "named_instances": [],
+      "latin_basic_coverage": "95/95",
+      "bengali_sample_coverage": "0/116",
+      "bengali_shaping_features_present": [],
+      "family_name_in_font": "Space Mono",
+      "category": "mono"
+    }
+  ],
+  "could_not_measure": []
+}
