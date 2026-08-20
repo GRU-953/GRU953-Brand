@@ -15,12 +15,28 @@ Below 24px the bare mark's strokes thin out, so the TILE is used instead: the sa
 Daybreak on a Meridian square. The tile's block of colour carries recognition at sizes where
 a line drawing cannot.
 
-Run:  python3 03_logo/marks.py
+THIS IS THE PRE-REBUILD MARK, NOT THE FINAL ONE. The confirmed rebuild plan (kept outside
+this repo, in the owner's own planning notes -- not referenced by path here, since a path
+useful on one machine is meaningless on a clone) keeps the Soaring Bird concept but rebuilds
+its geometry on a stated construction grid so it works natively at a 16px floor, with the
+owner's own drawing as the reference rather than the shipped file (see
+check_rebuild_fidelity.py, the fidelity harness that rebuild will be measured against). Until
+that rebuild replaces it, this file keeps the current 24px-floor, ship-the-original-verbatim
+approach working and honest.
+
+Run:
+    PLAYWRIGHT_BROWSERS_PATH="$(pwd)/00_sandbox/browsers" ./.venv/bin/python \
+        brand-kit/03_logo/marks.py
 """
-import pathlib, re, subprocess
-from svgpathtools import parse_path
-import numpy as np
+import io
+import json
+import pathlib
+import re
+import subprocess
+import sys
+
 from PIL import Image
+from playwright.sync_api import sync_playwright
 
 HERE = pathlib.Path(__file__).resolve().parent
 # Resolved from THIS FILE, not typed. An absolute path baked in here worked on exactly
@@ -28,7 +44,32 @@ HERE = pathlib.Path(__file__).resolve().parent
 # repository fail at the first svgo call.
 SANDBOX = str(pathlib.Path(__file__).resolve().parent.parent / "00_sandbox")
 TILE_INSET = 0.19          # the bird's ink occupies the middle 62% of the tile
-TILE_RADIUS = 0.2246       # the squircle iOS and Android both expect
+# A GRU953 house choice, NOT a platform requirement. Verified 20 August 2026 against
+# Apple's own current app-icon guidance: it states no corner radius, no percentage, no
+# squircle value anywhere -- the mask is designed to "precisely match... the bezel of
+# the physical device itself", so no fixed percentage can be right for Apple's own
+# masked platforms. This file's own earlier version claimed the opposite ("the squircle
+# corner radius iOS and Android both expect") in both a code comment and this SVG's own
+# screen-reader-audible <desc> -- a false claim a screen reader was, until this fix,
+# announcing as fact. Android's adaptive-icon system masks every launcher icon itself
+# regardless of this value, so in practice this radius only ever matters on platforms
+# that do not mask the icon at all (the bare web/README/social use of this same file).
+TILE_RADIUS = 0.2246
+
+
+def preflight_chromium():
+    """See measure_original.py's own preflight_chromium for the reasoning -- a
+    missing browser install must exit 2 (not equipped), never crash into exit 1
+    (a real failure) or silently pass."""
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            browser.close()
+    except Exception as e:
+        print(f"NOT EQUIPPED: Chromium did not launch ({e}). Run: "
+              f"sh 00_sandbox/setup.sh (with PLAYWRIGHT_BROWSERS_PATH set to "
+              f"$(pwd)/00_sandbox/browsers) and re-run this script.")
+        sys.exit(2)
 
 
 def optimise(p):
@@ -49,7 +90,7 @@ def optimise(p):
     if r.returncode != 0 or len(out) < 200 or b"<svg" not in out:
         p.write_bytes(before)
         print(f"  ! svgo did not optimise {p.name}: "
-              f"{(r.stderr or r.stdout).strip().splitlines()[:1]} \u2014 kept the original")
+              f"{(r.stderr or r.stdout).strip().splitlines()[:1]} — kept the original")
 
 
 def bird_path():
@@ -64,6 +105,27 @@ def bird_path():
     src = (HERE / "original/GRU953-logo-master.svg").read_text()
     d = re.search(r'\sd="([^"]+)"', src).group(1)
     return re.sub(r"\s+", " ", d.replace("&#xA;", " ").replace("&#x9;", " ")).strip()
+
+
+def inked_bbox():
+    """The bird's own inked bounding box, in artboard units.
+
+    Read from original-measurements.json (measure_original.py) rather than computed here
+    a second way: that figure comes from real rendered pixels, cross-checked at 1x and 4x
+    render scale, which is a MORE faithful answer to "where is the ink" than an analytic
+    bounding box over Bezier control points -- a control-point box can be looser than the
+    curve's own true extent. Requires measure_original.py to have been run first; fails
+    loudly rather than silently computing a second, less-verified number if it hasn't.
+    """
+    path = HERE / "original-measurements.json"
+    if not path.exists():
+        print(f"FAIL: {path.name} does not exist. Run measure_original.py first -- "
+              f"this file reads the inked bounding box from its output rather than "
+              f"recomputing a second, less-verified version of the same figure.")
+        sys.exit(1)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    b = data["measurements_by_render_scale"][0]["inked_bbox_artboard_units"]
+    return b["x"], b["y"], b["x"] + b["width"], b["y"] + b["height"]
 
 
 D = bird_path()
@@ -84,7 +146,7 @@ S = 1024.0
 # Fit and centre the bird's INKED bounding box, not its viewBox. The master drawing carries
 # its own padding and is wider than it is tall, so scaling the viewBox left the bird small
 # and sitting off-centre inside the tile. Measure the ink, fit that.
-_x0, _x1, _y0, _y1 = parse_path(D).bbox()
+_x0, _y0, _x1, _y1 = inked_bbox()
 _bw, _bh = _x1 - _x0, _y1 - _y0
 _box = S * (1 - 2 * TILE_INSET)
 _sc = _box / max(_bw, _bh)
@@ -93,9 +155,10 @@ TILE = (
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" '
     'height="1024" role="img" aria-labelledby="at ad">'
     '<title id="at">GRU953 app icon</title>'
-    '<desc id="ad">The GRU953 Soaring Bird in Daybreak on a Meridian tile, at the squircle '
-    'corner radius iOS and Android expect. Used wherever the bare mark would be smaller than '
-    '24px.</desc>'
+    '<desc id="ad">The GRU953 Soaring Bird in Daybreak on a Meridian tile, on a rounded '
+    'square (a GRU953 house choice, not a platform requirement -- neither Apple nor '
+    'Android publishes a fixed app-icon corner radius). Used wherever the bare mark '
+    'would be smaller than 24px.</desc>'
     f'<rect width="1024" height="1024" rx="{S * TILE_RADIUS:.1f}" fill="#1A1753"/>'
     f'<g transform="translate({_tx:.2f} {_ty:.2f}) scale({_sc:.6f})" '
     f'color="#FFAB8E"><path fill="currentColor" fill-rule="nonzero" d="{D}"/></g></svg>')
@@ -123,7 +186,35 @@ print(f"GRU953-appicon.svg   {tp.stat().st_size:7,} bytes")
 # and what survives is exactly the set of interior counters. Their COUNT is compared with
 # the count at a large size, where they are certainly all open. If any counter has silted
 # up, the count drops, and the file is not written.
-def enclosed_mask(px):
+#
+# Rendered through Chromium (Playwright), the same renderer every other measurement in this
+# kit uses -- not rsvg-convert, which this file called until this fix and which is not
+# installed anywhere in this project's own sandbox (Phase 1 of the rebuild replaced it with
+# Chromium everywhere else; this was the one place that substitution had not yet reached).
+# Pure Python throughout, no numpy: the same flood-fill and connected-component technique
+# already proven in measure_original.py's enclosed_mask()/find_counters(), applied here to
+# the SHIPPED bird at several small sizes instead of the ORIGINAL drawing at one large size.
+def render_ink_mask(svg_text: str, px: int) -> list:
+    html = f"""<!doctype html><html><head><style>
+      html, body {{ margin: 0; padding: 0; background: #fff; }}
+      svg {{ display: block; width: {px}px; height: {px}px; }}
+    </style></head><body>{svg_text}</body></html>"""
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": px, "height": px})
+        page.set_content(html)
+        page.wait_for_timeout(50)
+        png_bytes = page.screenshot()
+        browser.close()
+    img = Image.open(io.BytesIO(png_bytes)).convert("L")
+    assert img.size == (px, px), f"expected {px}x{px}, got {img.size}"
+    data = img.load()
+    # ink is black; anything light (>170) is background -- same threshold this file's
+    # numpy version used, kept identical so the size-gate's own pass/fail is unaffected.
+    return [[data[x, y] <= 170 for x in range(px)] for y in range(px)]
+
+
+def enclosed_mask(px: int) -> list:
     """Rasterise the mark at `px` and return the mask of white pixels ENCLOSED by ink.
 
     White that can be reached from the border is outside the drawing; what cannot be
@@ -131,28 +222,24 @@ def enclosed_mask(px):
     holes in the wing still holes?" — rather than the question a whole-canvas pixel count
     actually answers, which is "is there a lot of empty space around the drawing?"
     """
-    src = pathlib.Path(f"/tmp/mark{px}.svg")
-    src.write_text(mp.read_text().replace("currentColor", "#000"))
-    subprocess.run(["rsvg-convert", "-w", str(px), "-b", "white", str(src),
-                    "-o", f"/tmp/mark{px}.png"], check=True)
-    a = np.array(Image.open(f"/tmp/mark{px}.png").convert("L"))
-    white = a > 170                       # ink is black; anything light is background
-    h, w = white.shape
-    outside = np.zeros_like(white)
-    stack = ([(0, x) for x in range(w) if white[0, x]]
-             + [(h - 1, x) for x in range(w) if white[h - 1, x]]
-             + [(y, 0) for y in range(h) if white[y, 0]]
-             + [(y, w - 1) for y in range(h) if white[y, w - 1]])
+    is_ink = render_ink_mask(mp.read_text().replace("currentColor", "#000"), px)
+    is_white = [[not v for v in row] for row in is_ink]
+    h, w = len(is_white), len(is_white[0])
+    outside = [[False] * w for _ in range(h)]
+    stack = ([(0, x) for x in range(w) if is_white[0][x]]
+             + [(h - 1, x) for x in range(w) if is_white[h - 1][x]]
+             + [(y, 0) for y in range(h) if is_white[y][0]]
+             + [(y, w - 1) for y in range(h) if is_white[y][w - 1]])
     while stack:
         y, x = stack.pop()
-        if outside[y, x] or not white[y, x]:
+        if outside[y][x] or not is_white[y][x]:
             continue
-        outside[y, x] = True
+        outside[y][x] = True
         if y: stack.append((y - 1, x))
         if x: stack.append((y, x - 1))
         if y < h - 1: stack.append((y + 1, x))
         if x < w - 1: stack.append((y, x + 1))
-    return white & ~outside
+    return [[is_white[y][x] and not outside[y][x] for x in range(w)] for y in range(h)]
 
 
 def reference_counters(px=512, min_area=40):
@@ -164,18 +251,18 @@ def reference_counters(px=512, min_area=40):
     mark degrades.
     """
     m = enclosed_mask(px)
-    h, w = m.shape
-    seen = np.zeros_like(m)
+    h, w = len(m), len(m[0])
+    seen = [[False] * w for _ in range(h)]
     out = []
     for y in range(h):
         for x in range(w):
-            if m[y, x] and not seen[y, x]:
+            if m[y][x] and not seen[y][x]:
                 pts, st = [], [(y, x)]
                 while st:
                     cy, cx = st.pop()
-                    if seen[cy, cx] or not m[cy, cx]:
+                    if seen[cy][cx] or not m[cy][cx]:
                         continue
-                    seen[cy, cx] = True
+                    seen[cy][cx] = True
                     pts.append((cy, cx))
                     for ny, nx in ((cy - 1, cx), (cy + 1, cx), (cy, cx - 1), (cy, cx + 1)):
                         if 0 <= ny < h and 0 <= nx < w:
@@ -195,28 +282,37 @@ def counters_surviving(px, refs):
     has no enclosed white anywhere near its centre.
     """
     m = enclosed_mask(px)
-    h, w = m.shape
+    h, w = len(m), len(m[0])
     alive = 0
     for fy, fx in refs:
         y, x = min(h - 1, int(round(fy * h))), min(w - 1, int(round(fx * w)))
-        if any(m[min(h - 1, max(0, y + dy)), min(w - 1, max(0, x + dx))]
+        if any(m[min(h - 1, max(0, y + dy))][min(w - 1, max(0, x + dx))]
                for dy in (-1, 0, 1) for dx in (-1, 0, 1)):
             alive += 1
     return alive
 
 
-REFS = reference_counters()
-print(f"  the mark has {len(REFS)} interior counters, measured at 512px")
-survive = {}
-for px in (32, 24, 20, 16):
-    survive[px] = counters_surviving(px, REFS)
-    print(f"  at {px}px: {survive[px]} of {len(REFS)} still open"
-          + ("   <- the documented floor" if px == 24 else ""))
+def main():
+    preflight_chromium()
 
-FLOOR = 24
-if survive[FLOOR] < len(REFS):
-    raise SystemExit(
-        f"FAIL \u2014 only {survive[FLOOR]} of the mark's {len(REFS)} interior counters "
-        f"survive at {FLOOR}px, the documented floor. The wing has silted up. Do not ship.")
-print(f"PASS \u2014 all {len(REFS)} interior counters are still open at the "
-      f"documented {FLOOR}px floor.")
+    refs = reference_counters()
+    print(f"  the mark has {len(refs)} interior counters, measured at 512px")
+    survive = {}
+    for px in (32, 24, 20, 16):
+        survive[px] = counters_surviving(px, refs)
+        print(f"  at {px}px: {survive[px]} of {len(refs)} still open"
+              + ("   <- the documented floor" if px == 24 else ""))
+
+    floor = 24
+    if survive[floor] < len(refs):
+        print(f"FAIL — only {survive[floor]} of the mark's {len(refs)} interior "
+              f"counters survive at {floor}px, the documented floor. The wing has "
+              f"silted up. Do not ship.")
+        return 1
+    print(f"PASS — all {len(refs)} interior counters are still open at the "
+          f"documented {floor}px floor.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
