@@ -1,0 +1,26 @@
+{
+  "key": "d2-near-black-one-signature",
+  "name": "One signature, bought with a near-black ground",
+  "name_bn": "একটি রং, প্রায়-কালো ভূমির বিনিময়ে",
+  "premise": "The current kit correctly proves no single accent clears 4.5:1 against both white and its Ink (#0B0E14): the arithmetic window (L <= 0.1833 on paper, L >= 0.1946 on ink) is empty for any one value. Solve for the ground instead of the accent: at a ground luminance <= ~0.0019 (roughly #050608 or darker), the window opens, L in [0.175, 0.18333] -- narrow, but real. This direction buys back a single true signature colour across both themes, and pays for it in a ground that reads as OLED-black rather than a brand-tinted indigo. The engine below must re-derive this window to four decimal places -- the arithmetic above is a hypothesis, not a given.",
+  "structure": {
+    "ground_strategy": "near-black",
+    "signature_structure": "one-value",
+    "temperature_relationship": "neutral-plus-one",
+    "dark_theme_construction": "independent-composition"
+  },
+  "families": {
+    "ground":   {"label": "Undertow", "label_bn": "টান", "kind": "ground",
+                 "anchor": "#050608",
+                 "note": "Near-black, chosen to open the single-signature contrast window, not for its own sake."},
+    "accent_light": {"label": "Meridian ember (light)", "label_bn": "মেরিডিয়ান অঙ্গার", "kind": "signature",
+                 "anchor": "#8A4A2E",
+                 "note": "Provisional single-value anchor -- the engine solves the true achievable value; this is a starting hue only."},
+    "accent_dark":  {"label": "Meridian ember (dark)", "label_bn": "মেরিডিয়ান অঙ্গার", "kind": "signature",
+                 "anchor": "#8A4A2E",
+                 "note": "Same anchor as accent_light on purpose -- the whole premise of this direction is ONE value in both themes. The engine proves whether this single value actually clears both grounds."},
+    "support":  {"label": "Ash", "label_bn": "ছাই", "kind": "support",
+                 "anchor": "#8A8378",
+                 "note": "A warm neutral, doing the job Ember did in D1 -- support without adding a second chromatic family."}
+  }
+}

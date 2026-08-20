@@ -1,0 +1,110 @@
+{
+  "key": "d4-three-key-material-mappable",
+  "name": "Three-key, Material-mappable",
+  "name_bn": "তিন-চাবি, ম্যাটেরিয়াল-সংগতিপূর্ণ",
+  "premise": "Primary, secondary and tertiary key colours, each with container and on- pairs -- the structural shape Material 3 actually ships (confirmed: 26 total roles, 3 base + 5 container + 2 dim/bright surface roles among them). A future Android product built on these tokens needs no invented mapping, and the role-naming question (this rebuild's own bg vs surface question) resolves itself because the roles come from the source structure. The cost: more roles than a solo studio brand strictly needs, and a look that is partly Google's rather than distinctively GRU953's.",
+  "structure": {
+    "ground_strategy": "chromatic",
+    "signature_structure": "three-key",
+    "temperature_relationship": "analogous",
+    "dark_theme_construction": "true-inversion"
+  },
+  "families": {
+    "ground": {
+      "label": "Primary",
+      "label_bn": "প্রাইমারি",
+      "kind": "signature",
+      "anchor_step": 900,
+      "hue": 278.0,
+      "ramp": {
+        "50": "#F3F6FF",
+        "100": "#E6EBFF",
+        "200": "#D1D9FF",
+        "300": "#B7C1FF",
+        "400": "#9BA5FF",
+        "500": "#7E86F6",
+        "600": "#6469D3",
+        "700": "#4C4EAD",
+        "800": "#343583",
+        "900": "#1A1753",
+        "950": "#0E0B37"
+      }
+    },
+    "accent_light": {
+      "label": "Secondary (light)",
+      "label_bn": "সেকেন্ডারি",
+      "kind": "signature",
+      "anchor_step": 600,
+      "hue": 40.3,
+      "ramp": {
+        "50": "#FFF3EE",
+        "100": "#FFE6DC",
+        "200": "#FFD1C0",
+        "300": "#F9B59C",
+        "400": "#EB9779",
+        "500": "#D57654",
+        "600": "#B45A39",
+        "700": "#914124",
+        "800": "#6B2A10",
+        "900": "#461401",
+        "950": "#2A0600"
+      }
+    },
+    "accent_dark": {
+      "label": "Secondary (dark)",
+      "label_bn": "সেকেন্ডারি",
+      "kind": "signature",
+      "anchor_step": 300,
+      "hue": 39.8,
+      "ramp": {
+        "50": "#FFF2EC",
+        "100": "#FFE4D9",
+        "200": "#FFCEBA",
+        "300": "#FFAB8E",
+        "400": "#F8906B",
+        "500": "#E26C42",
+        "600": "#C05025",
+        "700": "#9B370C",
+        "800": "#732100",
+        "900": "#4C0A00",
+        "950": "#2E0100"
+      }
+    },
+    "support": {
+      "label": "Tertiary",
+      "label_bn": "টারশিয়ারি",
+      "kind": "signature",
+      "anchor_step": 600,
+      "hue": 160.2,
+      "ramp": {
+        "50": "#F1F9F4",
+        "100": "#E1F1E8",
+        "200": "#C9E4D4",
+        "300": "#A9D3BB",
+        "400": "#89BEA1",
+        "500": "#65A383",
+        "600": "#3E7A5C",
+        "700": "#33694E",
+        "800": "#1E4B35",
+        "900": "#092E1E",
+        "950": "#01190D"
+      }
+    }
+  },
+  "light_theme_ground": "#FFFFFF",
+  "dark_theme_ground": "#1A1753",
+  "primary_pairing_proof": {
+    "light_theme": {
+      "fg": "#B45A39",
+      "bg": "#FFFFFF",
+      "worst_case_ratio": 4.604
+    },
+    "dark_theme": {
+      "fg": "#FFAB8E",
+      "bg": "#1A1753",
+      "worst_case_ratio": 8.695
+    },
+    "method": "8-bit hex, then every +/-1-per-channel neighbour of both colours checked (729 combinations); the worst ratio found is published, never the ideal continuous-OKLCH value.",
+    "target": "WCAG 2.2 SC 1.4.3, 4.5:1 normal text, cleared by a further 0.05 margin before rounding"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "key": "d3-neutral-ground",
+  "name": "Neutral ground, all chroma in the accent",
+  "name_bn": "নিরপেক্ষ ভূমি, রং শুধু বিশেষ রঙে",
+  "premise": "Tests whether the brand's own stated restraint -- a field of empty space, one point of colour, everything aligned to a strong edge -- reads better with NO chromatic field at all. The ground becomes a warm near-neutral (stone); every surface token sits under a stated low chroma ceiling; all colour is spent on one signature plus the two functional hues. Also fixes a real structural weakness in the shipping kit: Meridian currently does double duty as BOTH the page ground and the information colour, so --gru-info and the page background are literally the same family.",
+  "structure": {
+    "ground_strategy": "neutral",
+    "signature_structure": "one-hue-two-values",
+    "temperature_relationship": "neutral-plus-one",
+    "dark_theme_construction": "true-inversion"
+  },
+  "families": {
+    "ground": {
+      "label": "Stone",
+      "label_bn": "পাথর",
+      "kind": "ground",
+      "anchor_step": 50,
+      "hue": 84.6,
+      "ramp": {
+        "50": "#F5F2EC",
+        "100": "#F2ECE1",
+        "200": "#E5DBC9",
+        "300": "#D4C6A9",
+        "400": "#BFAD8A",
+        "500": "#A59168",
+        "600": "#88754E",
+        "700": "#6B5A37",
+        "800": "#4D3F22",
+        "900": "#2F250E",
+        "950": "#1A1304"
+      }
+    },
+    "accent_light": {
+      "label": "Signal (light)",
+      "label_bn": "সংকেত",
+      "kind": "signature",
+      "anchor_step": 600,
+      "hue": 35.8,
+      "ramp": {
+        "50": "#FFF2ED",
+        "100": "#FFE5DC",
+        "200": "#FFCEBF",
+        "300": "#FFB09A",
+        "400": "#F49176",
+        "500": "#DF6E51",
+        "600": "#B44A2E",
+        "700": "#983920",
+        "800": "#71230D",
+        "900": "#4A0D00",
+        "950": "#2D0200"
+      }
+    },
+    "accent_dark": {
+      "label": "Signal (dark)",
+      "label_bn": "সংকেত",
+      "kind": "signature",
+      "anchor_step": 400,
+      "hue": 45.1,
+      "ramp": {
+        "50": "#FFF2EA",
+        "100": "#FFE5D6",
+        "200": "#FFCEB6",
+        "300": "#FFB08B",
+        "400": "#FF9868",
+        "500": "#E26E32",
+        "600": "#C0510B",
+        "700": "#9B3800",
+        "800": "#732200",
+        "900": "#4C0B00",
+        "950": "#2E0200"
+      }
+    },
+    "support": {
+      "label": "Slate",
+      "label_bn": "স্লেট",
+      "kind": "support",
+      "anchor_step": 700,
+      "hue": 250.8,
+      "ramp": {
+        "50": "#F5F7F9",
+        "100": "#EAEDF1",
+        "200": "#D7DDE3",
+        "300": "#C0C8D2",
+        "400": "#A6B1BC",
+        "500": "#8995A2",
+        "600": "#6D7985",
+        "700": "#5B6570",
+        "800": "#3A424B",
+        "900": "#21272E",
+        "950": "#101419"
+      }
+    }
+  },
+  "light_theme_ground": "#FFFFFF",
+  "dark_theme_ground": "#17140F",
+  "primary_pairing_proof": {
+    "light_theme": {
+      "fg": "#B44A2E",
+      "bg": "#FFFFFF",
+      "worst_case_ratio": 5.189
+    },
+    "dark_theme": {
+      "fg": "#FF9868",
+      "bg": "#17140F",
+      "worst_case_ratio": 8.528
+    },
+    "method": "8-bit hex, then every +/-1-per-channel neighbour of both colours checked (729 combinations); the worst ratio found is published, never the ideal continuous-OKLCH value.",
+    "target": "WCAG 2.2 SC 1.4.3, 4.5:1 normal text, cleared by a further 0.05 margin before rounding"
+  }
+}

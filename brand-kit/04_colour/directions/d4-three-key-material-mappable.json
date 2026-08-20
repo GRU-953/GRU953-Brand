@@ -1,0 +1,26 @@
+{
+  "key": "d4-three-key-material-mappable",
+  "name": "Three-key, Material-mappable",
+  "name_bn": "তিন-চাবি, ম্যাটেরিয়াল-সংগতিপূর্ণ",
+  "premise": "Primary, secondary and tertiary key colours, each with container and on- pairs -- the structural shape Material 3 actually ships (confirmed: 26 total roles, 3 base + 5 container + 2 dim/bright surface roles among them). A future Android product built on these tokens needs no invented mapping, and the role-naming question (this rebuild's own bg vs surface question) resolves itself because the roles come from the source structure. The cost: more roles than a solo studio brand strictly needs, and a look that is partly Google's rather than distinctively GRU953's.",
+  "structure": {
+    "ground_strategy": "chromatic",
+    "signature_structure": "three-key",
+    "temperature_relationship": "analogous",
+    "dark_theme_construction": "true-inversion"
+  },
+  "families": {
+    "ground":   {"label": "Primary", "label_bn": "প্রাইমারি", "kind": "signature",
+                 "anchor": "#1A1753",
+                 "note": "Kept as Meridian, playing Material's 'primary' role."},
+    "accent_light": {"label": "Secondary (light)", "label_bn": "সেকেন্ডারি", "kind": "signature",
+                 "anchor": "#B45A39",
+                 "note": "Daybreak's light value, playing Material's 'secondary' role."},
+    "accent_dark":  {"label": "Secondary (dark)", "label_bn": "সেকেন্ডারি", "kind": "signature",
+                 "anchor": "#FFAB8E",
+                 "note": "Daybreak's dark value."},
+    "support":  {"label": "Tertiary", "label_bn": "টারশিয়ারি", "kind": "signature",
+                 "anchor": "#3E7A5C",
+                 "note": "A genuinely new third key colour -- Material's structure requires three, and reusing Ember here would collapse the tertiary/support distinction the direction exists to test."}
+  }
+}

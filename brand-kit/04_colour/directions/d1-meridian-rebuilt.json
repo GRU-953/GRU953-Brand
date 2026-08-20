@@ -1,0 +1,26 @@
+{
+  "key": "d1-meridian-rebuilt",
+  "name": "Meridian rebuilt",
+  "name_bn": "মেরিডিয়ান, পুনর্নির্মিত",
+  "premise": "The incumbent, rebuilt on the same engine so the comparison is like-for-like rather than a straw man. Chromatic ground, one hue with two tuned values as the signature -- the structure the current kit already committed to. Its job is to give the owner a real defence of the current brand, not a token 'keep what you have' option.",
+  "structure": {
+    "ground_strategy": "chromatic",
+    "signature_structure": "one-hue-two-values",
+    "temperature_relationship": "analogous",
+    "dark_theme_construction": "true-inversion"
+  },
+  "families": {
+    "ground":   {"label": "Meridian", "label_bn": "মেরিডিয়ান", "kind": "signature",
+                 "anchor": "#1A1753",
+                 "note": "The deep sky before dawn. Unchanged from the shipping kit."},
+    "accent_light": {"label": "Daybreak (light)", "label_bn": "ভোরের আলো", "kind": "signature",
+                 "anchor": "#B45A39",
+                 "note": "The deep tuned value of the one-hue-two-values signature, for light grounds."},
+    "accent_dark":  {"label": "Daybreak (dark)", "label_bn": "ভোরের আলো", "kind": "signature",
+                 "anchor": "#FFAB8E",
+                 "note": "The pale tuned value of the same signature hue, for dark grounds."},
+    "support":  {"label": "Ember", "label_bn": "অঙ্গার", "kind": "signature",
+                 "anchor": "#EDB24D",
+                 "note": "Warm mid-tone support, unchanged."}
+  }
+}

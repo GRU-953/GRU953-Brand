@@ -1,0 +1,28 @@
+{
+  "key": "d3-neutral-ground",
+  "name": "Neutral ground, all chroma in the accent",
+  "name_bn": "নিরপেক্ষ ভূমি, রং শুধু বিশেষ রঙে",
+  "premise": "Tests whether the brand's own stated restraint -- a field of empty space, one point of colour, everything aligned to a strong edge -- reads better with NO chromatic field at all. The ground becomes a warm near-neutral (stone); every surface token sits under a stated low chroma ceiling; all colour is spent on one signature plus the two functional hues. Also fixes a real structural weakness in the shipping kit: Meridian currently does double duty as BOTH the page ground and the information colour, so --gru-info and the page background are literally the same family.",
+  "structure": {
+    "ground_strategy": "neutral",
+    "signature_structure": "one-hue-two-values",
+    "temperature_relationship": "neutral-plus-one",
+    "dark_theme_construction": "true-inversion"
+  },
+  "dark_theme_ground": "#17140F",
+  "families": {
+    "ground":   {"label": "Stone", "label_bn": "পাথর", "kind": "ground",
+                 "anchor": "#F5F2EC",
+                 "hue": 78.0, "max_chroma": 0.012,
+                 "note": "A warm near-neutral, chroma-capped low so it reads as paper, not as a colour."},
+    "accent_light": {"label": "Signal (light)", "label_bn": "সংকেত", "kind": "signature",
+                 "anchor": "#B44A2E",
+                 "note": "The one place chroma is spent freely. A warm red-orange, distinct from the functional danger hue."},
+    "accent_dark":  {"label": "Signal (dark)", "label_bn": "সংকেত", "kind": "signature",
+                 "anchor": "#FF9868",
+                 "note": "Same hue as accent_light, tuned pale for the dark theme -- the one-hue-two-values structure carried over from the incumbent, on a neutral rather than chromatic ground."},
+    "support":  {"label": "Slate", "label_bn": "স্লেট", "kind": "support",
+                 "anchor": "#5B6570",
+                 "note": "A distinct, separate family from the information role -- fixes Meridian's double duty in the shipping kit."}
+  }
+}

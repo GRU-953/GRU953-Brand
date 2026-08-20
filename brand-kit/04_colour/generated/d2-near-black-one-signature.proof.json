@@ -1,0 +1,132 @@
+{
+  "key": "d2-near-black-one-signature",
+  "name": "One signature, bought with a near-black ground",
+  "name_bn": "একটি রং, প্রায়-কালো ভূমির বিনিময়ে",
+  "premise": "The current kit correctly proves no single accent clears 4.5:1 against both white and its Ink (#0B0E14): the arithmetic window (L <= 0.1833 on paper, L >= 0.1946 on ink) is empty for any one value. Solve for the ground instead of the accent: at a ground luminance <= ~0.0019 (roughly #050608 or darker), the window opens, L in [0.175, 0.18333] -- narrow, but real. This direction buys back a single true signature colour across both themes, and pays for it in a ground that reads as OLED-black rather than a brand-tinted indigo. The engine below must re-derive this window to four decimal places -- the arithmetic above is a hypothesis, not a given.",
+  "structure": {
+    "ground_strategy": "near-black",
+    "signature_structure": "one-value",
+    "temperature_relationship": "neutral-plus-one",
+    "dark_theme_construction": "independent-composition"
+  },
+  "families": {
+    "ground": {
+      "label": "Undertow",
+      "label_bn": "টান",
+      "kind": "ground",
+      "anchor_step": 950,
+      "hue": 261.6,
+      "ramp": {
+        "50": "#F6F7F8",
+        "100": "#EBEDEF",
+        "200": "#DADCE0",
+        "300": "#C4C7CD",
+        "400": "#ACB0B6",
+        "500": "#90949B",
+        "600": "#73787F",
+        "700": "#595C63",
+        "800": "#3E4146",
+        "900": "#24272A",
+        "950": "#050608"
+      }
+    },
+    "accent_light": {
+      "label": "Meridian ember (light)",
+      "label_bn": "মেরিডিয়ান অঙ্গার",
+      "kind": "signature",
+      "anchor_step": 700,
+      "hue": 43.6,
+      "ramp": {
+        "50": "#FFF4EF",
+        "100": "#FEE7DE",
+        "200": "#F9D3C4",
+        "300": "#F1B9A2",
+        "400": "#E19D80",
+        "500": "#CA7D5C",
+        "600": "#AA6142",
+        "700": "#8A4A2E",
+        "800": "#653019",
+        "900": "#411906",
+        "950": "#260A01"
+      }
+    },
+    "accent_dark": {
+      "label": "Meridian ember (dark)",
+      "label_bn": "মেরিডিয়ান অঙ্গার",
+      "kind": "signature",
+      "anchor_step": 700,
+      "hue": 43.6,
+      "ramp": {
+        "50": "#FFF4EF",
+        "100": "#FEE7DE",
+        "200": "#F9D3C4",
+        "300": "#F1B9A2",
+        "400": "#E19D80",
+        "500": "#CA7D5C",
+        "600": "#AA6142",
+        "700": "#8A4A2E",
+        "800": "#653019",
+        "900": "#411906",
+        "950": "#260A01"
+      }
+    },
+    "support": {
+      "label": "Ash",
+      "label_bn": "ছাই",
+      "kind": "support",
+      "anchor_step": 600,
+      "hue": 79.3,
+      "ramp": {
+        "50": "#F8F6F5",
+        "100": "#EEECE9",
+        "200": "#DFDCD6",
+        "300": "#CCC6BE",
+        "400": "#B5AFA4",
+        "500": "#9A9387",
+        "600": "#8A8378",
+        "700": "#615B52",
+        "800": "#454039",
+        "900": "#2A2620",
+        "950": "#16130F"
+      }
+    }
+  },
+  "light_theme_ground": "#FFFFFF",
+  "dark_theme_ground": "#050608",
+  "primary_pairing_proof": {
+    "light_theme": {
+      "fg": "#8A4A2E",
+      "bg": "#FFFFFF",
+      "worst_case_ratio": 6.62
+    },
+    "dark_theme": {
+      "fg": "#8A4A2E",
+      "bg": "#050608",
+      "worst_case_ratio": 2.931
+    },
+    "method": "8-bit hex, then every +/-1-per-channel neighbour of both colours checked (729 combinations); the worst ratio found is published, never the ideal continuous-OKLCH value.",
+    "target": "WCAG 2.2 SC 1.4.3, 4.5:1 normal text, cleared by a further 0.05 margin before rounding"
+  },
+  "single_value_claim_solved": {
+    "found": false,
+    "closest_attempt_hex": "#A16952",
+    "closest_ratio_on_light": 4.409,
+    "closest_ratio_on_dark": 4.408,
+    "closest_attempt_chroma": 0.08,
+    "closest_attempt_oklch_lightness": 0.575,
+    "shortfall_below_target_plus_margin": 0.142,
+    "chromas_tried": [
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.13,
+      0.16,
+      0.2
+    ],
+    "hue_searched": 43.6,
+    "light_ground": "#FFFFFF",
+    "dark_ground": "#050608"
+  }
+}
