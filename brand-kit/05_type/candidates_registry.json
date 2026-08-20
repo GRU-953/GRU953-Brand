@@ -1,0 +1,39 @@
+{
+  "$note": "The typography candidate list. Every family here is on Google Fonts, SIL OFL 1.1 licensed, sourced from Google's own font repository (github.com/google/fonts), which is the primary distribution point Google itself publishes for these files. 28 families: 15 Latin display/UI, 8 Bengali, 5 mono -- fewer than the plan's upper estimate of 35, and no family is added just to pad the count.",
+  "candidates": {
+    "latin": {
+      "sora":                  {"family": "Sora",                 "repo_dir": "sora",                 "file": "Sora[wght].ttf",                          "incumbent": true,  "note": "the current display face -- must earn its place, not keep it by default"},
+      "inter":                  {"family": "Inter",                "repo_dir": "inter",                "file": "Inter[opsz,wght].ttf"},
+      "instrumentsans":         {"family": "Instrument Sans",      "repo_dir": "instrumentsans",       "file": "InstrumentSans[wdth,wght].ttf"},
+      "publicsans":             {"family": "Public Sans",          "repo_dir": "publicsans",           "file": "PublicSans[wght].ttf"},
+      "ibmplexsans":            {"family": "IBM Plex Sans",        "repo_dir": "ibmplexsans",          "file": "IBMPlexSans[wdth,wght].ttf"},
+      "manrope":                {"family": "Manrope",              "repo_dir": "manrope",              "file": "Manrope[wght].ttf"},
+      "figtree":                {"family": "Figtree",              "repo_dir": "figtree",              "file": "Figtree[wght].ttf"},
+      "plusjakartasans":        {"family": "Plus Jakarta Sans",    "repo_dir": "plusjakartasans",      "file": "PlusJakartaSans[wght].ttf"},
+      "worksans":               {"family": "Work Sans",            "repo_dir": "worksans",             "file": "WorkSans[wght].ttf"},
+      "archivo":                {"family": "Archivo",              "repo_dir": "archivo",              "file": "Archivo[wdth,wght].ttf"},
+      "schibstedgrotesk":       {"family": "Schibsted Grotesk",    "repo_dir": "schibstedgrotesk",     "file": "SchibstedGrotesk[wght].ttf"},
+      "onest":                  {"family": "Onest",                "repo_dir": "onest",                "file": "Onest[wght].ttf"},
+      "spacegrotesk":           {"family": "Space Grotesk",        "repo_dir": "spacegrotesk",         "file": "SpaceGrotesk[wght].ttf"},
+      "bricolagegrotesque":     {"family": "Bricolage Grotesque",  "repo_dir": "bricolagegrotesque",   "file": "BricolageGrotesque[opsz,wdth,wght].ttf"},
+      "geist":                  {"family": "Geist",                "repo_dir": "geist",                "file": "Geist[wght].ttf", "note": "borrowed-association concern (Vercel's brand face) -- measured anyway, rejected on that ground alone if it wins numerically"}
+    },
+    "bengali": {
+      "notosansbengali":        {"family": "Noto Sans Bengali",    "repo_dir": "notosansbengali",      "file": "NotoSansBengali[wdth,wght].ttf", "incumbent": true},
+      "notoserifbengali":       {"family": "Noto Serif Bengali",   "repo_dir": "notoserifbengali",     "file": "NotoSerifBengali[wdth,wght].ttf"},
+      "anekbangla":             {"family": "Anek Bangla",          "repo_dir": "anekbangla",           "file": "AnekBangla[wdth,wght].ttf", "incumbent": true, "note": "incumbent optional display"},
+      "tirobangla":             {"family": "Tiro Bangla",          "repo_dir": "tirobangla",           "file": "TiroBangla-Regular.ttf"},
+      "hindsiliguri":           {"family": "Hind Siliguri",        "repo_dir": "hindsiliguri",         "file": "HindSiliguri-Regular.ttf"},
+      "balooda2":               {"family": "Baloo Da 2",           "repo_dir": "balooda2",             "file": "BalooDa2[wght].ttf"},
+      "galada":                 {"family": "Galada",               "repo_dir": "galada",               "file": "Galada-Regular.ttf"},
+      "mina":                   {"family": "Mina",                 "repo_dir": "mina",                 "file": "Mina-Regular.ttf"}
+    },
+    "mono": {
+      "jetbrainsmono":          {"family": "JetBrains Mono",       "repo_dir": "jetbrainsmono",        "file": "JetBrainsMono[wght].ttf", "incumbent": true},
+      "ibmplexmono":            {"family": "IBM Plex Mono",        "repo_dir": "ibmplexmono",          "file": "IBMPlexMono-Regular.ttf"},
+      "sourcecodepro":          {"family": "Source Code Pro",      "repo_dir": "sourcecodepro",        "file": "SourceCodePro[wght].ttf"},
+      "geistmono":              {"family": "Geist Mono",           "repo_dir": "geistmono",            "file": "GeistMono[wght].ttf"},
+      "spacemono":              {"family": "Space Mono",           "repo_dir": "spacemono",            "file": "SpaceMono-Regular.ttf"}
+    }
+  }
+}
