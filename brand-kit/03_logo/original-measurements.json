@@ -1,0 +1,78 @@
+{
+  "$note": "Measured, not asserted. Every figure here was read off rendered pixels of brand-kit/03_logo/original/GRU953-logo-master.svg through Chromium (Playwright) -- the same renderer the mark is seen through everywhere else in this kit. Regenerate: python3 brand-kit/03_logo/measure_original.py",
+  "source_file": "brand-kit/03_logo/original/GRU953-logo-master.svg",
+  "artboard": {
+    "viewbox": [
+      0,
+      0,
+      1024,
+      1024
+    ],
+    "units": "SVG user units"
+  },
+  "ink_threshold": 128,
+  "measurements_by_render_scale": [
+    {
+      "render_scale": 1,
+      "render_px": 1024,
+      "ink_pixel_count": 117764,
+      "ink_coverage_pct_of_artboard": 11.231,
+      "inked_bbox_artboard_units": {
+        "x": 108.0,
+        "y": 192.0,
+        "width": 796.0,
+        "height": 708.0
+      },
+      "inked_bbox_aspect_ratio_w_over_h": 1.1243,
+      "ink_centroid_artboard_units": {
+        "x": 485.17,
+        "y": 539.21
+      },
+      "bbox_centre_artboard_units": {
+        "x": 506.0,
+        "y": 546.0
+      },
+      "centroid_offset_from_bbox_centre_artboard_units": {
+        "x": -20.83,
+        "y": -6.79
+      },
+      "artboard_centre_artboard_units": 512.0
+    },
+    {
+      "render_scale": 4,
+      "render_px": 4096,
+      "ink_pixel_count": 1885061,
+      "ink_coverage_pct_of_artboard": 11.236,
+      "inked_bbox_artboard_units": {
+        "x": 108.0,
+        "y": 191.75,
+        "width": 796.25,
+        "height": 709.25
+      },
+      "inked_bbox_aspect_ratio_w_over_h": 1.1227,
+      "ink_centroid_artboard_units": {
+        "x": 485.61,
+        "y": 539.67
+      },
+      "bbox_centre_artboard_units": {
+        "x": 506.12,
+        "y": 546.38
+      },
+      "centroid_offset_from_bbox_centre_artboard_units": {
+        "x": -20.52,
+        "y": -6.7
+      },
+      "artboard_centre_artboard_units": 512.0
+    }
+  ],
+  "cross_check": {
+    "method": "bounding-box width/height measured at 1x and 4x render scale, compared in artboard units",
+    "max_disagreement_artboard_units": 1.25,
+    "agrees_within_2_units": true
+  },
+  "not_yet_measured": [
+    "Per-facet wing angles (needs manual identification of the four facet edges from the path data, then a least-squares line fit to each).",
+    "Interior counter count, per-counter centroid, and per-counter minimum inscribed-circle diameter (needs a flood-fill from the artboard border, the same approach brand-kit/03_logo/marks.py already uses at 512px for its own, narrower survival check).",
+    "Stroke width sampled along the drawing's own centreline (needs a centreline extraction this script does not attempt)."
+  ]
+}
