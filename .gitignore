@@ -1,5 +1,10 @@
-# Dependencies — restored with `npm install` in brand-kit/00_sandbox
+# The project-local sandbox. Rebuilt with `sh 00_sandbox/setup.sh`, never shipped.
+# Nothing here is committed on purpose: a gitignored build environment cannot go
+# stale in a way anyone would notice, because it is never the thing that ships.
+.venv/
 node_modules/
+00_sandbox/browsers/
+00_sandbox/_smoke_test.*
 
 # Python bytecode
 __pycache__/

@@ -1,7 +1,7 @@
-# The brand, checked on every push. Four jobs, in the order a failure is cheapest to find.
+# The brand, checked on every push. Five jobs, in the order a failure is cheapest to find.
 #
-# Nothing here needs a network beyond checking the code out: the palette engine's one
-# dependency is installed from PyPI, and every other step is the standard library or Node.
+# Nothing here needs a network beyond checking the code out and installing pinned
+# packages: no external service, no credential, nothing that can be down when this runs.
 name: brand
 
 on:
@@ -83,3 +83,38 @@ jobs:
         with: { node-version: '20' }
       - run: cd brand-kit/00_sandbox && npm ci --silent || npm install --silent
       - run: python3 brand-kit/00_sandbox/verify.py
+
+  # 5. The project-local sandbox, proved on a clean checkout — not just the one Mac it
+  #    was built on — and the 27 design-system cards, rendered and measured. Added
+  #    20 August 2026: this is the first time this check has ever run anywhere. It sat
+  #    unwired since the design system was built, so a card could break and nothing
+  #    would say so.
+  sandbox:
+    name: the sandbox builds clean, and the 27 cards render clean
+    runs-on: ubuntu-latest
+    # Set once, at job level, so every step below — the install, the smoke test, the
+    # hermetic gate — agrees on where Chromium lives. A dev machine running the same
+    # commands from 00_sandbox/setup.sh sees the identical path, which is the point:
+    # a green run here means the same thing as a green run on the owner's own Mac.
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/00_sandbox/browsers
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      # Every version here is pinned in requirements.txt for the same reason coloraide
+      # is pinned above: an unpinned shaping or colour library can change a measured
+      # result with nobody having edited anything.
+      - run: pip install -r requirements.txt
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: the sandbox's own smoke test — a real job through every pinned tool
+        run: python3 00_sandbox/smoke.py
+      - name: the kit's own build helpers still install on their own
+        run: cd brand-kit/00_sandbox && npm ci --silent
+      - name: 27 cards render clean — 4 widths x 2 colour schemes
+        run: node design-system/check.mjs
+      - name: the build depends on nothing that merely happens to be on PATH
+        run: sh scripts/no-system-path.sh

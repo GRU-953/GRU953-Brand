@@ -1,0 +1,23 @@
+# Pinned exactly. An unpinned colour or font library can silently change a measured
+# ratio or a shaped glyph between two runs with nobody having edited anything — and
+# the diff gates in this repo exist to catch exactly that kind of drift, so the
+# library versions themselves must not be a source of it.
+#
+# coloraide and fonttools[woff] are pinned to the versions already proven green in
+# .github/workflows/ci.yml. The rest are added for the rebuild's later phases (mark
+# reconstruction, guidebook PDF, Bangla shaping) and pinned to the versions verified
+# working in the sibling Aninda Studio build, on the same machine, the same week.
+#
+# fonttools[woff], never bare fonttools: the woff2 decoder needs the Brotli
+# extension, and the bare package does not pull it in. Confirmed the hard way —
+# see the comment beside this same pin in .github/workflows/ci.yml.
+coloraide==8.11.1
+fonttools[woff]==4.62.1
+uharfbuzz==0.56.0
+brotli==1.2.0
+pillow==12.1.0
+playwright==1.62.0
+pypdfium2==5.13.0
+lxml==6.0.2
+Jinja2==3.1.6
+Markdown==3.10

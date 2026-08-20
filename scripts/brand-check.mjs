@@ -15,7 +15,10 @@ import path from 'node:path';
 
 const ROOT = path.resolve(process.argv[2] || '.');
 const SKIP = new Set(['node_modules', '.git', 'dist', 'build', 'vendor', '.next',
-                      'coverage', '__pycache__', '.venv']);
+                      'coverage', '__pycache__', '.venv', 'browsers']);
+// 'browsers' is 00_sandbox/browsers — the project-local, gitignored Chromium download.
+// Without this the checker walked into it and reviewed a browser binary tree for brand
+// content, which is neither useful nor fast.
 const fails = [], notes = [];
 
 function walk(dir, out = []) {

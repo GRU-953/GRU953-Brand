@@ -1,14 +1,11 @@
 {
-  "name": "00_sandbox",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "gru953-brand-kit-sandbox",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Project-local Node tooling for the kit's own build helpers (render.mjs, pdf.mjs, check.mjs, verify.py's CSS parse check). Nothing here ships.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Aninda Sundar Howlader",
   "dependencies": {
     "css-tree": "^3.2.1",
     "playwright": "^1.62.1",

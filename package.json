@@ -1,0 +1,12 @@
+{
+  "name": "gru953-brand",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Project-local Node tooling shared across brand-kit, design-system and plugin. Nothing here ships — see NOTICE and LICENSE for what does.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Aninda Sundar Howlader",
+  "devDependencies": {
+    "playwright": "1.62.0"
+  }
+}
