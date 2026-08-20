@@ -1,0 +1,118 @@
+{
+  "candidate": "brand-kit/03_logo/rebuild/round1-candidate.svg",
+  "render_scale": 2,
+  "silhouette_overlap": 0.432,
+  "contour_deviation": {
+    "max_artboard_units": 78.2,
+    "p95_artboard_units": 30.154,
+    "mean_artboard_units": 13.962,
+    "max_pct_of_artboard": 7.637
+  },
+  "counter_correspondence": {
+    "matched": 8,
+    "orphans_in_original": 0,
+    "orphans_in_candidate": 0,
+    "one_to_one": true,
+    "match_detail": [
+      [
+        0,
+        3,
+        0.0486
+      ],
+      [
+        1,
+        4,
+        0.0281
+      ],
+      [
+        2,
+        0,
+        0.019
+      ],
+      [
+        3,
+        1,
+        0.044
+      ],
+      [
+        4,
+        5,
+        0.0472
+      ],
+      [
+        5,
+        7,
+        0.0479
+      ],
+      [
+        6,
+        6,
+        0.0437
+      ],
+      [
+        7,
+        2,
+        0.0481
+      ]
+    ]
+  },
+  "facet_angle_fidelity": [
+    {
+      "original_angle_deg": 28.37,
+      "candidate_angle_deg": 28.32,
+      "deviation_deg": 0.05,
+      "candidate_edge_length_units": 79.89,
+      "matched": true
+    },
+    {
+      "original_angle_deg": 27.74,
+      "candidate_angle_deg": 27.75,
+      "deviation_deg": 0.01,
+      "candidate_edge_length_units": 78.06,
+      "matched": true
+    },
+    {
+      "original_angle_deg": 25.71,
+      "candidate_angle_deg": 25.72,
+      "deviation_deg": 0.01,
+      "candidate_edge_length_units": 89.67,
+      "matched": true
+    },
+    {
+      "original_angle_deg": 25.89,
+      "candidate_angle_deg": 26.02,
+      "deviation_deg": 0.13,
+      "candidate_edge_length_units": 88.1,
+      "matched": true
+    }
+  ],
+  "centroid_offset_pct": 0.5998,
+  "verdicts": {
+    "silhouette_overlap": {
+      "value": 0.432,
+      "target": ">= 0.92",
+      "passes": false
+    },
+    "contour_deviation_pct": {
+      "value": 7.637,
+      "target": "<= 1.5",
+      "passes": false
+    },
+    "counters_one_to_one": {
+      "value": true,
+      "target": "True",
+      "passes": true
+    },
+    "facet_angle_max_deviation_deg": {
+      "value": 0.13,
+      "target": "<= 1.5 per facet",
+      "passes": true
+    },
+    "centroid_offset_pct": {
+      "value": 0.5998,
+      "target": "<= 1.0",
+      "passes": true
+    }
+  },
+  "all_pass": false
+}
