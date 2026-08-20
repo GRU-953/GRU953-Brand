@@ -1,0 +1,489 @@
+{
+  "$note": "The RENDERED half of the type measurement -- real ink through Chromium, never a font's own declared metrics. Regenerate: python3 brand-kit/05_type/render_measure_candidates.py",
+  "render_size_px": 400,
+  "latin_test_string": "Hxpqg",
+  "bengali_test_string": "সহজ প্রযুক্তি সবার জন্য",
+  "measured_count": 28,
+  "could_not_measure_count": 0,
+  "measurements": [
+    {
+      "full_string_ink_bbox_px": {
+        "top": 44,
+        "bottom": 418,
+        "height": 375
+      },
+      "rendered_x_height_px": 214,
+      "rendered_cap_height_px": 292,
+      "rendered_x_height_over_font_size": 0.535,
+      "rendered_cap_height_over_font_size": 0.73,
+      "key": "sora",
+      "family": "Sora",
+      "category": "latin",
+      "incumbent": true
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 55,
+        "bottom": 429,
+        "height": 375
+      },
+      "rendered_x_height_px": 206,
+      "rendered_cap_height_px": 291,
+      "rendered_x_height_over_font_size": 0.515,
+      "rendered_cap_height_over_font_size": 0.7275,
+      "key": "inter",
+      "family": "Inter",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 56,
+        "bottom": 429,
+        "height": 374
+      },
+      "rendered_x_height_px": 204,
+      "rendered_cap_height_px": 288,
+      "rendered_x_height_over_font_size": 0.51,
+      "rendered_cap_height_over_font_size": 0.72,
+      "key": "instrumentsans",
+      "family": "Instrument Sans",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 56,
+        "bottom": 412,
+        "height": 357
+      },
+      "rendered_x_height_px": 207,
+      "rendered_cap_height_px": 289,
+      "rendered_x_height_over_font_size": 0.5175,
+      "rendered_cap_height_over_font_size": 0.7225,
+      "key": "publicsans",
+      "family": "Public Sans",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 71,
+        "bottom": 434,
+        "height": 364
+      },
+      "rendered_x_height_px": 207,
+      "rendered_cap_height_px": 279,
+      "rendered_x_height_over_font_size": 0.5175,
+      "rendered_cap_height_over_font_size": 0.6975,
+      "key": "ibmplexsans",
+      "family": "IBM Plex Sans",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 65,
+        "bottom": 454,
+        "height": 390
+      },
+      "rendered_x_height_px": 216,
+      "rendered_cap_height_px": 288,
+      "rendered_x_height_over_font_size": 0.54,
+      "rendered_cap_height_over_font_size": 0.72,
+      "key": "manrope",
+      "family": "Manrope",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 60,
+        "bottom": 424,
+        "height": 365
+      },
+      "rendered_x_height_px": 200,
+      "rendered_cap_height_px": 280,
+      "rendered_x_height_over_font_size": 0.5,
+      "rendered_cap_height_over_font_size": 0.7,
+      "key": "figtree",
+      "family": "Figtree",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 65,
+        "bottom": 450,
+        "height": 386
+      },
+      "rendered_x_height_px": 215,
+      "rendered_cap_height_px": 298,
+      "rendered_x_height_over_font_size": 0.5375,
+      "rendered_cap_height_over_font_size": 0.745,
+      "key": "plusjakartasans",
+      "family": "Plus Jakarta Sans",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 73,
+        "bottom": 422,
+        "height": 350
+      },
+      "rendered_x_height_px": 200,
+      "rendered_cap_height_px": 264,
+      "rendered_x_height_over_font_size": 0.5,
+      "rendered_cap_height_over_font_size": 0.66,
+      "key": "worksans",
+      "family": "Work Sans",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 58,
+        "bottom": 405,
+        "height": 348
+      },
+      "rendered_x_height_px": 211,
+      "rendered_cap_height_px": 275,
+      "rendered_x_height_over_font_size": 0.5275,
+      "rendered_cap_height_over_font_size": 0.6875,
+      "key": "archivo",
+      "family": "Archivo",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 63,
+        "bottom": 424,
+        "height": 362
+      },
+      "rendered_x_height_px": 211,
+      "rendered_cap_height_px": 281,
+      "rendered_x_height_over_font_size": 0.5275,
+      "rendered_cap_height_over_font_size": 0.7025,
+      "key": "schibstedgrotesk",
+      "family": "Schibsted Grotesk",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 50,
+        "bottom": 426,
+        "height": 377
+      },
+      "rendered_x_height_px": 211,
+      "rendered_cap_height_px": 283,
+      "rendered_x_height_over_font_size": 0.5275,
+      "rendered_cap_height_over_font_size": 0.7075,
+      "key": "onest",
+      "family": "Onest",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 58,
+        "bottom": 417,
+        "height": 360
+      },
+      "rendered_x_height_px": 196,
+      "rendered_cap_height_px": 280,
+      "rendered_x_height_over_font_size": 0.49,
+      "rendered_cap_height_over_font_size": 0.7,
+      "key": "spacegrotesk",
+      "family": "Space Grotesk",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 68,
+        "bottom": 392,
+        "height": 325
+      },
+      "rendered_x_height_px": 207,
+      "rendered_cap_height_px": 264,
+      "rendered_x_height_over_font_size": 0.5175,
+      "rendered_cap_height_over_font_size": 0.66,
+      "key": "bricolagegrotesque",
+      "family": "Bricolage Grotesque",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 58,
+        "bottom": 406,
+        "height": 349
+      },
+      "rendered_x_height_px": 212,
+      "rendered_cap_height_px": 284,
+      "rendered_x_height_over_font_size": 0.53,
+      "rendered_cap_height_over_font_size": 0.71,
+      "key": "geist",
+      "family": "Geist",
+      "category": "latin",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 392,
+        "height": 393
+      },
+      "matra_row_y_px": 78,
+      "baseline_row_y_px": 392,
+      "matra_to_baseline_px": 314,
+      "matra_to_baseline_over_font_size": 0.785,
+      "key": "notosansbengali",
+      "family": "Noto Sans Bengali",
+      "category": "bengali",
+      "incumbent": true
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 420,
+        "height": 421
+      },
+      "matra_row_y_px": 89,
+      "baseline_row_y_px": 420,
+      "matra_to_baseline_px": 331,
+      "matra_to_baseline_over_font_size": 0.8275,
+      "key": "notoserifbengali",
+      "family": "Noto Serif Bengali",
+      "category": "bengali",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 443,
+        "height": 444
+      },
+      "matra_row_y_px": 99,
+      "baseline_row_y_px": 443,
+      "matra_to_baseline_px": 344,
+      "matra_to_baseline_over_font_size": 0.86,
+      "key": "anekbangla",
+      "family": "Anek Bangla",
+      "category": "bengali",
+      "incumbent": true
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 403,
+        "height": 404
+      },
+      "matra_row_y_px": 77,
+      "baseline_row_y_px": 403,
+      "matra_to_baseline_px": 326,
+      "matra_to_baseline_over_font_size": 0.815,
+      "key": "tirobangla",
+      "family": "Tiro Bangla",
+      "category": "bengali",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 415,
+        "height": 416
+      },
+      "matra_row_y_px": 88,
+      "baseline_row_y_px": 415,
+      "matra_to_baseline_px": 327,
+      "matra_to_baseline_over_font_size": 0.8175,
+      "key": "hindsiliguri",
+      "family": "Hind Siliguri",
+      "category": "bengali",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 447,
+        "height": 448
+      },
+      "matra_row_y_px": 72,
+      "baseline_row_y_px": 447,
+      "matra_to_baseline_px": 375,
+      "matra_to_baseline_over_font_size": 0.9375,
+      "key": "balooda2",
+      "family": "Baloo Da 2",
+      "category": "bengali",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 407,
+        "height": 408
+      },
+      "matra_row_y_px": 59,
+      "baseline_row_y_px": 407,
+      "matra_to_baseline_px": 348,
+      "matra_to_baseline_over_font_size": 0.87,
+      "key": "galada",
+      "family": "Galada",
+      "category": "bengali",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 0,
+        "bottom": 417,
+        "height": 418
+      },
+      "matra_row_y_px": 81,
+      "baseline_row_y_px": 417,
+      "matra_to_baseline_px": 336,
+      "matra_to_baseline_over_font_size": 0.84,
+      "key": "mina",
+      "family": "Mina",
+      "category": "bengali",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 52,
+        "bottom": 415,
+        "height": 364
+      },
+      "rendered_x_height_px": 220,
+      "rendered_cap_height_px": 292,
+      "rendered_x_height_over_font_size": 0.55,
+      "rendered_cap_height_over_font_size": 0.73,
+      "key": "jetbrainsmono",
+      "family": "JetBrains Mono",
+      "category": "mono",
+      "incumbent": true
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 71,
+        "bottom": 434,
+        "height": 364
+      },
+      "rendered_x_height_px": 207,
+      "rendered_cap_height_px": 279,
+      "rendered_x_height_over_font_size": 0.5175,
+      "rendered_cap_height_over_font_size": 0.6975,
+      "key": "ibmplexmono",
+      "family": "IBM Plex Mono",
+      "category": "mono",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 79,
+        "bottom": 430,
+        "height": 352
+      },
+      "rendered_x_height_px": 195,
+      "rendered_cap_height_px": 263,
+      "rendered_x_height_over_font_size": 0.4875,
+      "rendered_cap_height_over_font_size": 0.6575,
+      "key": "sourcecodepro",
+      "family": "Source Code Pro",
+      "category": "mono",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 58,
+        "bottom": 406,
+        "height": 349
+      },
+      "rendered_x_height_px": 212,
+      "rendered_cap_height_px": 284,
+      "rendered_x_height_over_font_size": 0.53,
+      "rendered_cap_height_over_font_size": 0.71,
+      "key": "geistmono",
+      "family": "Geist Mono",
+      "category": "mono",
+      "incumbent": false
+    },
+    {
+      "full_string_ink_bbox_px": {
+        "top": 72,
+        "bottom": 431,
+        "height": 360
+      },
+      "rendered_x_height_px": 199,
+      "rendered_cap_height_px": 280,
+      "rendered_x_height_over_font_size": 0.4975,
+      "rendered_cap_height_over_font_size": 0.7,
+      "key": "spacemono",
+      "family": "Space Mono",
+      "category": "mono",
+      "incumbent": false
+    }
+  ],
+  "could_not_measure": [],
+  "sora_bengali_pairings": [
+    {
+      "latin": "Sora",
+      "bengali": "Noto Sans Bengali",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.785,
+      "bengali_size_multiplier_needed": 0.6815
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Noto Serif Bengali",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.8275,
+      "bengali_size_multiplier_needed": 0.6465
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Anek Bangla",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.86,
+      "bengali_size_multiplier_needed": 0.6221
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Tiro Bangla",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.815,
+      "bengali_size_multiplier_needed": 0.6564
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Hind Siliguri",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.8175,
+      "bengali_size_multiplier_needed": 0.6544
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Baloo Da 2",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.9375,
+      "bengali_size_multiplier_needed": 0.5707
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Galada",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.87,
+      "bengali_size_multiplier_needed": 0.6149
+    },
+    {
+      "latin": "Sora",
+      "bengali": "Mina",
+      "latin_x_height_over_font_size": 0.535,
+      "bengali_matra_over_font_size": 0.84,
+      "bengali_size_multiplier_needed": 0.6369
+    }
+  ]
+}
