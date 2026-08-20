@@ -451,7 +451,14 @@ def check_prose(path: pathlib.Path, text: str) -> None:
             r"(?:prefers-|accent-|forced-|caret-|outline-|border-|background-|text-decoration-)"
             r"color|color(?:-scheme|-adjust|:)|--gru|\bCSS\b|\bLICENSE\b|license:"
             r"|SPDX|LicenseRef", re.I)
-        if m_sp and not exempt.search(ln):
+        # A markdown blockquote is a verbatim quotation — the same reasoning already
+        # applied to <pre>/<code> in strip_html() above: a source quoted for its own
+        # words must keep that source's own spelling. Rewriting an American source's
+        # "color" to "colour" inside a quotation mark would be misquoting it, not
+        # correcting it. First hit: this file's own research quotes from Material
+        # Design, USWDS and Primer, all American-sourced and all genuinely verbatim.
+        in_blockquote = ln.lstrip().startswith(">")
+        if m_sp and not exempt.search(ln) and not in_blockquote:
             add("minor", f"{rel}:{i}", f"American spelling: {m_sp.group(1)!r}",
                 "the house style is UK English",
                 "colour, behaviour, organise, analyse, customise, licence (the noun)")
@@ -505,7 +512,20 @@ def check_prose(path: pathlib.Path, text: str) -> None:
         # A QUOTED "open source" is a mention, not a claim — the documents that exist to
         # state this distinction quote the wrong phrase in order to forbid it. And prose
         # wraps, so the negation may sit on the line above or below.
-        quoted = re.search(r"""["\u201c\u2018']\s*open[- ]source""", ln, re.I)
+        #
+        # Bracketed by quote marks, not just preceded by one: the original regex only
+        # matched "open source" sitting immediately after an opening quote, which missed
+        # the far more common case of a longer quoted sentence with the phrase in the
+        # middle -- e.g. a research quote reading `*"Material Design 3 is Google's
+        # open-source design system..."*`. That is still a quotation, not GRU953 making
+        # a claim about its own PolyForm-licensed work, and it was reported as a blocker
+        # the first time this file quoted a real source describing itself as open source.
+        _phrase = re.search(r"open[- ]source", ln, re.I)
+        quoted = False
+        if _phrase:
+            _before, _after = ln[:_phrase.start()], ln[_phrase.end():]
+            if re.search(r"[\"\u201c\u2018]", _before) and re.search(r"[\"\u201d\u2019]", _after):
+                quoted = True
         near = " ".join(prose_lines[max(0, i - 2):i + 1])
         # A CLAIM needs a verb. "### Open source" is a heading about the concept and
         # "| Open source | ওপেন সোর্স |" is a glossary row; neither says this work is open
@@ -519,7 +539,21 @@ def check_prose(path: pathlib.Path, text: str) -> None:
         # presence of LICENSE-GUIDEBOOK.md; this one required the word in the same file,
         # so a README claiming "open source" beside a PolyForm LICENSE-GUIDEBOOK.md passed
         # here and failed there. Two implementations of one rule, disagreeing.
+        #
+        # TREE["polyform"] is tree-wide: it goes true the moment ANY file anywhere in
+        # what is being reviewed mentions PolyForm, which in this repository is nearly
+        # always. Without a self-reference requirement that turns this into "any 'X is
+        # open source' sentence in any file, anywhere, blocks the build" — and a
+        # benchmark document doing exactly its job, accurately describing GOV.UK's
+        # MIT-licensed design system or Ant Design's own open-source status, is not a
+        # claim about GRU953's own PolyForm-licensed writing. First hit: this file
+        # itself, describing "the open-source Ant Design project" — true, and nothing
+        # to do with GRU953's licence.
+        SELF_REF = re.compile(r"\bGRU953\b|\bthis (?:kit|guidebook|book|document|system"
+                               r"|repository|writing)\b|\bour (?:writing|guidebook|book)\b",
+                               re.I)
         if claim and (re.search(r"PolyForm", text, re.I) or TREE["polyform"]) \
+                and SELF_REF.search(near) \
                 and not OK_CONTEXT.search(near) and not quoted:
             add("blocker", f"{rel}:{i}",
                 "PolyForm-licensed content described as open source",

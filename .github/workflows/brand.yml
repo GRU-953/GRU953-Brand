@@ -47,6 +47,9 @@ jobs:
         with: { python-version: '3.11' }
       - run: python3 sync-tokens.py --check
       - run: cd design-system && python3 build.py --check
+      # The benchmark's tally is generated from 01_research/_data/criteria.json and
+      # 01_research/findings.json, never typed by hand -- this is what proves it.
+      - run: python3 brand-kit/01_research/render_benchmark.py --check
 
   # 3. The brand itself, on everything that ships.
   review:
